@@ -1,0 +1,50 @@
+{
+    "file": {
+        "uploading": "Subiendo archivo...",
+        "uploaded": "Archivo subido exitosamente",
+        "processing": "Procesando archivo...",
+        "processed": "Archivo procesado exitosamente",
+        "error_size": "El archivo es demasiado grande (máximo 32MB)",
+        "error_format": "Formato de archivo no soportado",
+        "error_upload": "Error al subir el archivo"
+    },
+    "ocr": {
+        "processing": "Realizando OCR...",
+        "processing_page": "Procesando página {current} de {total}...",
+        "completed": "OCR completado exitosamente",
+        "batch_completed": "Proceso por lotes completado",
+        "error_processing": "Error en el procesamiento OCR",
+        "no_text_found": "No se encontró texto en la imagen",
+        "ready_to_process": "Listo para procesar"
+    },
+    "preprocessing": {
+        "processing": "Preprocesando imagen...",
+        "processing_batch": "Preprocesando imágenes {current} de {total}...",
+        "completed": "Preprocesamiento completado",
+        "error_processing": "Error en el preprocesamiento",
+        "ready_to_ocr": "Listo para enviar a OCR"
+    },
+    "video": {
+        "processing": "Extrayendo fotogramas del video...",
+        "analyzing": "Analizando video...",
+        "extracting": "Extrayendo fotograma {current} de {total}...",
+        "completed": "Extracción completada",
+        "error_processing": "Error al procesar video",
+        "frames_extracted": "{count} fotogramas extraídos"
+    },
+    "batch": {
+        "processing_batch": "Procesando lote {current} de {total}...",
+        "batch_completed": "Lote {current} completado",
+        "continuing": "Continuando con siguiente lote...",
+        "stopped": "Proceso detenido por el usuario"
+    },
+    "download": {
+        "preparing": "Preparando descarga...",
+        "completed": "Descarga completada",
+        "error": "Error al preparar descarga"
+    },
+    "copy": {
+        "success": "Texto copiado al portapapeles",
+        "error": "Error al copiar texto"
+    }
+}

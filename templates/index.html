@@ -147,21 +147,33 @@
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-7xl">
         <header class="text-center mb-8">
-            <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                MLX DeepSeek-OCR
-            </h1>
-            <p class="text-xl text-gray-700">Apple Silicon 原生 · 4bit 極速 · 完全離線</p>
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex-1"></div>
+                <div class="flex-1 text-center">
+                    <h1 class="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2" data-i18n="header.title">
+                        MLX DeepSeek-OCR
+                    </h1>
+                    <p class="text-xl text-gray-700" data-i18n="header.subtitle">Apple Silicon 原生 · 4bit 極速 · 完全離線</p>
+                </div>
+                <div class="flex-1 flex justify-end">
+                    <select id="languageSelector" class="px-4 py-2 rounded-lg border-2 border-purple-200 focus:outline-none focus:ring-4 focus:ring-purple-300 bg-white text-gray-700">
+                        <option value="zh">中文</option>
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
         </header>
 
         <!-- 標籤導航 -->
         <div class="flex space-x-4 mb-6">
-            <button id="tab-ocr" class="tab-btn active px-6 py-3 rounded-xl font-bold text-lg bg-purple-600 text-white shadow-lg">
+            <button id="tab-ocr" class="tab-btn active px-6 py-3 rounded-xl font-bold text-lg bg-purple-600 text-white shadow-lg" data-i18n="tabs.ocr">
                 📄 OCR 辨識
             </button>
-            <button id="tab-video" class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+            <button id="tab-video" class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300" data-i18n="tabs.video">
                 🎬 影片截圖
             </button>
-            <button id="tab-preprocess" disabled class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300 opacity-50 cursor-not-allowed" title="獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能">
+            <button id="tab-preprocess" disabled class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300 opacity-50 cursor-not-allowed" data-i18n="tabs.preprocess" data-i18n-title="errors.preprocessing_disabled">
                 🎨 照片前處理
             </button>
         </div>
@@ -173,70 +185,70 @@
                 <!-- OCR 辨識 Tab -->
                 <div id="tab-ocr-content" class="tab-content active">
                     <div class="bg-white rounded-2xl shadow-xl p-6">
-                        <h2 class="text-2xl font-bold mb-4 text-gray-800">上傳檔案</h2>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="upload.title">上傳檔案</h2>
                         
                         <div id="dropZone" class="drop-zone rounded-xl p-10 text-center cursor-pointer mb-4 bg-gray-50 hover:bg-gray-100">
                             <svg class="mx-auto h-16 w-16 text-purple-500" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                                 <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <p class="mt-3 text-lg font-medium text-gray-700">拖放檔案到這裡</p>
-                            <p class="mt-1 text-sm text-gray-500">支援 JPG、PNG、PDF（最大 32MB）</p>
+                            <p class="mt-3 text-lg font-medium text-gray-700" data-i18n="upload.drag_drop">拖放檔案到這裡</p>
+                            <p class="mt-1 text-sm text-gray-500" data-i18n="upload.supported_formats">支援 JPG、PNG、PDF（最大 32MB）</p>
                             <input type="file" id="fileInput" accept="image/*,application/pdf" class="hidden">
                         </div>
 
                         <!-- 圖片前處理選項（圖片專用） -->
                         <div id="imagePreprocessSection" class="hidden space-y-4 mb-4">
                             <div class="p-5 bg-yellow-50 rounded-xl border-2 border-yellow-200">
-                                <h3 class="text-lg font-bold text-yellow-800 mb-3">🎨 照片前處理選項（可選）</h3>
-                                <p class="text-sm text-yellow-700 mb-4">選擇處理選項後，系統會在OCR辨識前自動處理圖片</p>
+                                <h3 class="text-lg font-bold text-yellow-800 mb-3" data-i18n="preprocessing.options_title">🎨 照片前處理選項（可選）</h3>
+                                <p class="text-sm text-yellow-700 mb-4" data-i18n="preprocessing.description">選擇處理選項後，系統會在OCR辨識前自動處理圖片</p>
                                 
                                 <div class="space-y-3 mb-4">
                                     <label class="flex items-start space-x-3 cursor-pointer">
                                         <input type="checkbox" id="imageAutoRotate" class="mt-1 rounded text-purple-600">
                                         <div>
-                                            <span class="font-medium text-gray-800">🔄 自動旋轉</span>
-                                            <p class="text-xs text-gray-600">自動檢測並修正圖片傾斜角度</p>
+                                            <span class="font-medium text-gray-800" data-i18n="preprocessing.auto_rotate">🔄 自動旋轉</span>
+                                            <p class="text-xs text-gray-600" data-i18n="preprocessing.auto_rotate_desc">自動檢測並修正圖片傾斜角度</p>
                                         </div>
                                     </label>
                                     
                                     <label class="flex items-start space-x-3 cursor-pointer">
                                         <input type="checkbox" id="imageEnhance" class="mt-1 rounded text-purple-600">
                                         <div>
-                                            <span class="font-medium text-gray-800">✨ 增強對比+銳化</span>
-                                            <p class="text-xs text-gray-600">讓圖片更清晰，對比更明顯</p>
+                                            <span class="font-medium text-gray-800" data-i18n="preprocessing.enhance">✨ 增強對比+銳化</span>
+                                            <p class="text-xs text-gray-600" data-i18n="preprocessing.enhance_desc">讓圖片更清晰，對比更明顯</p>
                                         </div>
                                     </label>
                                     
                                     <label class="flex items-start space-x-3 cursor-pointer">
                                         <input type="checkbox" id="imageRemoveShadows" class="mt-1 rounded text-purple-600">
                                         <div>
-                                            <span class="font-medium text-gray-800">☀️ 去除陰影</span>
-                                            <p class="text-xs text-gray-600">移除光線不均造成的陰影</p>
+                                            <span class="font-medium text-gray-800" data-i18n="preprocessing.remove_shadows">☀️ 去除陰影</span>
+                                            <p class="text-xs text-gray-600" data-i18n="preprocessing.remove_shadows_desc">移除光線不均造成的陰影</p>
                                         </div>
                                     </label>
                                     
                                     <label class="flex items-start space-x-3 cursor-pointer">
                                         <input type="checkbox" id="imageBinarize" class="mt-1 rounded text-purple-600">
                                         <div>
-                                            <span class="font-medium text-gray-800">⚫⚪ 二值化</span>
-                                            <p class="text-xs text-gray-600">轉換成純黑白圖（⚠️ 不可逆）</p>
+                                            <span class="font-medium text-gray-800" data-i18n="preprocessing.binarize">⚫⚪ 二值化</span>
+                                            <p class="text-xs text-gray-600" data-i18n="preprocessing.binarize_desc">轉換成純黑白圖（⚠️ 不可逆）</p>
                                         </div>
                                     </label>
                                     
                                     <label class="flex items-start space-x-3 cursor-pointer">
                                         <input type="checkbox" id="imageRemoveBg" class="mt-1 rounded text-purple-600">
                                         <div>
-                                            <span class="font-medium text-gray-800">🎨 去除背景 (AI)</span>
-                                            <p class="text-xs text-gray-600">使用 rembg AI 模型智能去背</p>
+                                            <span class="font-medium text-gray-800" data-i18n="preprocessing.remove_bg">🎨 去除背景 (AI)</span>
+                                            <p class="text-xs text-gray-600" data-i18n="preprocessing.remove_bg_desc">使用 rembg AI 模型智能去背</p>
                                         </div>
                                     </label>
                                 </div>
                                 
                                 <div class="flex space-x-3 mt-4">
-                                    <button id="skipImagePreprocessBtn" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+                                    <button id="skipImagePreprocessBtn" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition" data-i18n="preprocessing.skip_preprocessing">
                                         跳過前處理
                                     </button>
-                                    <button id="executeImagePreprocessBtn" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+                                    <button id="executeImagePreprocessBtn" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition" data-i18n="preprocessing.execute_preprocessing">
                                         執行前處理
                                     </button>
                                 </div>
@@ -247,16 +259,16 @@
                         <div id="configPanel" class="hidden space-y-4 mb-4">
                             <!-- Mode 選擇 -->
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">📄 內容類型</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="config.content_type">📄 內容類型</label>
                                 <select id="modeSelect" class="w-full border-2 border-purple-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-4 focus:ring-purple-300">
-                                    <option value="Document">Document Mode (結構化內容)</option>
-                                    <option value="Scene">Scene Mode (現場文字)</option>
+                                    <option value="Document" data-i18n="config.document_mode">Document Mode (結構化內容)</option>
+                                    <option value="Scene" data-i18n="config.scene_mode">Scene Mode (現場文字)</option>
                                 </select>
                             </div>
 
                             <!-- Subcategory 選擇 -->
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">📚 細分類別</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="config.subcategory">📚 細分類別</label>
                                 <select id="subcategorySelect" class="w-full border-2 border-blue-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-4 focus:ring-blue-300">
                                     <option value="Academic">Academic</option>
                                 </select>
@@ -264,14 +276,14 @@
 
                             <!-- Complexity 滑塊 -->
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">🎚️ 複雜度：<span id="complexityLabel">Medium (256 tokens) ⭐ 推薦</span></label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2"><span data-i18n="config.complexity">🎚️ 複雜度：</span><span id="complexityLabel" data-i18n="config.medium_recommended">Medium (256 tokens) ⭐ 推薦</span></label>
                                 <input type="range" id="complexitySlider" min="0" max="4" value="2" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                                 <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                    <span>Tiny (64)</span>
-                                    <span>Small (100)</span>
-                                    <span>Medium (256)</span>
-                                    <span>Large (400)</span>
-                                    <span>Gundam (800)</span>
+                                    <span data-i18n="config.tiny">Tiny (64)</span>
+                                    <span data-i18n="config.small">Small (100)</span>
+                                    <span data-i18n="config.medium">Medium (256)</span>
+                                    <span data-i18n="config.large">Large (400)</span>
+                                    <span data-i18n="config.gundam">Gundam (800)</span>
                                 </div>
                             </div>
                         </div>
@@ -279,24 +291,24 @@
                         <!-- PDF 模式切換 -->
                         <div id="pdfModeSection" class="hidden space-y-4">
                             <div class="flex space-x-3">
-                                <button id="batchModeBtn" class="flex-1 mode-tab active py-4 px-6 rounded-xl font-bold text-lg shadow-lg">
+                                <button id="batchModeBtn" class="flex-1 mode-tab active py-4 px-6 rounded-xl font-bold text-lg shadow-lg" data-i18n="pdf.batch_processing">
                                     批次處理
                                 </button>
-                                <button id="singleModeBtn" class="flex-1 mode-tab py-4 px-6 rounded-xl font-bold text-lg bg-gray-50 text-gray-700">
+                                <button id="singleModeBtn" class="flex-1 mode-tab py-4 px-6 rounded-xl font-bold text-lg bg-gray-50 text-gray-700" data-i18n="pdf.single_page">
                                     單頁辨識
                                 </button>
                             </div>
 
                             <!-- PDF 前處理按鈕（切換到前處理Tab） -->
                             <div id="pdfPreprocessSection" class="hidden p-5 bg-yellow-50 rounded-xl border-2 border-yellow-200">
-                                <h3 class="text-lg font-bold text-yellow-800 mb-3">🎨 PDF前處理選項（可選）</h3>
-                                <p class="text-sm text-yellow-700 mb-4">點擊下方按鈕將PDF頁面提取為圖片，然後在前處理Tab中進行處理</p>
+                                <h3 class="text-lg font-bold text-yellow-800 mb-3" data-i18n="pdf.preprocessing_options">🎨 PDF前處理選項（可選）</h3>
+                                <p class="text-sm text-yellow-700 mb-4" data-i18n="pdf.preprocessing_desc">點擊下方按鈕將PDF頁面提取為圖片，然後在前處理Tab中進行處理</p>
                                 
                                 <div class="flex space-x-3">
-                                    <button id="skipPdfPreprocessBtn" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+                                    <button id="skipPdfPreprocessBtn" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition" data-i18n="preprocessing.skip_preprocessing">
                                         跳過前處理
                                     </button>
-                                    <button id="executePdfPreprocessBtn" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition">
+                                    <button id="executePdfPreprocessBtn" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition" data-i18n="buttons.send_to_ocr">
                                         前往前處理
                                     </button>
                                 </div>
@@ -304,22 +316,22 @@
 
                             <!-- 批次設定 -->
                             <div id="batchSettings" class="p-5 bg-purple-50 rounded-xl border-2 border-purple-200">
-                                <p class="text-sm font-bold text-purple-800 mb-3">每批次處理頁數</p>
+                                <p class="text-sm font-bold text-purple-800 mb-3" data-i18n="pdf.pages_per_batch">每批次處理頁數</p>
                                 <select id="batchSize" class="w-full border-2 border-purple-300 rounded-lg px-4 py-3">
-                                    <option value="2" selected>2 頁（推薦）</option>
-                                    <option value="1">1 頁（最穩）</option>
-                                    <option value="3">3 頁</option>
-                                    <option value="5">5 頁</option>
-                                    <option value="10">10 頁</option>
-                                    <option value="custom">自訂</option>
+                                    <option value="2" selected data-i18n="pdf.batch_size_2">2 頁（推薦）</option>
+                                    <option value="1" data-i18n="pdf.batch_size_1">1 頁（最穩）</option>
+                                    <option value="3" data-i18n="pdf.batch_size_3">3 頁</option>
+                                    <option value="5" data-i18n="pdf.batch_size_5">5 頁</option>
+                                    <option value="10" data-i18n="pdf.batch_size_10">10 頁</option>
+                                    <option value="custom" data-i18n="pdf.custom">自訂</option>
                                 </select>
-                                <input type="number" id="customBatchSize" class="hidden w-full mt-2 border-2 border-purple-300 rounded-lg px-4 py-3" min="1" max="50" value="5" placeholder="輸入自訂頁數 (1-50)">
+                                <input type="number" id="customBatchSize" class="hidden w-full mt-2 border-2 border-purple-300 rounded-lg px-4 py-3" min="1" max="50" value="5" data-i18n-placeholder="pdf.enter_custom_pages" placeholder="輸入自訂頁數 (1-50)">
                                 <div id="batchValidationError" class="hidden mt-2 text-sm text-red-600"></div>
                             </div>
 
                             <!-- 單頁設定 -->
                             <div id="singleSettings" class="hidden p-5 bg-blue-50 rounded-xl border-2 border-blue-200">
-                                <p class="text-sm font-bold text-blue-800 mb-3">選擇頁面</p>
+                                <p class="text-sm font-bold text-blue-800 mb-3" data-i18n="pdf.select_page">選擇頁面</p>
                                 <select id="pageSelector" class="w-full border-2 border-blue-300 rounded-lg px-4 py-3"></select>
                             </div>
                         </div>
@@ -327,31 +339,31 @@
                         <!-- 執行按鈕 -->
                         <div class="mt-6 space-y-3">
                             <button id="processBatchBtn" class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
-                                <span id="batchBtnText">開始批次處理</span>
+                                <span id="batchBtnText" data-i18n="buttons.start_batch">開始批次處理</span>
                             </button>
                             <button id="processSingleBtn" class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
-                                <span id="singleBtnText">辨識此頁</span>
+                                <span id="singleBtnText" data-i18n="buttons.recognize_page">辨識此頁</span>
                             </button>
                             <button id="processImageBtn" class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
-                                <span id="imageBtnText">開始辨識</span>
+                                <span id="imageBtnText" data-i18n="buttons.start_recognition">開始辨識</span>
                             </button>
                         </div>
                     </div>
 
                     <!-- 縮圖列表 -->
                     <div id="thumbnails" class="hidden bg-white rounded-2xl shadow-xl p-4 max-h-96 overflow-y-auto">
-                        <p class="text-sm font-bold text-gray-700 mb-3">點擊縮圖切換頁面</p>
+                        <p class="text-sm font-bold text-gray-700 mb-3" data-i18n="thumbnails.click_to_switch">點擊縮圖切換頁面</p>
                         <div id="thumbnailsGrid" class="grid grid-cols-3 gap-3"></div>
                     </div>
 
                     <!-- 預覽區 -->
                     <div class="bg-white rounded-2xl shadow-xl p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xl font-bold text-gray-800">預覽</h3>
+                            <h3 class="text-xl font-bold text-gray-800" data-i18n="preview.title">預覽</h3>
                             <div class="space-x-2">
                                 <button onclick="zoomPreview(1.2)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow">+</button>
                                 <button onclick="zoomPreview(0.8)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow">−</button>
-                                <button id="clearBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow">清除</button>
+                                <button id="clearBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow" data-i18n="preview.clear">清除</button>
                             </div>
                         </div>
                         <div id="preview" class="hidden relative bg-gray-100 rounded-xl overflow-hidden border-4 border-gray-300">
@@ -364,8 +376,8 @@
                 <div id="tab-preprocess-content" class="tab-content">
                     <!-- 頂部說明橫幅 -->
                     <div class="info-banner">
-                        <h3>🎨 關於「去除背景」功能</h3>
-                        <p>
+                        <h3 data-i18n="preprocessing.about_bg_removal">🎨 關於「去除背景」功能</h3>
+                        <p data-i18n="preprocessing.about_bg_removal_desc">
                             ✅ 使用 <strong>rembg AI 模型</strong>，與您的 Colab 代碼<strong>完全相同</strong><br>
                             ✅ 只需勾選「去除背景」選項，或點擊「🎨 僅去背景」快速按鈕<br>
                             ✅ 輸出為透明背景 PNG 格式<br>
@@ -376,7 +388,7 @@
                     <div class="bg-white rounded-2xl shadow-xl p-6">
                         <h2 class="text-2xl font-bold mb-4 text-gray-800">照片前處理</h2>
                         
-                        <div class="hint-box">
+                        <div class="hint-box" data-i18n="preprocessing.hint_no_options">
                             💡 提示：如果不勾選任何選項，將保存原圖（不做任何處理）<br>
                             💡 提示：可以多選，系統會依序處理所有選項
                         </div>
@@ -385,44 +397,44 @@
                             <svg class="mx-auto h-12 w-12 text-purple-500" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                                 <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <p class="mt-3 text-lg font-medium text-gray-700">拖放照片到這裡</p>
-                            <p class="mt-1 text-sm text-gray-500">支援 JPG、PNG（可多選）</p>
+                            <p class="mt-3 text-lg font-medium text-gray-700" data-i18n="preprocessing.drag_drop">拖放照片到這裡</p>
+                            <p class="mt-1 text-sm text-gray-500" data-i18n="preprocessing.multi_support">支援 JPG、PNG（可多選）</p>
                             <input type="file" id="preprocessFileInput" accept="image/*" multiple disabled class="hidden">
                         </div>
 
                         <!-- 前處理設定 -->
                         <div id="preprocessSettings" class="space-y-4 mb-4 hidden">
                             <div>
-                                <h3 class="text-lg font-bold text-gray-800 mb-3">處理選項（可多選）</h3>
+                                <h3 class="text-lg font-bold text-gray-800 mb-3" data-i18n="preprocessing.processing_options">處理選項（可多選）</h3>
                                 
                                 <label class="option-label">
                                     <input type="checkbox" id="autoRotate" class="rounded text-purple-600">
-                                    <span>🔄 自動旋轉</span>
-                                    <span class="option-description">自動檢測並修正圖片傾斜角度（適合手機拍攝的歪斜照片）</span>
+                                    <span data-i18n="preprocessing.auto_rotate">🔄 自動旋轉</span>
+                                    <span class="option-description" data-i18n="preprocessing.auto_rotate_desc">自動檢測並修正圖片傾斜角度（適合手機拍攝的歪斜照片）</span>
                                 </label>
                                 
                                 <label class="option-label">
                                     <input type="checkbox" id="enhance" class="rounded text-purple-600">
-                                    <span>✨ 增強對比+銳化</span>
-                                    <span class="option-description">讓圖片更清晰，對比更明顯（適合模糊、灰濛濛的照片）</span>
+                                    <span data-i18n="preprocessing.enhance">✨ 增強對比+銳化</span>
+                                    <span class="option-description" data-i18n="preprocessing.enhance_desc">讓圖片更清晰，對比更明顯（適合模糊、灰濛濛的照片）</span>
                                 </label>
                                 
                                 <label class="option-label">
                                     <input type="checkbox" id="removeShadows" class="rounded text-purple-600">
-                                    <span>☀️ 去除陰影</span>
-                                    <span class="option-description">移除光線不均造成的陰影（適合有陰影的文件掃描）</span>
+                                    <span data-i18n="preprocessing.remove_shadows">☀️ 去除陰影</span>
+                                    <span class="option-description" data-i18n="preprocessing.remove_shadows_desc">移除光線不均造成的陰影（適合有陰影的文件掃描）</span>
                                 </label>
                                 
                                 <label class="option-label">
                                     <input type="checkbox" id="binarize" class="rounded text-purple-600">
-                                    <span>⚫⚪ 二值化</span>
-                                    <span class="option-description">轉換成純黑白圖（適合文字辨識、列印，⚠️ 不可逆）</span>
+                                    <span data-i18n="preprocessing.binarize">⚫⚪ 二值化</span>
+                                    <span class="option-description" data-i18n="preprocessing.binarize_desc">轉換成純黑白圖（適合文字辨識、列印，⚠️ 不可逆）</span>
                                 </label>
                                 
                                 <label class="option-label">
                                     <input type="checkbox" id="removeBg" class="rounded text-purple-600">
-                                    <span>🎨 去除背景 (AI)</span>
-                                    <span class="option-description">
+                                    <span data-i18n="preprocessing.remove_bg">🎨 去除背景 (AI)</span>
+                                    <span class="option-description" data-i18n="preprocessing.remove_bg_desc">
                                         <strong>使用 rembg AI 模型智能去背</strong><br>
                                         • 等同 Colab 代碼，效果完全相同<br>
                                         • 輸出透明 PNG 格式<br>
@@ -433,18 +445,18 @@
 
                             <!-- 快速預設按鈕 -->
                             <div class="bg-purple-50 p-4 rounded-xl border-2 border-purple-200">
-                                <h3 class="text-lg font-bold text-purple-800 mb-3">⚡ 快速預設組合（一鍵套用）</h3>
+                                <h3 class="text-lg font-bold text-purple-800 mb-3" data-i18n="preprocessing.preset_title">⚡ 快速預設組合（一鍵套用）</h3>
                                 <div class="grid grid-cols-2 gap-2">
-                                    <button onclick="applyPreprocessPreset('remove_background_only')" class="preset-btn bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                                    <button onclick="applyPreprocessPreset('remove_background_only')" class="preset-btn bg-gradient-to-r from-purple-600 to-pink-600 text-white" data-i18n="preprocessing.preset_remove_bg_only">
                                         🎨 僅去背景
                                     </button>
-                                    <button onclick="applyPreprocessPreset('photo_optimize')" class="preset-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+                                    <button onclick="applyPreprocessPreset('photo_optimize')" class="preset-btn bg-gradient-to-r from-blue-600 to-cyan-600 text-white" data-i18n="preprocessing.preset_photo_optimize">
                                         📷 照片優化
                                     </button>
-                                    <button onclick="applyPreprocessPreset('scan_optimize')" class="preset-btn bg-gradient-to-r from-green-600 to-teal-600 text-white">
+                                    <button onclick="applyPreprocessPreset('scan_optimize')" class="preset-btn bg-gradient-to-r from-green-600 to-teal-600 text-white" data-i18n="preprocessing.preset_scan_optimize">
                                         📄 掃描優化
                                     </button>
-                                    <button onclick="applyPreprocessPreset('enhance_blurry')" class="preset-btn bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
+                                    <button onclick="applyPreprocessPreset('enhance_blurry')" class="preset-btn bg-gradient-to-r from-yellow-500 to-orange-500 text-white" data-i18n="preprocessing.preset_enhance_blurry">
                                         🔍 模糊增強
                                     </button>
                                 </div>
@@ -496,74 +508,74 @@
          
                 <div id="tab-video-content" class="tab-content">
                     <div class="bg-white rounded-2xl shadow-xl p-6">
-                        <h2 class="text-2xl font-bold mb-4 text-gray-800">影片截圖</h2>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="video.title">影片截圖</h2>
                         
                         <div id="videoDropZone" class="drop-zone rounded-xl p-8 text-center cursor-pointer mb-4 bg-gray-50 hover:bg-gray-100 border-2 border-dashed border-blue-300">
                             <svg class="mx-auto h-12 w-12 text-blue-500" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                                 <path d="M12 8v28l16-14L12 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M36 8v28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <p class="mt-3 text-lg font-medium text-gray-700">拖放影片到這裡</p>
-                            <p class="mt-1 text-sm text-gray-500">支援 MP4、AVI、MOV、MKV</p>
+                            <p class="mt-3 text-lg font-medium text-gray-700" data-i18n="upload.drag_drop">拖放影片到這裡</p>
+                            <p class="mt-1 text-sm text-gray-500" data-i18n="upload.video_formats">支援 MP4、AVI、MOV、MKV</p>
                             <input type="file" id="videoFileInput" accept="video/*" class="hidden">
                         </div>
 
                         <!-- 影片資訊 -->
                         <div id="videoInfo" class="hidden mb-4 p-4 bg-blue-50 rounded-xl border-2 border-blue-200">
-                            <h4 class="font-bold text-blue-800 mb-2">影片資訊</h4>
+                            <h4 class="font-bold text-blue-800 mb-2" data-i18n="video.info">影片資訊</h4>
                             <div id="videoInfoContent" class="text-sm text-blue-700"></div>
                         </div>
 
                         <!-- 截圖設定 -->
                         <div id="videoSettings" class="space-y-4 mb-4 hidden">
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">截圖方式</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="video.extraction_method">截圖方式</label>
                                 <select id="extractionMethod" class="w-full border-2 border-blue-200 rounded-xl px-4 py-3">
-                                    <option value="fixed_count">固定數量 (100張)</option>
-                                    <option value="fixed_interval">固定間隔 (每秒5張)</option>
-                                    <option value="scene_change">場景變化偵測</option>
+                                    <option value="fixed_count" data-i18n="video.fixed_count">固定數量 (100張)</option>
+                                    <option value="fixed_interval" data-i18n="video.fixed_interval">固定間隔 (每秒5張)</option>
+                                    <option value="scene_change" data-i18n="video.scene_change">場景變化偵測</option>
                                 </select>
                             </div>
 
                             <div id="frameCountSetting" class="hidden">
-                                <label class="block text-sm font-bold text-gray-700 mb-2">總幀數</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="video.total_frames">總幀數</label>
                                 <input type="number" id="totalFrames" min="1" max="1000" value="1000" class="w-full border-2 border-blue-200 rounded-xl px-4 py-3">
                             </div>
 
                             <div id="intervalSetting" class="hidden">
-                                <label class="block text-sm font-bold text-gray-700 mb-2">每秒張數</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="video.frames_per_second">每秒張數</label>
                                 <input type="number" id="frameInterval" min="1" max="30" value="5" class="w-full border-2 border-blue-200 rounded-xl px-4 py-3">
                             </div>
 
                             <!-- 修正 1：場景變化偵測設定（新增） -->
                             <div id="sceneChangeSettings" class="hidden">
-                                <label class="block text-sm font-bold text-gray-700 mb-2">場景變化敏感度</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="video.scene_sensitivity">場景變化敏感度</label>
                                 <input type="range" id="sceneSensitivity" min="0.1" max="1" step="0.1" value="0.5" class="w-full h-2 bg-gray-200 rounded-lg">
                                 <div class="flex justify-between text-xs text-gray-500 mt-1">
-                                    <span>低 (更多幀)</span>
-                                    <span id="sensitivityLabel">中 (0.5)</span>
-                                    <span>高 (更少幀)</span>
+                                    <span data-i18n="video.sensitivity_low">低 (更多幀)</span>
+                                    <span id="sensitivityLabel" data-i18n="video.sensitivity_medium">中 (0.5)</span>
+                                    <span data-i18n="video.sensitivity_high">高 (更少幀)</span>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">輸出格式</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="video.output_format">輸出格式</label>
                                 <select id="outputFormat" class="w-full border-2 border-blue-200 rounded-xl px-4 py-3">
-                                    <option value="jpg">JPG (高壓縮)</option>
-                                    <option value="png">PNG (高品質)</option>
+                                    <option value="jpg" data-i18n="video.jpg_compressed">JPG (高壓縮)</option>
+                                    <option value="png" data-i18n="video.png_high_quality">PNG (高品質)</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- 執行按鈕 -->
                         <div class="mt-6 space-y-3">
-                            <button id="extractFramesBtn" class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="extractFramesBtn" class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="video.start_capture">
                                 開始截圖
                             </button>
-                            <button id="downloadFramesBtn" class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="downloadFramesBtn" class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="video.download_frames">
                                 下載截圖
                             </button>
-                            <button id="sendFramesToOcrBtn" class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="sendFramesToOcrBtn" class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="video.send_to_ocr">
                                 發送到 OCR
                             </button>
                         </div>
@@ -588,12 +600,12 @@
            
             <div class="xl:col-span-2 bg-white rounded-2xl shadow-2xl p-8">
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-3xl font-bold text-gray-800" id="resultTitle">辨識結果</h2>
+                    <h2 class="text-3xl font-bold text-gray-800" id="resultTitle" data-i18n="results.title">辨識結果</h2>
                     <div class="space-x-3">
-                        <button id="copyBtn" class="hidden bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition transform hover:scale-105">
+                        <button id="copyBtn" class="hidden bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition transform hover:scale-105" data-i18n="results.copy_all">
                             複製全部
                         </button>
-                        <button id="downloadBtn" class="hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition transform hover:scale-105">
+                        <button id="downloadBtn" class="hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition transform hover:scale-105" data-i18n="results.download_txt">
                             下載 TXT
                         </button>
                     </div>
@@ -603,35 +615,35 @@
                 <div id="progressInfo" class="hidden mb-6">
                     <div class="text-center">
                         <div class="inline-flex items-center space-x-2 text-sm font-medium">
-                            <span>進度：</span>
+                            <span data-i18n="progress.label">進度：</span>
                             <span id="progressCurrent" class="text-purple-600 font-bold">0</span>
-                            <span>/ <span id="progressTotal">0</span> 頁</span>
+                            <span>/ <span id="progressTotal">0</span> <span data-i18n="progress.pages">頁</span></span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-3 mt-2">
                             <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
                         </div>
-                        <div class="text-xs text-gray-500 mt-2" id="progressConfig">配置信息</div>
+                        <div class="text-xs text-gray-500 mt-2" id="progressConfig" data-i18n="progress.config_info">配置信息</div>
                     </div>
                 </div>
 
                 <!-- 結果內容 -->
                 <div id="result" class="bg-gray-50 rounded-2xl p-6 min-h-96 max-h-screen overflow-y-auto border-2 border-dashed border-gray-300">
-                    <p class="text-center text-gray-400 text-xl mt-32" id="defaultResultText">請上傳檔案開始處理</p>
+                    <p class="text-center text-gray-400 text-xl mt-32" id="defaultResultText" data-i18n="results.default_text">請上傳檔案開始處理</p>
                 </div>
 
                 <!-- 批次控制 -->
                 <div id="batchControls" class="hidden mt-6 flex space-x-4">
-                    <button id="continueBtn" class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 rounded-xl shadow-xl transition transform hover:scale-105">
+                    <button id="continueBtn" class="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 rounded-xl shadow-xl transition transform hover:scale-105" data-i18n="buttons.continue_batch">
                         繼續下一批
                     </button>
-                    <button id="stopBtn" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-xl shadow-xl transition transform hover:scale-105">
+                    <button id="stopBtn" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-xl shadow-xl transition transform hover:scale-105" data-i18n="buttons.stop_batch">
                         停止批次
                     </button>
                 </div>
 
                 <!-- 成功提示 -->
                 <div id="success" class="hidden mt-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-center font-bold text-2xl py-6 rounded-2xl shadow-2xl">
-                    <span id="successMessage">全部完成！</span>
+                    <span id="successMessage" data-i18n="success.completed">全部完成！</span>
                 </div>
 
                 <!-- 錯誤提示（修正 10） -->
@@ -643,14 +655,14 @@
         <div id="loading" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div class="bg-white rounded-2xl p-10 shadow-2xl text-center">
                 <div class="spinner mx-auto mb-4"></div>
-                <p class="text-xl font-bold text-gray-800" id="loadingText">處理中...</p>
-                <p class="text-sm text-gray-600 mt-2" id="loadingSubtext">請稍候</p>
+                <p class="text-xl font-bold text-gray-800" id="loadingText" data-i18n="loading.processing">處理中...</p>
+                <p class="text-sm text-gray-600 mt-2" id="loadingSubtext" data-i18n="loading.please_wait">請稍候</p>
             </div>
         </div>
     </div>
 
     <!-- 載入 app.js -->
-    <script src="/static/app.js?v=2"></script>
+    <script src="/static/app.js?v=3"></script>
 
     <!-- 內嵌 JS：標籤切換、預設配置、快速功能 -->
     <script>

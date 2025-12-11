@@ -34,6 +34,142 @@ let isPdfPreprocessMode = false; // PDF前處理模式標記（新增：用於�
 let isVideoPreprocessMode = false; // 視頻截圖前處理模式標記（新增：用於狀態檢測）
 let processedVideoFrames = []; // 處理後的視頻截圖（類似 processedPdfThumbnails）
 
+// ===== I18n 翻譯系統 =====
+class I18n {
+    constructor() {
+        this.currentLang = localStorage.getItem('language') || this.detectLanguage();
+        this.translations = {};
+        this.loadTranslations(this.currentLang);
+    }
+    
+    detectLanguage() {
+        // 檢測瀏覽器語言
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.startsWith('es')) return 'es';
+        if (browserLang.startsWith('zh')) return 'zh';
+        return 'zh'; // 預設中文
+    }
+    
+    async loadTranslations(lang) {
+        try {
+            const files = ['common', 'ui', 'messages', 'errors'];
+            for (const file of files) {
+                const response = await fetch(`/static/locales/${lang}/${file}.json`);
+                if (response.ok) {
+                    this.translations[file] = await response.json();
+                }
+            }
+        } catch (error) {
+            console.warn('Failed to load translations:', error);
+        }
+    }
+    
+    t(key, params = {}) {
+        const keyParts = key.split('.');
+        
+        // Try to find the translation by checking all translation file categories
+        for (const [fileCategory, fileData] of Object.entries(this.translations)) {
+            if (!fileData) {
+                continue;
+            }
+            
+            let text = fileData;
+            let found = true;
+            
+            // Navigate through nested structure using the key parts
+            for (const k of keyParts) {
+                if (text && typeof text === 'object' && text !== null && k in text) {
+                    text = text[k];
+                } else {
+                    found = false;
+                    break;
+                }
+            }
+            
+            if (found && text !== undefined && text !== null) {
+                return this.interpolate(text, params);
+            }
+        }
+        
+        return key; // Return key as fallback
+    }
+    
+    interpolate(text, params) {
+        return text.replace(/\{(\w+)\}/g, (match, key) => {
+            return params[key] !== undefined ? params[key] : match;
+        });
+    }
+    
+    async setLanguage(lang) {
+        if (lang === this.currentLang) return;
+        
+        this.currentLang = lang;
+        localStorage.setItem('language', lang);
+        await this.loadTranslations(lang);
+        
+        // Wait a bit for translations to be fully loaded
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        this.updateUI();
+        
+        // 更新 HTML lang 屬性
+        document.documentElement.lang = lang === 'zh' ? 'zh-TW' : lang;
+    }
+    
+    async updateUI() {
+        // Ensure translations are loaded
+        if (Object.keys(this.translations).length === 0) {
+            await this.loadTranslations(this.currentLang);
+        }
+        
+        // Update all elements with data-i18n attribute
+        const elements = document.querySelectorAll('[data-i18n]');
+        
+        elements.forEach((element) => {
+            const key = element.getAttribute('data-i18n');
+            const translation = this.t(key);
+            
+            if (element.tagName === 'INPUT' && (element.type === 'submit' || element.type === 'button')) {
+                element.value = translation;
+            } else if (element.tagName === 'INPUT' && element.type === 'text') {
+                element.placeholder = translation;
+            } else if (element.tagName === 'OPTION') {
+                element.textContent = translation;
+            } else {
+                element.textContent = translation;
+            }
+        });
+        
+        // Update title attributes
+        document.querySelectorAll('[data-i18n-title]').forEach(element => {
+            const key = element.getAttribute('data-i18n-title');
+            element.title = this.t(key);
+        });
+        
+        // Update select options
+        document.querySelectorAll('select[data-i18n-options]').forEach(select => {
+            Array.from(select.options).forEach((option) => {
+                const optionKey = option.getAttribute('data-i18n');
+                if (optionKey) {
+                    const translation = this.t(optionKey);
+                    if (translation !== optionKey) {
+                        option.textContent = translation;
+                    }
+                }
+            });
+        });
+        
+        // Update elements with data-i18n-placeholder
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            element.placeholder = this.t(key);
+        });
+    }
+}
+
+// 初始化 i18n
+const i18n = new I18n();
+
 // ===== DOM 元素获取 =====
 const fileInput = document.getElementById('fileInput');
 const dropZone = document.getElementById('dropZone');
@@ -389,7 +525,7 @@ async function loadPagePreview(pageNumber) {
             previewImage.style.transform = 'scale(1)';
         }
     } catch (err) {
-        showError('預覽載入失敗: ' + err.message);
+ showError(i18n.t('errors.file.not_found') + ': ' + err.message);
     }
 }
 
@@ -400,7 +536,7 @@ function handleFiles(files) {
     const file = files[0];
     
     if (!['image/png', 'image/jpeg', 'image/jpg', 'application/pdf'].includes(file.type)) {
-        showError('只支援 JPG, PNG 或 PDF');
+        showError(null, 'file.invalid_format');
         return;
     }
     
@@ -467,7 +603,7 @@ async function initPDFPages(file) {
         hideLoading();
 
         if (!data.success) {
-            showError(data.error || 'PDF 載入失敗');
+            showError(data.error || i18n.t('errors.file.upload_failed'));
             return;
         }
 
@@ -512,7 +648,7 @@ async function initPDFPages(file) {
 
     } catch (err) {
         hideLoading();
-        showError('載入失敗：' + err.message);
+        showError(i18n.t('errors.file.upload_failed') + '：' + err.message);
     }
 }
 // ===== Part 2: OCR 識別邏輯 =====
@@ -522,7 +658,7 @@ processImageBtn.addEventListener('click', async () => {
     if (!selectedFile) return;
     
     processImageBtn.disabled = true;
-    imageBtnText.innerText = '處理中...';
+    imageBtnText.innerText = i18n.t('loading.processing');
     showLoading('辨識中...');
     resetResults();
 
@@ -582,7 +718,7 @@ async function processBatch() {
     const startPage = currentBatchIndex * batchSize + 1;
     const endPage = Math.min((currentBatchIndex + 1) * batchSize, totalPages);
     
-    const loadingText = isVideoMode ? `處理中... (${startPage}~${endPage} 張截圖)` : `處理中... (${startPage}~${endPage} 頁)`;
+    const loadingText = isVideoMode ? `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('units.frames')})` : `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('units.pages')})`;
     showLoading(loadingText);
 
     try {
@@ -602,13 +738,13 @@ async function processBatch() {
             });
             
             if (!uploadResponse.ok) {
-                const errorData = await uploadResponse.json().catch(() => ({ error: '上傳失敗' }));
-                throw new Error(errorData.error || `上傳失敗: HTTP ${uploadResponse.status}`);
+                const errorData = await uploadResponse.json().catch(() => ({ error: i18n.t('errors.file.upload_failed') }));
+                throw new Error(errorData.error || `${i18n.t('errors.file.upload_failed')}: HTTP ${uploadResponse.status}`);
             }
             
             const uploadData = await uploadResponse.json();
             if (!uploadData.success || !uploadData.images) {
-                throw new Error('上傳失敗：服務器返回無效數據');
+                throw new Error(i18n.t('errors.file.upload_failed') + '：服務器返回無效數據');
             }
             
             // 將上傳的路徑映射到截圖編號
@@ -679,7 +815,7 @@ async function processBatch() {
             const errorData = await res.json().catch(() => ({ error: `HTTP ${res.status}: ${res.statusText}` }));
             hideLoading();
             console.error('❌ 批次處理失敗:', errorData);
-            showError(errorData.error || `批次處理失敗: HTTP ${res.status}`);
+            showError(errorData.error || `${i18n.t('errors.processing.ocr_failed')}: HTTP ${res.status}`);
             return;
         }
         
@@ -846,7 +982,7 @@ copyBtn.addEventListener('click', () => {
             copyBtn.innerHTML = orig;
         }, 2000);
     }).catch(err => {
-        showError('複製失敗: ' + err.message);
+ showError(err.message, 'copy.error');
     });
 });
 
@@ -876,7 +1012,7 @@ function resetState() {
     thumbnailsGrid.innerHTML = '';
     thumbnailsContainer.classList.add('hidden');
     preview.classList.add('hidden');
-    resultDiv.innerHTML = '<p class="text-gray-400 text-center mt-20">辨識結果將顯示在這裡</p>';
+    resultDiv.innerHTML = `<p class="text-gray-400 text-center mt-20">${i18n.t('results.default_text')}</p>`;
     
     // ===== 修正：重置時隱藏前處理選項 =====
     if (imagePreprocessSection) {
@@ -901,7 +1037,7 @@ function resetState() {
 
 // ===== 重置結果 =====
 function resetResults() {
-    resultDiv.innerHTML = '<p class="text-gray-400 text-center mt-20">辨識結果將顯示在這裡</p>';
+    resultDiv.innerHTML = `<p class="text-gray-400 text-center mt-20">${i18n.t('results.default_text')}</p>`;
     [successDiv, errorDiv, progressInfo, batchControls, copyBtn, downloadBtn]
         .forEach(el => el.classList.add('hidden'));
 }
@@ -1013,7 +1149,7 @@ function switchToOcrTab() {
     // 顯示 OCR 結果顯示區域（影片截圖不使用此區域）
     if (resultDiv) {
         resultDiv.classList.remove('hidden');
-        resultDiv.innerHTML = '<p class="text-gray-400 text-center mt-20">辨識結果將顯示在這裡</p>';
+        resultDiv.innerHTML = `<p class="text-gray-400 text-center mt-20">${i18n.t('results.default_text')}</p>`;
     }
     if (resultTitle) {
         resultTitle.classList.remove('hidden');
@@ -1331,7 +1467,7 @@ if (processPreprocessBtn) {
         if (preprocessFiles.length === 0) return;
         
         const settings = getPreprocessSettings();
-        showLoading('照片前處理中...', '這可能需要一些時間');
+        showLoading(i18n.t('preprocessing.processing'), i18n.t('common.status.loading'));
         
         try {
             // 步骤1：上传文件
@@ -1599,7 +1735,7 @@ if (executeImagePreprocessBtn) {
         const isVideoMode = isVideoPreprocessMode && preprocessFiles && preprocessFiles.length > 0;
         
         if (!selectedFile && !isVideoMode) {
-            showError('請先上傳圖片');
+            showError(null, 'file.not_found');
             return;
         }
         
@@ -1613,7 +1749,7 @@ if (executeImagePreprocessBtn) {
         }
         
         const filesToProcess = isVideoMode ? preprocessFiles : [selectedFile];
-        const loadingText = isVideoMode ? `圖片前處理中... (${filesToProcess.length} 張)` : '圖片前處理中...';
+        const loadingText = isVideoMode ? `${i18n.t('preprocessing.processing')} (${filesToProcess.length} ${i18n.t('units.images')})` : i18n.t('preprocessing.processing');
         
         showLoading(loadingText, '這可能需要一些時間');
         
@@ -1843,7 +1979,7 @@ if (executeImagePreprocessBtn) {
                         processImageBtn.classList.remove('hidden');
                         processImageBtn.disabled = false;
                         if (imageBtnText) {
-                            imageBtnText.innerText = '開始辨識';
+        imageBtnText.innerText = i18n.t('buttons.start_recognition');
                         }
                     }
                     
@@ -2383,7 +2519,7 @@ if (sendToOcrBtn) {
             processBatchBtn.disabled = false;
             // 更新批次處理按鈕文本（像 initPDFPages 一樣）
             if (batchBtnText) {
-                batchBtnText.innerText = `開始批次處理 (共 ${totalPages} 頁)`;
+        batchBtnText.innerText = `${i18n.t('buttons.start_batch')} (共 ${totalPages} 頁)`;
             }
         }
         if (processSingleBtn) {
@@ -2920,7 +3056,10 @@ if (sendFramesToOcrBtn) {
 // ===== Part 5: 輔助函數和初始化 =====
 
 // === 修正 7：顯示錯誤（統一使用 showError） ===
-function showError(message) {
+function showError(message, translationKey = null, params = {}) {
+    if (translationKey) {
+        message = i18n.t(translationKey, params);
+    }
     errorDiv.innerText = message;
     errorDiv.classList.remove('hidden');
     
@@ -2930,7 +3069,9 @@ function showError(message) {
 }
 
 // ===== 顯示加載 =====
-function showLoading(text = '處理中...', subtext = '請稍候') {
+function showLoading(text = null, subtext = null) {
+    if (!text) text = i18n.t('loading.processing');
+    if (!subtext) subtext = i18n.t('loading.please_wait');
     loading.classList.remove('hidden');
     loadingText.textContent = text;
     document.getElementById('loadingSubtext').textContent = subtext;
@@ -2952,7 +3093,26 @@ function zoomPreview(factor) {
 
 // ===== 初始化截圖方式顯示 =====
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('MLX DeepSeek-OCR 應用程式已完全載入');
+
+    
+    // ===== I18n 語言選擇器事件 =====
+    const languageSelector = document.getElementById('languageSelector');
+    if (languageSelector) {
+        // 設定當前語言
+        languageSelector.value = i18n.currentLang;
+        
+        // 語言切換事件
+        languageSelector.addEventListener('change', async function() {
+            console.log('Language changed to:', this.value);
+            await i18n.setLanguage(this.value);
+            console.log('Language change completed');
+        });
+    }
+    
+    // Initialize UI translations
+    setTimeout(async () => {
+        await i18n.updateUI();
+    }, 500);
     
     // ===== 修正：確保前處理選項在初始狀態時隱藏 =====
     if (imagePreprocessSection) {
@@ -2967,7 +3127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (configPanel) {
         configPanel.classList.add('hidden');
     }
-    console.log('✅ 已確保前處理選項在初始狀態時隱藏');
+
     
     // 初始化分類選項
     updateSubcategoryOptions();

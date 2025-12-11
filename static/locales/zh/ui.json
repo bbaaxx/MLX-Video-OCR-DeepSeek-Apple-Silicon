@@ -1,0 +1,149 @@
+{
+    "header": {
+        "title": "MLX DeepSeek-OCR",
+        "subtitle": "Apple Silicon 原生 · 4bit 極速 · 完全離線"
+    },
+    "tabs": {
+        "ocr": "📄 OCR 辨識",
+        "video": "🎬 影片截圖",
+        "preprocess": "🎨 照片前處理"
+    },
+    "upload": {
+        "title": "上傳檔案",
+        "drag_drop": "拖放檔案到這裡",
+        "supported_formats": "支援 JPG、PNG、PDF（最大 32MB）",
+        "video_formats": "支援 MP4、AVI、MOV、MKV"
+    },
+    "preview": {
+        "title": "預覽",
+        "clear": "清除"
+    },
+    "thumbnails": {
+        "click_to_switch": "點擊縮圖切換頁面"
+    },
+    "results": {
+        "title": "辨識結果",
+        "copy_all": "複製全部",
+        "download_txt": "下載 TXT",
+        "default_text": "請上傳檔案開始處理"
+    },
+    "progress": {
+        "label": "進度：",
+        "pages": "頁",
+        "config_info": "配置信息"
+    },
+    "buttons": {
+        "start_recognition": "開始辨識",
+        "start_batch": "開始批次處理",
+        "recognize_page": "辨識此頁",
+        "start_preprocessing": "開始前處理",
+        "download_results": "下載處理結果",
+        "send_to_ocr": "發送至 OCR",
+        "continue_batch": "繼續下一批",
+        "stop_batch": "停止批次",
+        "select_all": "全選",
+        "deselect_all": "全不選"
+    },
+    "preprocessing": {
+        "title": "照片前處理",
+        "options_title": "🎨 照片前處理選項（可選）",
+        "description": "選擇處理選項後，系統會在OCR辨識前自動處理圖片",
+        "drag_drop": "拖放照片到這裡",
+        "multi_support": "支援 JPG、PNG（可多選）",
+        "processing_options": "處理選項（可多選）",
+        "progress": "處理進度",
+        "results_preview": "處理結果預覽",
+        "auto_rotate": "🔄 自動旋轉",
+        "auto_rotate_desc": "自動檢測並修正圖片傾斜角度（適合手機拍攝的歪斜照片）",
+        "enhance": "✨ 增強對比+銳化",
+        "enhance_desc": "讓圖片更清晰，對比更明顯（適合模糊、灰濛濛的照片）",
+        "remove_shadows": "☀️ 去除陰影",
+        "remove_shadows_desc": "移除光線不均造成的陰影（適合有陰影的文件掃描）",
+        "binarize": "⚫⚪ 二值化",
+        "binarize_desc": "轉換成純黑白圖（適合文字辨識、列印，⚠️ 不可逆）",
+        "remove_bg": "🎨 去除背景 (AI)",
+        "remove_bg_desc": "使用 rembg AI 模型智能去背",
+        "skip_preprocessing": "跳過前處理",
+        "execute_preprocessing": "執行前處理",
+        "about_bg_removal": "🎨 關於「去除背景」功能",
+        "about_bg_removal_desc": "✅ 使用 <strong>rembg AI 模型</strong>，與您的 Colab 代碼<strong>完全相同</strong><br>✅ 只需勾選「去除背景」選項，或點擊「🎨 僅去背景」快速按鈕<br>✅ 輸出為透明背景 PNG 格式<br>💡 如需純去背（不做其他處理），點擊「🎨 僅去背景」按鈕即可",
+        "hint_no_options": "💡 提示：如果不勾選任何選項，將保存原圖（不做任何處理）<br>💡 提示：可以多選，系統會依序處理所有選項",
+        "preset_title": "⚡ 快速預設組合（一鍵套用）",
+        "preset_remove_bg_only": "🎨 僅去背景",
+        "preset_photo_optimize": "📷 照片優化",
+        "preset_scan_optimize": "📄 掃描優化",
+        "preset_enhance_blurry": "🔍 模糊增強"
+    },
+    "video": {
+        "title": "影片截圖",
+        "info": "影片資訊",
+        "extraction_method": "截圖方式",
+        "fixed_count": "固定數量 (100張)",
+        "fixed_interval": "固定間隔 (每秒5張)",
+        "scene_change": "場景變化偵測",
+        "total_frames": "總幀數",
+        "frames_per_second": "每秒張數",
+        "scene_sensitivity": "場景變化敏感度",
+        "output_format": "輸出格式",
+        "jpg_compressed": "JPG (高壓縮)",
+        "png_high_quality": "PNG (高品質)",
+        "sensitivity_low": "低 (更多幀)",
+        "sensitivity_medium": "中 (0.5)",
+        "sensitivity_high": "高 (更少幀)",
+        "start_capture": "開始截圖",
+        "download_frames": "下載截圖",
+        "send_to_ocr": "發送到 OCR"
+    },
+    "pdf": {
+        "batch_processing": "批次處理",
+        "single_page": "單頁辨識",
+        "preprocessing_options": "🎨 PDF前處理選項（可選）",
+        "preprocessing_desc": "點擊下方按鈕將PDF頁面提取為圖片，然後在前處理Tab中進行處理",
+        "pages_per_batch": "每批次處理頁數",
+        "recommended": "頁（推薦）",
+        "most_stable": "頁（最穩）",
+        "custom": "自訂",
+        "enter_custom_pages": "輸入自訂頁數 (1-50)",
+        "select_page": "選擇頁面",
+        "batch_size_1": "1 頁（最穩）",
+        "batch_size_2": "2 頁（推薦）",
+        "batch_size_3": "3 頁",
+        "batch_size_5": "5 頁",
+        "batch_size_10": "10 頁"
+    },
+    "config": {
+        "content_type": "📄 內容類型",
+        "document_mode": "Document Mode (結構化內容)",
+        "scene_mode": "Scene Mode (現場文字)",
+        "subcategory": "📚 細分類別",
+        "complexity": "🎚️ 複雜度：",
+        "medium_recommended": "Medium (256 tokens) ⭐ 推薦",
+        "tiny": "Tiny (64)",
+        "small": "Small (100)",
+        "medium": "Medium (256)",
+        "large": "Large (400)",
+        "gundam": "Gundam (800)"
+    },
+    "presets": {
+        "title": "⚡ 快速預設組合（一鍵套用）",
+        "remove_bg_only": "🎨 僅去背景",
+        "photo_optimize": "📷 照片優化",
+        "scan_optimize": "📄 掃描優化",
+        "enhance_blurry": "🔍 模糊增強",
+        "custom_settings": "自訂設定",
+        "scan_optimization": "掃描件優化",
+        "photo_doc_optimization": "拍照文檔優化",
+        "blurry_photo_enhance": "模糊照片增強",
+        "remove_background_only": "僅去背景"
+    },
+    "loading": {
+        "processing": "處理中...",
+        "please_wait": "請稍候"
+    },
+    "success": {
+        "completed": "全部完成！"
+    },
+    "errors": {
+        "preprocessing_disabled": "獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能"
+    }
+}

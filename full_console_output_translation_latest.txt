@@ -1,0 +1,1291 @@
+(index):64 cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation
+(anonymous) @ (index):64
+(anonymous) @ (index):64
+app.js?v=3:3125 MLX DeepSeek-OCR 應用程式已完全載入
+app.js?v=3:3161 ✅ 已確保前處理選項在初始狀態時隱藏
+app.js?v=3:60 Loaded common translations: {languages: {…}, actions: {…}, status: {…}, units: {…}, time: {…}, …}
+app.js?v=3:60 Loaded ui translations: {header: {…}, tabs: {…}, upload: {…}, preview: {…}, thumbnails: {…}, …}
+app.js?v=3:60 Loaded messages translations: {file: {…}, ocr: {…}, preprocessing: {…}, video: {…}, batch: {…}, …}
+app.js?v=3:60 Loaded errors translations: {file: {…}, processing: {…}, validation: {…}, network: {…}, permissions: {…}, …}
+app.js?v=3:63 All translations loaded: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:3143 Initializing UI translations...
+app.js?v=3:139 === COMPREHENSIVE DEBUG ===
+app.js?v=3:140 Current language: es
+app.js?v=3:141 Translation object keys: (4) ['common', 'ui', 'messages', 'errors']
+ UI category data: {header: {…}, tabs: {…}, upload: {…}, preview: {…}, thumbnails: {…}, …}
+ Header category data: undefined
+ Full translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ Found 65 elements with data-i18n attribute
+ Looking for key: header.title
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: header, data: undefined
+ Category header not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: header.title
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 0: header.title -> header.title
+ Looking for key: header.subtitle
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: header, data: undefined
+ Category header not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: header.subtitle
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 1: header.subtitle -> header.subtitle
+ Looking for key: tabs.ocr
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: tabs, data: undefined
+ Category tabs not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: tabs.ocr
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 2: tabs.ocr -> tabs.ocr
+ Looking for key: tabs.video
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: tabs, data: undefined
+ Category tabs not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: tabs.video
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 3: tabs.video -> tabs.video
+ Looking for key: tabs.preprocess
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: tabs, data: undefined
+ Category tabs not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: tabs.preprocess
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 4: tabs.preprocess -> tabs.preprocess
+ Looking for key: upload.title
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: upload, data: undefined
+ Category upload not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: upload.title
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 5: upload.title -> upload.title
+ Looking for key: upload.drag_drop
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: upload, data: undefined
+ Category upload not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: upload.drag_drop
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 6: upload.drag_drop -> upload.drag_drop
+ Looking for key: upload.supported_formats
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: upload, data: undefined
+ Category upload not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: upload.supported_formats
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 7: upload.supported_formats -> upload.supported_formats
+ Looking for key: preprocessing.options_title
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.options_title
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 8: preprocessing.options_title -> preprocessing.options_title
+ Looking for key: preprocessing.description
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.description
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 9: preprocessing.description -> preprocessing.description
+ Looking for key: preprocessing.auto_rotate
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.auto_rotate
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 10: preprocessing.auto_rotate -> preprocessing.auto_rotate
+ Looking for key: preprocessing.auto_rotate_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.auto_rotate_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 11: preprocessing.auto_rotate_desc -> preprocessing.auto_rotate_desc
+ Looking for key: preprocessing.enhance
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.enhance
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 12: preprocessing.enhance -> preprocessing.enhance
+ Looking for key: preprocessing.enhance_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.enhance_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 13: preprocessing.enhance_desc -> preprocessing.enhance_desc
+ Looking for key: preprocessing.remove_shadows
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.remove_shadows
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 14: preprocessing.remove_shadows -> preprocessing.remove_shadows
+ Looking for key: preprocessing.remove_shadows_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.remove_shadows_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 15: preprocessing.remove_shadows_desc -> preprocessing.remove_shadows_desc
+ Looking for key: preprocessing.binarize
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.binarize
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 16: preprocessing.binarize -> preprocessing.binarize
+ Looking for key: preprocessing.binarize_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.binarize_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 17: preprocessing.binarize_desc -> preprocessing.binarize_desc
+ Looking for key: preprocessing.remove_bg
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.remove_bg
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 18: preprocessing.remove_bg -> preprocessing.remove_bg
+ Looking for key: preprocessing.remove_bg_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.remove_bg_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 19: preprocessing.remove_bg_desc -> preprocessing.remove_bg_desc
+ Looking for key: preprocessing.skip_preprocessing
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.skip_preprocessing
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 20: preprocessing.skip_preprocessing -> preprocessing.skip_preprocessing
+ Looking for key: preprocessing.execute_preprocessing
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.execute_preprocessing
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 21: preprocessing.execute_preprocessing -> preprocessing.execute_preprocessing
+ Looking for key: config.content_type
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.content_type
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 22: config.content_type -> config.content_type
+ Looking for key: config.document_mode
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.document_mode
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 23: config.document_mode -> config.document_mode
+ Looking for key: config.scene_mode
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.scene_mode
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 24: config.scene_mode -> config.scene_mode
+ Looking for key: config.subcategory
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.subcategory
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 25: config.subcategory -> config.subcategory
+ Looking for key: config.complexity
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.complexity
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 26: config.complexity -> config.complexity
+ Looking for key: config.medium_recommended
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.medium_recommended
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 27: config.medium_recommended -> config.medium_recommended
+ Looking for key: config.tiny
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.tiny
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 28: config.tiny -> config.tiny
+ Looking for key: config.small
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.small
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 29: config.small -> config.small
+ Looking for key: config.medium
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.medium
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 30: config.medium -> config.medium
+ Looking for key: config.large
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.large
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 31: config.large -> config.large
+ Looking for key: config.gundam
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: config, data: undefined
+ Category config not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: config.gundam
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 32: config.gundam -> config.gundam
+ Looking for key: pdf.batch_processing
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_processing
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 33: pdf.batch_processing -> pdf.batch_processing
+ Looking for key: pdf.single_page
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.single_page
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 34: pdf.single_page -> pdf.single_page
+ Looking for key: pdf.preprocessing_options
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.preprocessing_options
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 35: pdf.preprocessing_options -> pdf.preprocessing_options
+ Looking for key: pdf.preprocessing_desc
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.preprocessing_desc
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 36: pdf.preprocessing_desc -> pdf.preprocessing_desc
+ Looking for key: preprocessing.skip_preprocessing
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preprocessing, data: undefined
+ Category preprocessing not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preprocessing.skip_preprocessing
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 37: preprocessing.skip_preprocessing -> preprocessing.skip_preprocessing
+ Looking for key: buttons.send_to_ocr
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: buttons, data: undefined
+ Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: buttons.send_to_ocr
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 38: buttons.send_to_ocr -> buttons.send_to_ocr
+ Looking for key: pdf.pages_per_batch
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.pages_per_batch
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 39: pdf.pages_per_batch -> pdf.pages_per_batch
+ Looking for key: pdf.batch_size_2
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_size_2
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 40: pdf.batch_size_2 -> pdf.batch_size_2
+ Looking for key: pdf.batch_size_1
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_size_1
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 41: pdf.batch_size_1 -> pdf.batch_size_1
+ Looking for key: pdf.batch_size_3
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_size_3
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 42: pdf.batch_size_3 -> pdf.batch_size_3
+ Looking for key: pdf.batch_size_5
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_size_5
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 43: pdf.batch_size_5 -> pdf.batch_size_5
+ Looking for key: pdf.batch_size_10
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.batch_size_10
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 44: pdf.batch_size_10 -> pdf.batch_size_10
+ Looking for key: pdf.custom
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.custom
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 45: pdf.custom -> pdf.custom
+ Looking for key: pdf.select_page
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: pdf, data: undefined
+ Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: pdf.select_page
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 46: pdf.select_page -> pdf.select_page
+ Looking for key: buttons.start_batch
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: buttons, data: undefined
+ Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: buttons.start_batch
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 47: buttons.start_batch -> buttons.start_batch
+ Looking for key: buttons.recognize_page
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: buttons, data: undefined
+ Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: buttons.recognize_page
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 48: buttons.recognize_page -> buttons.recognize_page
+ Looking for key: buttons.start_recognition
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: buttons, data: undefined
+ Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: buttons.start_recognition
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 49: buttons.start_recognition -> buttons.start_recognition
+ Looking for key: thumbnails.click_to_switch
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: thumbnails, data: undefined
+ Category thumbnails not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: thumbnails.click_to_switch
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 50: thumbnails.click_to_switch -> thumbnails.click_to_switch
+ Looking for key: preview.title
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preview, data: undefined
+ Category preview not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preview.title
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 51: preview.title -> preview.title
+ Looking for key: preview.clear
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: preview, data: undefined
+ Category preview not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: preview.clear
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 52: preview.clear -> preview.clear
+ Looking for key: results.title
+ this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+ this context: I18n {currentLang: 'es', translations: {…}}
+ Checking category: results, data: undefined
+ Category results not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Translation not found for key: results.title
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+ Element 53: results.title -> results.title
+ Looking for key: results.copy_all
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: results, data: undefined
+app.js?v=3:81 Category results not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: results.copy_all
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 54: results.copy_all -> results.copy_all
+app.js?v=3:71 Looking for key: results.download_txt
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: results, data: undefined
+app.js?v=3:81 Category results not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: results.download_txt
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 55: results.download_txt -> results.download_txt
+app.js?v=3:71 Looking for key: progress.label
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: progress, data: undefined
+app.js?v=3:81 Category progress not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: progress.label
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 56: progress.label -> progress.label
+app.js?v=3:71 Looking for key: progress.pages
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: progress, data: undefined
+app.js?v=3:81 Category progress not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: progress.pages
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 57: progress.pages -> progress.pages
+app.js?v=3:71 Looking for key: progress.config_info
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: progress, data: undefined
+app.js?v=3:81 Category progress not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: progress.config_info
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 58: progress.config_info -> progress.config_info
+app.js?v=3:71 Looking for key: results.default_text
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: results, data: undefined
+app.js?v=3:81 Category results not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: results.default_text
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 59: results.default_text -> results.default_text
+app.js?v=3:71 Looking for key: buttons.continue_batch
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: buttons, data: undefined
+app.js?v=3:81 Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: buttons.continue_batch
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 60: buttons.continue_batch -> buttons.continue_batch
+app.js?v=3:71 Looking for key: buttons.stop_batch
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: buttons, data: undefined
+app.js?v=3:81 Category buttons not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: buttons.stop_batch
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 61: buttons.stop_batch -> buttons.stop_batch
+app.js?v=3:71 Looking for key: success.completed
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: success, data: undefined
+app.js?v=3:81 Category success not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: success.completed
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 62: success.completed -> success.completed
+app.js?v=3:71 Looking for key: loading.processing
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: loading, data: undefined
+app.js?v=3:81 Category loading not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: loading.processing
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 63: loading.processing -> loading.processing
+app.js?v=3:71 Looking for key: loading.please_wait
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: loading, data: undefined
+app.js?v=3:81 Category loading not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: loading.please_wait
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:152
+updateUI @ app.js?v=3:150
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:154 Element 64: loading.please_wait -> loading.please_wait
+app.js?v=3:71 Looking for key: errors.preprocessing_disabled
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: errors, data: {file: {…}, processing: {…}, validation: {…}, network: {…}, permissions: {…}, …}
+app.js?v=3:94 Key preprocessing_disabled not found in category errors
+t @ app.js?v=3:94
+(anonymous) @ app.js?v=3:171
+updateUI @ app.js?v=3:169
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: errors.preprocessing_disabled
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:171
+updateUI @ app.js?v=3:169
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:71 Looking for key: pdf.enter_custom_pages
+app.js?v=3:72 this.translations object: {common: {…}, ui: {…}, messages: {…}, errors: {…}}
+app.js?v=3:73 this context: I18n {currentLang: 'es', translations: {…}}
+app.js?v=3:78 Checking category: pdf, data: undefined
+app.js?v=3:81 Category pdf not found
+t @ app.js?v=3:81
+(anonymous) @ app.js?v=3:192
+updateUI @ app.js?v=3:190
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:106 Translation not found for key: pdf.enter_custom_pages
+t @ app.js?v=3:106
+(anonymous) @ app.js?v=3:192
+updateUI @ app.js?v=3:190
+(anonymous) @ app.js?v=3:3144
+setTimeout
+(anonymous) @ app.js?v=3:3142
+app.js?v=3:195 === END DEBUG ===
+app.js?v=3:3145 UI translations initialized

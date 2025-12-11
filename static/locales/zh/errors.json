@@ -1,0 +1,41 @@
+{
+    "file": {
+        "no_file": "未提供檔案",
+        "too_large": "檔案超過最大大小 32MB",
+        "invalid_format": "無效的檔案格式",
+        "corrupted": "檔案已損壞",
+        "upload_failed": "上傳檔案失敗",
+        "not_found": "找不到檔案"
+    },
+    "processing": {
+        "general_error": "處理期間發生錯誤",
+        "ocr_failed": "OCR 處理失敗",
+        "preprocessing_failed": "前處理失敗",
+        "video_processing_failed": "影片處理失敗",
+        "memory_error": "記憶體不足錯誤",
+        "timeout": "處理逾時",
+        "server_error": "伺服器內部錯誤"
+    },
+    "validation": {
+        "invalid_batch_size": "無效的批次大小（必須是 1-50）",
+        "invalid_page_number": "無效的頁碼",
+        "invalid_frame_count": "無效的幀數",
+        "invalid_interval": "無效的間隔（必須是 1-30）",
+        "missing_required_field": "缺少必填欄位",
+        "invalid_configuration": "無效的配置：{content_type}/{subcategory}/{complexity}"
+    },
+    "network": {
+        "connection_error": "連線錯誤",
+        "request_timeout": "請求逾時",
+        "server_unavailable": "伺服器不可用"
+    },
+    "permissions": {
+        "file_access_denied": "檔案存取被拒絕",
+        "operation_not_allowed": "不允許的操作"
+    },
+    "system": {
+        "unknown_error": "未知錯誤",
+        "feature_disabled": "功能暫時停用",
+        "maintenance_mode": "系統維護模式"
+    }
+}

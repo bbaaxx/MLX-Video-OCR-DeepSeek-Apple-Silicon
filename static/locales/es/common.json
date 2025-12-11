@@ -1,0 +1,64 @@
+{
+    "languages": {
+        "spanish": "Español",
+        "chinese": "中文",
+        "english": "English"
+    },
+    "actions": {
+        "ok": "OK",
+        "cancel": "Cancelar",
+        "confirm": "Confirmar",
+        "save": "Guardar",
+        "delete": "Eliminar",
+        "edit": "Editar",
+        "close": "Cerrar",
+        "back": "Atrás",
+        "next": "Siguiente",
+        "previous": "Anterior",
+        "search": "Buscar",
+        "filter": "Filtrar",
+        "sort": "Ordenar",
+        "refresh": "Actualizar",
+        "reset": "Restablecer"
+    },
+    "status": {
+        "loading": "Cargando...",
+        "ready": "Listo",
+        "processing": "Procesando...",
+        "completed": "Completado",
+        "failed": "Fallido",
+        "pending": "Pendiente",
+        "paused": "Pausado",
+        "cancelled": "Cancelado",
+        "success": "Éxito",
+        "error": "Error",
+        "warning": "Advertencia",
+        "info": "Información"
+    },
+    "units": {
+        "pages": "páginas",
+        "files": "archivos",
+        "images": "imágenes",
+        "frames": "fotogramas",
+        "seconds": "segundos",
+        "minutes": "minutos",
+        "hours": "horas",
+        "bytes": "bytes",
+        "kb": "KB",
+        "mb": "MB",
+        "gb": "GB"
+    },
+    "time": {
+        "now": "Ahora",
+        "today": "Hoy",
+        "yesterday": "Ayer",
+        "tomorrow": "Mañana"
+    },
+    "navigation": {
+        "home": "Inicio",
+        "settings": "Configuración",
+        "help": "Ayuda",
+        "about": "Acerca de",
+        "contact": "Contacto"
+    }
+}

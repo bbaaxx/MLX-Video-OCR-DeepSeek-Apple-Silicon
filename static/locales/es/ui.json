@@ -1,0 +1,149 @@
+{
+    "header": {
+        "title": "MLX DeepSeek-OCR",
+        "subtitle": "Apple Silicon nativo · 4bit ultrarrápido · Completamente offline"
+    },
+    "tabs": {
+        "ocr": "📄 OCR Reconocimiento",
+        "video": "🎬 Captura de Video",
+        "preprocess": "🎨 Preprocesamiento de Fotos"
+    },
+    "upload": {
+        "title": "Subir Archivo",
+        "drag_drop": "Arrastra archivos aquí",
+        "supported_formats": "Soporta JPG, PNG, PDF (máx 32MB)",
+        "video_formats": "Soporta MP4, AVI, MOV, MKV"
+    },
+    "preview": {
+        "title": "Vista Previa",
+        "clear": "Limpiar"
+    },
+    "thumbnails": {
+        "click_to_switch": "Haz clic en las miniaturas para cambiar de página"
+    },
+    "results": {
+        "title": "Resultados de Reconocimiento",
+        "copy_all": "Copiar Todo",
+        "download_txt": "Descargar TXT",
+        "default_text": "Por favor suba un archivo para comenzar el procesamiento"
+    },
+    "progress": {
+        "label": "Progreso:",
+        "pages": "páginas",
+        "config_info": "Información de configuración"
+    },
+    "buttons": {
+        "start_recognition": "Iniciar Reconocimiento",
+        "start_batch": "Comenzar Proceso por Lotes",
+        "recognize_page": "Reconocer esta Página",
+        "start_preprocessing": "Comenzar Preprocesamiento",
+        "download_results": "Descargar Resultados",
+        "send_to_ocr": "Enviar a OCR",
+        "continue_batch": "Continuar Siguiente Lote",
+        "stop_batch": "Detener Lote",
+        "select_all": "Seleccionar Todo",
+        "deselect_all": "Deseleccionar Todo"
+    },
+    "preprocessing": {
+        "title": "Preprocesamiento de Fotos",
+        "options_title": "Opciones de Preprocesamiento (Opcional)",
+        "description": "Seleccione las opciones de procesamiento y el sistema procesará automáticamente las imágenes antes del OCR",
+        "drag_drop": "Arrastra fotos aquí",
+        "multi_support": "Soporta JPG, PNG (selección múltiple)",
+        "processing_options": "Opciones de Procesamiento (selección múltiple)",
+        "progress": "Progreso de Procesamiento",
+        "results_preview": "Vista Previa de Resultados",
+        "auto_rotate": "🔄 Rotación Automática",
+        "auto_rotate_desc": "Detecta y corrige automáticamente el ángulo de inclinación de la imagen",
+        "enhance": "✨ Mejorar Contraste + Nitidez",
+        "enhance_desc": "Hace la imagen más clara con mayor contraste",
+        "remove_shadows": "☀️ Eliminar Sombras",
+        "remove_shadows_desc": "Elimina sombras causadas por iluminación desigual",
+        "binarize": "⚫⚪ Binarización",
+        "binarize_desc": "Convierte a imagen blanco y negro puro (⚠️ irreversible)",
+        "remove_bg": "🎨 Eliminar Fondo (IA)",
+        "remove_bg_desc": "Usa el modelo de IA rembg para eliminar inteligentemente el fondo",
+        "skip_preprocessing": "Omitir Preprocesamiento",
+        "execute_preprocessing": "Ejecutar Preprocesamiento",
+        "about_bg_removal": "Acerca de la función 'Eliminar Fondo'",
+        "about_bg_removal_desc": "✅ Usa el <strong>modelo de IA rembg</strong>, <strong>exactamente igual</strong> que tu código Colab<br>✅ Solo selecciona la opción 'Eliminar Fondo' o haz clic en el botón rápido '🎨 Solo Eliminar Fondo'<br>✅ Salida en formato PNG con fondo transparente<br>💡 Para solo eliminar el fondo (sin otro procesamiento), haz clic en el botón '🎨 Solo Eliminar Fondo'",
+        "hint_no_options": "💡 Sugerencia: Si no seleccionas ninguna opción, se guardará la imagen original (sin procesamiento)<br>💡 Sugerencia: Puedes seleccionar múltiples opciones, el sistema procesará todas en secuencia",
+        "preset_title": "⚡ Combinaciones Rápidas (un clic)",
+        "preset_remove_bg_only": "🎨 Solo Eliminar Fondo",
+        "preset_photo_optimize": "📷 Optimizar Foto",
+        "preset_scan_optimize": "📄 Optimizar Escaneo",
+        "preset_enhance_blurry": "🔍 Mejorar Desenfocado"
+    },
+    "video": {
+        "title": "Captura de Video",
+        "info": "Información del Video",
+        "extraction_method": "Método de Captura",
+        "fixed_count": "Cantidad Fija (100 fotogramas)",
+        "fixed_interval": "Intervalo Fijo (5 fotogramas por segundo)",
+        "scene_change": "Detección de Cambios de Escena",
+        "total_frames": "Total de Fotogramas",
+        "frames_per_second": "Fotogramas por Segundo",
+        "scene_sensitivity": "Sensibilidad de Cambio de Escena",
+        "output_format": "Formato de Salida",
+        "jpg_compressed": "JPG (Alta Compresión)",
+        "png_high_quality": "PNG (Alta Calidad)",
+        "sensitivity_low": "Bajo (más fotogramas)",
+        "sensitivity_medium": "Medio (0.5)",
+        "sensitivity_high": "Alto (menos fotogramas)",
+        "start_capture": "Comenzar Captura",
+        "download_frames": "Descargar Fotogramas",
+        "send_to_ocr": "Enviar a OCR"
+    },
+    "pdf": {
+        "batch_processing": "Proceso por Lotes",
+        "single_page": "Reconocimiento de Página Única",
+        "preprocessing_options": "🎨 Opciones de Preprocesamiento PDF (Opcional)",
+        "preprocessing_desc": "Haga clic en el botón de abajo para extraer páginas PDF como imágenes, luego procese en la pestaña de preprocesamiento",
+        "pages_per_batch": "Páginas por lote",
+        "recommended": "páginas (recomendado)",
+        "most_stable": "páginas (más estable)",
+        "custom": "Personalizado",
+        "enter_custom_pages": "Ingrese número personalizado de páginas (1-50)",
+        "select_page": "Seleccionar Página",
+        "batch_size_1": "1 páginas (más estable)",
+        "batch_size_2": "2 páginas (recomendado)",
+        "batch_size_3": "3 páginas",
+        "batch_size_5": "5 páginas",
+        "batch_size_10": "10 páginas"
+    },
+    "config": {
+        "content_type": "📄 Tipo de Contenido",
+        "document_mode": "Document Mode (contenido estructurado)",
+        "scene_mode": "Scene Mode (texto en escena)",
+        "subcategory": "📚 Subcategoría",
+        "complexity": "🎚️ Complejidad:",
+        "medium_recommended": "Medium (256 tokens) ⭐ Recomendado",
+        "tiny": "Tiny (64)",
+        "small": "Small (100)",
+        "medium": "Medium (256)",
+        "large": "Large (400)",
+        "gundam": "Gundam (800)"
+    },
+    "presets": {
+        "title": "⚡ Combinaciones Rápidas Preestablecidas (un clic)",
+        "remove_bg_only": "🎨 Solo Eliminar Fondo",
+        "photo_optimize": "📷 Optimizar Foto",
+        "scan_optimize": "📄 Optimizar Escaneo",
+        "enhance_blurry": "🔍 Mejorar Desenfoque",
+        "custom_settings": "Configuración Personalizada",
+        "scan_optimization": "Optimización de Escaneo",
+        "photo_doc_optimization": "Optimización de Documento Fotografiado",
+        "blurry_photo_enhance": "Mejora de Foto Desenfocada",
+        "remove_background_only": "Solo Eliminar Fondo"
+    },
+    "loading": {
+        "processing": "Procesando...",
+        "please_wait": "Por favor espere"
+    },
+    "success": {
+        "completed": "¡Todo Completado!"
+    },
+    "errors": {
+        "preprocessing_disabled": "La función de preprocesamiento independiente está deshabilitada. Por favor use la función de preprocesamiento en la pestaña OCR o Captura de Video"
+    }
+}

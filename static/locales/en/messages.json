@@ -1,0 +1,50 @@
+{
+    "file": {
+        "uploading": "Uploading file...",
+        "uploaded": "File uploaded successfully",
+        "processing": "Processing file...",
+        "processed": "File processed successfully",
+        "error_size": "File too large (maximum 32MB)",
+        "error_format": "Unsupported file format",
+        "error_upload": "Error uploading file"
+    },
+    "ocr": {
+        "processing": "Performing OCR...",
+        "processing_page": "Processing page {current} of {total}...",
+        "completed": "OCR completed successfully",
+        "batch_completed": "Batch processing completed",
+        "error_processing": "OCR processing error",
+        "no_text_found": "No text found in image",
+        "ready_to_process": "Ready to process"
+    },
+    "preprocessing": {
+        "processing": "Preprocessing image...",
+        "processing_batch": "Preprocessing images {current} of {total}...",
+        "completed": "Preprocessing completed",
+        "error_processing": "Preprocessing error",
+        "ready_to_ocr": "Ready to send to OCR"
+    },
+    "video": {
+        "processing": "Extracting frames from video...",
+        "analyzing": "Analyzing video...",
+        "extracting": "Extracting frame {current} of {total}...",
+        "completed": "Extraction completed",
+        "error_processing": "Error processing video",
+        "frames_extracted": "{count} frames extracted"
+    },
+    "batch": {
+        "processing_batch": "Processing batch {current} of {total}...",
+        "batch_completed": "Batch {current} completed",
+        "continuing": "Continuing with next batch...",
+        "stopped": "Process stopped by user"
+    },
+    "download": {
+        "preparing": "Preparing download...",
+        "completed": "Download completed",
+        "error": "Error preparing download"
+    },
+    "copy": {
+        "success": "Text copied to clipboard",
+        "error": "Error copying text"
+    }
+}

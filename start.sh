@@ -44,8 +44,8 @@ else
 fi
 
 # 自動尋找可用端口 + 強制殺掉殭屍進程
-PORT=5000
-MAX_PORT=5010
+PORT=8080
+MAX_PORT=8090
 echo ""
 echo "尋找可用端口並清理殭屍進程..."
 

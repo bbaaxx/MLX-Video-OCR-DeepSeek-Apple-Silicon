@@ -1,0 +1,41 @@
+{
+    "file": {
+        "no_file": "No file provided",
+        "too_large": "File exceeds maximum size of 32MB",
+        "invalid_format": "Invalid file format",
+        "corrupted": "File is corrupted or damaged",
+        "upload_failed": "File upload failed",
+        "not_found": "File not found"
+    },
+    "processing": {
+        "general_error": "Error during processing",
+        "ocr_failed": "OCR processing failed",
+        "preprocessing_failed": "Preprocessing failed",
+        "video_processing_failed": "Video processing failed",
+        "memory_error": "Insufficient memory error",
+        "timeout": "Processing timeout",
+        "server_error": "Internal server error"
+    },
+    "validation": {
+        "invalid_batch_size": "Invalid batch size (must be 1-50)",
+        "invalid_page_number": "Invalid page number",
+        "invalid_frame_count": "Invalid frame count",
+        "invalid_interval": "Invalid interval (must be 1-30)",
+        "missing_required_field": "Missing required field",
+        "invalid_configuration": "Invalid configuration: {content_type}/{subcategory}/{complexity}"
+    },
+    "network": {
+        "connection_error": "Connection error",
+        "request_timeout": "Request timeout",
+        "server_unavailable": "Server unavailable"
+    },
+    "permissions": {
+        "file_access_denied": "File access denied",
+        "operation_not_allowed": "Operation not allowed"
+    },
+    "system": {
+        "unknown_error": "Unknown error",
+        "feature_disabled": "Feature temporarily disabled",
+        "maintenance_mode": "System maintenance mode"
+    }
+}

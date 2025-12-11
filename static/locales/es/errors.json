@@ -1,0 +1,41 @@
+{
+    "file": {
+        "no_file": "No se proporcionó ningún archivo",
+        "too_large": "El archivo excede el tamaño máximo de 32MB",
+        "invalid_format": "Formato de archivo no válido",
+        "corrupted": "El archivo está corrupto o dañado",
+        "upload_failed": "Error al subir el archivo",
+        "not_found": "Archivo no encontrado"
+    },
+    "processing": {
+        "general_error": "Error durante el procesamiento",
+        "ocr_failed": "El procesamiento OCR falló",
+        "preprocessing_failed": "El preprocesamiento falló",
+        "video_processing_failed": "El procesamiento de video falló",
+        "memory_error": "Error de memoria insuficiente",
+        "timeout": "Tiempo de procesamiento agotado",
+        "server_error": "Error interno del servidor"
+    },
+    "validation": {
+        "invalid_batch_size": "Tamaño de lote inválido (debe ser 1-50)",
+        "invalid_page_number": "Número de página inválido",
+        "invalid_frame_count": "Número de fotogramas inválido",
+        "invalid_interval": "Intervalo inválido (debe ser 1-30)",
+        "missing_required_field": "Campo requerido faltante",
+        "invalid_configuration": "Configuración inválida: {content_type}/{subcategory}/{complexity}"
+    },
+    "network": {
+        "connection_error": "Error de conexión",
+        "request_timeout": "Tiempo de espera agotado",
+        "server_unavailable": "Servidor no disponible"
+    },
+    "permissions": {
+        "file_access_denied": "Acceso al archivo denegado",
+        "operation_not_allowed": "Operación no permitida"
+    },
+    "system": {
+        "unknown_error": "Error desconocido",
+        "feature_disabled": "Función deshabilitada temporalmente",
+        "maintenance_mode": "Sistema en modo mantenimiento"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "file": {
+        "uploading": "上傳檔案中...",
+        "uploaded": "檔案上傳成功",
+        "processing": "處理檔案中...",
+        "processed": "檔案處理成功",
+        "error_size": "檔案太大（最大 32MB）",
+        "error_format": "不支援的檔案格式",
+        "error_upload": "上傳檔案時發生錯誤"
+    },
+    "ocr": {
+        "processing": "執行 OCR 中...",
+        "processing_page": "處理第 {current} 頁，共 {total} 頁...",
+        "completed": "OCR 完成成功",
+        "batch_completed": "批次處理完成",
+        "error_processing": "OCR 處理錯誤",
+        "no_text_found": "圖片中未找到文字",
+        "ready_to_process": "準備處理"
+    },
+    "preprocessing": {
+        "processing": "前處理圖片中...",
+        "processing_batch": "前處理圖片 {current}/{total}...",
+        "completed": "前處理完成",
+        "error_processing": "前處理錯誤",
+        "ready_to_ocr": "準備發送到 OCR"
+    },
+    "video": {
+        "processing": "從影片提取幀中...",
+        "analyzing": "分析影片中...",
+        "extracting": "提取第 {current} 幀，共 {total} 幀...",
+        "completed": "提取完成",
+        "error_processing": "處理影片時發生錯誤",
+        "frames_extracted": "已提取 {count} 幀"
+    },
+    "batch": {
+        "processing_batch": "處理第 {current} 批，共 {total} 批...",
+        "batch_completed": "第 {current} 批完成",
+        "continuing": "繼續下一批...",
+        "stopped": "使用者停止處理"
+    },
+    "download": {
+        "preparing": "準備下載中...",
+        "completed": "下載完成",
+        "error": "準備下載時發生錯誤"
+    },
+    "copy": {
+        "success": "文字已複製到剪貼簿",
+        "error": "複製文字時發生錯誤"
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "header": {
+        "title": "MLX DeepSeek-OCR",
+        "subtitle": "Apple Silicon native · 4bit ultra-fast · Completely offline"
+    },
+    "tabs": {
+        "ocr": "📄 OCR Recognition",
+        "video": "🎬 Video Capture",
+        "preprocess": "🎨 Photo Preprocessing"
+    },
+    "upload": {
+        "title": "Upload File",
+        "drag_drop": "Drag files here",
+        "supported_formats": "Supports JPG, PNG, PDF (max 32MB)",
+        "video_formats": "Supports MP4, AVI, MOV, MKV"
+    },
+    "preview": {
+        "title": "Preview",
+        "clear": "Clear"
+    },
+    "results": {
+        "title": "Recognition Results",
+        "copy_all": "Copy All",
+        "download_txt": "Download TXT",
+        "default_text": "Please upload a file to start processing"
+    },
+    "progress": {
+        "label": "Progress:",
+        "pages": "pages",
+        "config_info": "Configuration information"
+    },
+    "buttons": {
+        "start_recognition": "Start Recognition",
+        "start_batch": "Start Batch Processing",
+        "recognize_page": "Recognize This Page",
+        "start_preprocessing": "Start Preprocessing",
+        "download_results": "Download Results",
+        "send_to_ocr": "Send to OCR",
+        "continue_batch": "Continue Next Batch",
+        "stop_batch": "Stop Batch",
+        "select_all": "Select All",
+        "deselect_all": "Deselect All"
+    },
+    "preprocessing": {
+        "title": "Photo Preprocessing",
+        "options_title": "🎨 Photo Preprocessing Options (Optional)",
+        "description": "Select processing options and the system will automatically process images before OCR recognition",
+        "drag_drop": "Drag photos here",
+        "multi_support": "Supports JPG, PNG (multiple selection)",
+        "processing_options": "Processing Options (multiple selection)",
+        "progress": "Processing Progress",
+        "results_preview": "Processing Results Preview",
+        "auto_rotate": "🔄 Auto Rotate",
+        "auto_rotate_desc": "Automatically detect and correct image tilt angle",
+        "enhance": "✨ Enhance Contrast + Sharpen",
+        "enhance_desc": "Make images clearer with more contrast",
+        "remove_shadows": "☀️ Remove Shadows",
+        "remove_shadows_desc": "Remove shadows caused by uneven lighting",
+        "binarize": "⚫⚪ Binarization",
+        "binarize_desc": "Convert to pure black and white image (⚠️ irreversible)",
+        "remove_bg": "🎨 Remove Background (AI)",
+        "remove_bg_desc": "Use rembg AI model for intelligent background removal",
+        "skip_preprocessing": "Skip Preprocessing",
+        "execute_preprocessing": "Execute Preprocessing",
+        "about_bg_removal": "🎨 About 'Remove Background' Feature",
+        "about_bg_removal_desc": "✅ Uses <strong>rembg AI model</strong>, <strong>exactly the same</strong> as your Colab code<br>✅ Just check 'Remove Background' option or click '🎨 Remove Background Only' quick button<br>✅ Outputs as transparent background PNG format<br>💡 For background removal only (no other processing), click '🎨 Remove Background Only' button",
+        "hint_no_options": "💡 Tip: If no options are selected, original image will be saved (no processing)<br>💡 Tip: You can select multiple options, system will process all in sequence",
+        "preset_title": "⚡ Quick Presets (One Click)",
+        "preset_remove_bg_only": "🎨 Remove Background Only",
+        "preset_photo_optimize": "📷 Photo Optimize",
+        "preset_scan_optimize": "📄 Scan Optimize",
+        "preset_enhance_blurry": "🔍 Enhance Blurry"
+    },
+    "video": {
+        "title": "Video Capture",
+        "info": "Video Information",
+        "extraction_method": "Extraction Method",
+        "fixed_count": "Fixed Count (100 frames)",
+        "fixed_interval": "Fixed Interval (5 frames per second)",
+        "scene_change": "Scene Change Detection",
+        "total_frames": "Total Frames",
+        "frames_per_second": "Frames Per Second",
+        "scene_sensitivity": "Scene Change Sensitivity",
+        "output_format": "Output Format",
+        "jpg_compressed": "JPG (High Compression)",
+        "png_high_quality": "PNG (High Quality)",
+        "sensitivity_low": "Low (more frames)",
+        "sensitivity_medium": "Medium (0.5)",
+        "sensitivity_high": "High (fewer frames)",
+        "start_capture": "Start Capture",
+        "download_frames": "Download Frames",
+        "send_to_ocr": "Send to OCR"
+    },
+    "pdf": {
+        "batch_processing": "Batch Processing",
+        "single_page": "Single Page Recognition",
+        "preprocessing_options": "🎨 PDF Preprocessing Options (Optional)",
+        "preprocessing_desc": "Click the button below to extract PDF pages as images, then process in the preprocessing tab",
+        "pages_per_batch": "Pages per batch",
+        "recommended": "pages (recommended)",
+        "most_stable": "pages (most stable)",
+        "custom": "Custom",
+        "enter_custom_pages": "Enter custom page count (1-50)",
+        "select_page": "Select Page",
+        "batch_size_1": "1 pages (most stable)",
+        "batch_size_2": "2 pages (recommended)",
+        "batch_size_3": "3 pages",
+        "batch_size_5": "5 pages",
+        "batch_size_10": "10 pages"
+    },
+    "config": {
+        "content_type": "📄 Content Type",
+        "document_mode": "Document Mode (structured content)",
+        "scene_mode": "Scene Mode (scene text)",
+        "subcategory": "📚 Subcategory",
+        "complexity": "🎚️ Complexity:",
+        "medium_recommended": "Medium (256 tokens) ⭐ Recommended",
+        "tiny": "Tiny (64)",
+        "small": "Small (100)",
+        "medium": "Medium (256)",
+        "large": "Large (400)",
+        "gundam": "Gundam (800)"
+    },
+    "presets": {
+        "title": "⚡ Quick Preset Combinations (one click)",
+        "remove_bg_only": "🎨 Remove Background Only",
+        "photo_optimize": "📷 Optimize Photo",
+        "scan_optimize": "📄 Optimize Scan",
+        "enhance_blurry": "🔍 Enhance Blurry",
+        "custom_settings": "Custom Settings",
+        "scan_optimization": "Scan Optimization",
+        "photo_doc_optimization": "Photo Document Optimization",
+        "blurry_photo_enhance": "Blurry Photo Enhancement",
+        "remove_background_only": "Remove Background Only"
+    },
+    "loading": {
+        "processing": "Processing...",
+        "please_wait": "Please wait"
+    },
+    "success": {
+        "completed": "All Completed!"
+    },
+    "errors": {
+        "preprocessing_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab"
+    }
+}

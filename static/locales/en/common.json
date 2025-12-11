@@ -1,0 +1,64 @@
+{
+    "languages": {
+        "spanish": "Español",
+        "chinese": "中文",
+        "english": "English"
+    },
+    "actions": {
+        "ok": "OK",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "close": "Close",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous",
+        "search": "Search",
+        "filter": "Filter",
+        "sort": "Sort",
+        "refresh": "Refresh",
+        "reset": "Reset"
+    },
+    "status": {
+        "loading": "Loading...",
+        "ready": "Ready",
+        "processing": "Processing...",
+        "completed": "Completed",
+        "failed": "Failed",
+        "pending": "Pending",
+        "paused": "Paused",
+        "cancelled": "Cancelled",
+        "success": "Success",
+        "error": "Error",
+        "warning": "Warning",
+        "info": "Information"
+    },
+    "units": {
+        "pages": "pages",
+        "files": "files",
+        "images": "images",
+        "frames": "frames",
+        "seconds": "seconds",
+        "minutes": "minutes",
+        "hours": "hours",
+        "bytes": "bytes",
+        "kb": "KB",
+        "mb": "MB",
+        "gb": "GB"
+    },
+    "time": {
+        "now": "Now",
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "tomorrow": "Tomorrow"
+    },
+    "navigation": {
+        "home": "Home",
+        "settings": "Settings",
+        "help": "Help",
+        "about": "About",
+        "contact": "Contact"
+    }
+}
