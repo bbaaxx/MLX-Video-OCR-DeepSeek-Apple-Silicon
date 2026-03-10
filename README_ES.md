@@ -308,10 +308,18 @@ cd MLX-Video-OCR-DeepSeek-Apple-Silicon
 
 **🎉 ¡Así de simple!** El script se encarga de todo automáticamente.
 
+> **Nota**: El script de inicio requiere `uv` instalado. Si no está instalado, el script le indicará cómo instalarlo:
+> ```bash
+> curl -LsSf https://astral.sh/uv/install.sh | sh
+> # o usar Homebrew
+> brew install uv
+> ```
+
 **start.sh hará automáticamente:**
 - ✅ Verificar versión de Python
-- ✅ Crear entorno virtual
-- ✅ Instalar todas las dependencias
+- ✅ Verificar si uv está instalado (y sugerir instalación si no)
+- ✅ Crear entorno virtual (usando uv)
+- ✅ Instalar todas las dependencias (usando uv)
 - ✅ Buscar puerto disponible (5000-5010)
 - ✅ Limpiar procesos zombies
 - ✅ Iniciar la aplicación
@@ -329,14 +337,18 @@ cd MLX-Video-OCR-DeepSeek-Apple-Silicon
 # 1. Ingresar al directorio del proyecto
 cd ~/MLX-Video-OCR-DeepSeek-Apple-Silicon
 
-# 2. Crear entorno virtual
-python3 -m venv venv
-source venv/bin/activate
+# 2. Instalar uv (si aún no está instalado)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# o usar Homebrew: brew install uv
 
-# 3. Instalar dependencias
-pip install -r requirements.txt
+# 3. Crear entorno virtual
+uv venv
+source .venv/bin/activate
 
-# 4. Iniciar aplicación
+# 4. Instalar dependencias
+uv pip install -r requirements.txt
+
+# 5. Iniciar aplicación
 python3 app.py
 ```
 

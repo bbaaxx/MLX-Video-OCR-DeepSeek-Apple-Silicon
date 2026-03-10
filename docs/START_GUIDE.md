@@ -21,16 +21,20 @@ python3 app.py
 # 1. 进入项目目录
 cd <your-project-directory>
 
-# 2. 创建虚拟环境（如果还没有）
-python3 -m venv venv
+# 2. 安装 uv（如果还没有）
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# 或使用 Homebrew: brew install uv
 
-# 3. 激活虚拟环境
-source venv/bin/activate
+# 3. 创建虚拟环境（如果还没有）
+uv venv
 
-# 4. 安装依赖
-pip install -r requirements.txt
+# 4. 激活虚拟环境
+source .venv/bin/activate
 
-# 5. 启动应用
+# 5. 安装依赖
+uv pip install -r requirements.txt
+
+# 6. 启动应用
 python3 app.py
 ```
 
@@ -47,12 +51,16 @@ python3 --version
 
 ```bash
 cd <your-project-directory>
-pip3 list | grep -E "Flask|mlx|Pillow|opencv"
+python3 -c "import flask; import mlx_vlm; from PIL import Image; import cv2" && echo "依赖已安装" || echo "缺少依赖"
 ```
 
 如果没有安装，执行：
 ```bash
-pip3 install -r requirements.txt
+# 确保已激活虚拟环境
+source .venv/bin/activate
+
+# 安装依赖
+uv pip install -r requirements.txt
 ```
 
 ### 步骤 3: 启动应用
@@ -93,7 +101,11 @@ app.run(host='0.0.0.0', port=5001, debug=True)
 
 **解决方案：**
 ```bash
-pip3 install Flask==3.0.0 mlx-vlm==0.3.5 mlx>=0.20.0 Pillow>=10.3.0 Werkzeug==3.0.1 opencv-python>=4.10.0
+# 确保已激活虚拟环境
+source .venv/bin/activate
+
+# 安装依赖
+uv pip install -r requirements.txt
 ```
 
 ### Q3: Python 版本不对

@@ -242,7 +242,7 @@ prompts = {
 
 
 def remove_background_pil(image):
-    """使用 rembg 去除背景"""
+    """Remove background using rembg"""
     try:
         from rembg import remove
 
@@ -265,7 +265,7 @@ def remove_background_pil(image):
 
 
 def auto_rotate_image(image):
-    """自動旋轉圖像"""
+    """Auto-rotate image"""
     try:
         img_array = np.array(image)
         gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
@@ -299,7 +299,7 @@ def auto_rotate_image(image):
 
 
 def enhance_image(image):
-    """圖像增強處理"""
+    """Image enhancement processing"""
     img_array = np.array(image)
 
     # 對比度增強
@@ -318,7 +318,7 @@ def enhance_image(image):
 
 
 def remove_shadows(image):
-    """去除陰影"""
+    """Remove shadows"""
     img_array = np.array(image)
     rgb_planes = cv2.split(img_array)
 
@@ -334,7 +334,7 @@ def remove_shadows(image):
 
 
 def binarize_image(image):
-    """二值化處理"""
+    """Binarization processing"""
     img_array = np.array(image.convert("L"))
     _, binary = cv2.threshold(img_array, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     return Image.fromarray(binary, "L")
@@ -373,7 +373,7 @@ PREPROCESS_PRESETS = {
 
 
 def preprocess_single_image(image, settings):
-    """單張圖片前處理"""
+    """Preprocess single image"""
     processed = image.copy()
     intermediate_images = []
 
@@ -453,13 +453,15 @@ def extract_frames_from_video(
 
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
-        raise Exception("無法開啟影片檔案")
+        raise Exception("Cannot open video file")
 
     fps = cap.get(cv2.CAP_PROP_FPS)
     total_video_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     duration = total_video_frames / fps if fps > 0 else 0
 
-    print(f"📹 影片資訊: {total_video_frames} 幀, {fps:.2f} FPS, {duration:.2f} 秒")
+    print(
+        f"📹 Video info: {total_video_frames} frames, {fps:.2f} FPS, {duration:.2f} seconds"
+    )
 
     frames = []
 
@@ -503,7 +505,7 @@ def extract_frames_from_video(
         # 閾值範圍：0.4~0.75（大幅提高範圍，增強鑑別度，每秒不超過5張）
         scene_change_threshold = (1.0 - sensitivity) * 0.35 + 0.4
         print(
-            f"🎬 場景變化檢測：敏感度={sensitivity:.2f}, 閾值={scene_change_threshold:.3f}"
+            f"🎬 Scene change detection: sensitivity={sensitivity:.2f}, threshold={scene_change_threshold:.3f}"
         )
 
         for frame_idx in range(total_video_frames):
@@ -531,7 +533,7 @@ def extract_frames_from_video(
                 break
 
     cap.release()
-    print(f"✅ 提取完成: {len(frames)} 張幀")
+    print(f"✅ Extraction completed: {len(frames)} frames")
     return frames
 
 
@@ -612,7 +614,7 @@ def _run_ocr_in_process(image_bytes, prompt, max_tokens, output_queue):
             try:
                 current_max_tokens = retry_tokens[attempt]
                 print(
-                    f"[{os.getpid()}] 🔍 嘗試 {attempt + 1}/{max_retries}: max_tokens={current_max_tokens}"
+                    f"[{os.getpid()}] 🔍 Attempt {attempt + 1}/{max_retries}: max_tokens={current_max_tokens}"
                 )
 
                 res = generate(
@@ -632,32 +634,36 @@ def _run_ocr_in_process(image_bytes, prompt, max_tokens, output_queue):
             except AttributeError as e:
                 if "'NoneType' object has no attribute 'token'" in str(e):
                     print(
-                        f"[{os.getpid()}] ⚠️ 嘗試 {attempt + 1} 失敗: mlx-vlm bug (last_response=None)"
+                        f"[{os.getpid()}] ⚠️ Attempt {attempt + 1} failed: mlx-vlm bug (last_response=None)"
                     )
                     if attempt < max_retries - 1:
-                        time.sleep(1)  # 等待後重試（time 已在文件開頭導入）
+                        time.sleep(
+                            1
+                        )  # Wait before retry (time already imported at file start)
                         continue
                     else:
                         raise RuntimeError(
-                            "mlx-vlm generate() 失敗：stream_generate() 沒有產生響應。這可能是 CPU 模式下的已知問題。"
+                            "mlx-vlm generate() failed: stream_generate() produced no response. This may be a known issue in CPU mode."
                         )
                 else:
                     raise
             except Exception as e:
                 print(
-                    f"[{os.getpid()}] ⚠️ 嘗試 {attempt + 1} 失敗: {type(e).__name__}: {str(e)[:100]}"
+                    f"[{os.getpid()}] ⚠️ Attempt {attempt + 1} failed: {type(e).__name__}: {str(e)[:100]}"
                 )
                 if attempt < max_retries - 1:
-                    time.sleep(1)  # 等待後重試（time 已在文件開頭導入）
+                    time.sleep(
+                        1
+                    )  # Wait before retry (time already imported at file start)
                     continue
                 else:
                     raise
 
         t_ocr_end = time.time()
 
-        # 檢查結果是否有效
+        # Check if result is valid
         if res is None:
-            raise RuntimeError("generate() 在所有重試後仍返回 None")
+            raise RuntimeError("generate() still returned None after all retries")
 
         text = res.text if hasattr(res, "text") else str(res)
         text = re.sub(r"<\|grounding\|>|\[\[.*?\]\]", "", text).strip()
@@ -733,7 +739,7 @@ def generate_with_timeout_and_process(image, prompt, max_tokens=8192, timeout=16
         if "success" in result:
             timing = result.get("timing", {})
             print(
-                f"⏱️ 總耗時: {t_process_end - t_process_start:.2f}s (序列化: {t_serialize_end - t_serialize_start:.2f}s, 推理: {timing.get('inference', 0):.2f}s)"
+                f"⏱️ Total time: {t_process_end - t_process_start:.2f}s (serialization: {t_serialize_end - t_serialize_start:.2f}s, inference: {timing.get('inference', 0):.2f}s)"
             )
             return result["text"]
         else:
@@ -748,7 +754,7 @@ def generate_with_timeout_and_process(image, prompt, max_tokens=8192, timeout=16
 
 
 def get_preprocessing_config(content_type, subcategory, complexity):
-    """根據三維分類獲取前處理配置"""
+    """Get preprocessing config based on 3D classification"""
     try:
         config = PREPROCESSING_CONFIG[content_type][subcategory][complexity]
         return config
@@ -757,7 +763,7 @@ def get_preprocessing_config(content_type, subcategory, complexity):
 
 
 def preprocess_image_by_config(image, image_size):
-    """調整圖像到指定尺寸"""
+    """Resize image to specified dimensions"""
     img_processed = image.copy()
     img_processed.thumbnail(image_size, Image.Resampling.LANCZOS)
     print(f"🖼️ Image preprocessed to {image_size}, actual size: {img_processed.size}")
@@ -831,7 +837,7 @@ def health_check():
 
 @app.route("/api/preprocess/upload", methods=["POST"])
 def preprocess_upload():
-    """上傳照片進行前處理"""
+    """Upload photos for preprocessing"""
     if "files" not in request.files:
         return jsonify({"error": "No files"}), 400
 
@@ -911,7 +917,7 @@ def preprocess_upload():
 
 @app.route("/api/preprocess/process", methods=["POST"])
 def preprocess_process():
-    """執行照片前處理"""
+    """Execute photo preprocessing"""
     data = request.get_json()
     task_id = data.get("task_id")
     settings = data.get("settings", {})
@@ -1002,7 +1008,7 @@ def preprocess_process():
 
 @app.route("/api/preprocess/download", methods=["POST"])
 def preprocess_download():
-    """下載處理後的照片"""
+    """Download processed photos"""
     data = request.get_json()
     task_id = data.get("task_id")
 
@@ -1033,7 +1039,7 @@ def preprocess_download():
 
 @app.route("/api/preprocess/to-ocr", methods=["POST"])
 def preprocess_to_ocr():
-    """將處理後的照片發送到 OCR"""
+    """Send processed photos to OCR"""
     data = request.get_json()
     task_id = data.get("task_id")
 
@@ -1064,7 +1070,7 @@ def preprocess_to_ocr():
 
 @app.route("/api/video/upload", methods=["POST"])
 def video_upload():
-    """上傳影片進行截圖"""
+    """Upload video for frame extraction"""
     if "file" not in request.files:
         return jsonify({"error": "No file"}), 400
 
@@ -1123,7 +1129,7 @@ def video_upload():
 
 @app.route("/api/video/extract", methods=["POST"])
 def video_extract():
-    """從影片提取幀"""
+    """Extract frames from video"""
     data = request.get_json()
     task_id = data.get("task_id")
     settings = data.get("settings", {})
@@ -1203,7 +1209,7 @@ def video_extract():
 
 @app.route("/api/video/download", methods=["POST"])
 def video_download():
-    """下載影片截圖"""
+    """Download video frames"""
     data = request.get_json()
     task_id = data.get("task_id")
     selected_frames = data.get("selected_frames", [])
@@ -1239,7 +1245,7 @@ def video_download():
 
 @app.route("/api/ocr", methods=["POST"])
 def ocr():
-    """單張圖片 OCR - 支援新的三維分類和舊的快速 mode"""
+    """Single image OCR - supports new 3D classification and legacy quick mode"""
     lang = i18n_backend.get_client_language()
 
     if "file" not in request.files:
@@ -1482,7 +1488,7 @@ def init_pdf_task():
 
 @app.route("/api/pdf/extract-pages", methods=["POST"])
 def extract_pdf_pages():
-    """提取PDF所有頁面為圖片文件，供前處理使用"""
+    """Extract all PDF pages as image files for preprocessing"""
     data = request.get_json()
     task_id = data.get("task_id")
 
@@ -2024,10 +2030,10 @@ if __name__ == "__main__":
 
     print("✅ Application starting on http://0.0.0.0:5001")
     print("\n📊 Enhanced Features:")
-    print("   - 📄 OCR 辨識 (現有功能)")
-    print("   - 🎨 照片前處理 (新功能)")
-    print("   - 🎬 影片截圖 (新功能)")
-    print("   - 📋 PDF 批次處理 (現有功能)")
+    print("   - 📄 OCR Recognition (Existing Feature)")
+    print("   - 🎨 Photo Preprocessing (New Feature)")
+    print("   - 🎬 Video Frame Extraction (New Feature)")
+    print("   - 📋 PDF Batch Processing (Existing Feature)")
     print("\n🔄 Legacy Mode Support:")
     print("   - 'basic' → Document/Academic/Medium")
     print("   - 'table' → Document/Table/Large")

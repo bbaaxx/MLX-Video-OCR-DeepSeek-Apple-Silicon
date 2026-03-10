@@ -1,0 +1,65 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# This file is part of MLX DeepSeek-OCR.
+# Copyright (C) 2025 MLX DeepSeek-OCR contributors
+# Licensed under the GNU Affero General Public License v3.0 (AGPL-3.0).
+# See the LICENSE file in the project root for full license text:
+# https://www.gnu.org/licenses/agpl-3.0.en.html
+
+[project]
+name = "mlx-deepseek-ocr"
+version = "1.0.0"
+description = "Video/PDF/Image OCR solution optimized for Apple Silicon"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "AGPL-3.0-or-later" }
+authors = [
+    { name = "MLX DeepSeek-OCR contributors" }
+]
+keywords = ["ocr", "mlx", "apple-silicon", "deepseek", "video-ocr", "pdf-ocr"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Graphics",
+]
+
+dependencies = [
+    "Flask==3.0.0",
+    "mlx-vlm==0.3.5",
+    "mlx>=0.20.0",
+    "Pillow>=10.3.0",
+    "Werkzeug==3.0.1",
+    "PyMuPDF",
+    "opencv-python>=4.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon"
+Repository = "https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon"
+Issues = "https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues"
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.1.0",
+    "black>=23.0.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.black]
+line-length = 88
+target-version = ["py311", "py312"]

@@ -303,10 +303,18 @@ cd MLX-Video-OCR-DeepSeek-Apple-Silicon
 
 **🎉 就是這麼簡單！** 腳本會自動處理一切！
 
+> **注意**: 啟動腳本需要先安裝 `uv`。如果未安裝，腳本會提示您安裝：
+> ```bash
+> curl -LsSf https://astral.sh/uv/install.sh | sh
+> # 或使用 Homebrew
+> brew install uv
+> ```
+
 **start.sh 會自動：**
 - ✅ 檢查 Python 版本
-- ✅ 創建虛擬環境
-- ✅ 安裝所有依賴
+- ✅ 檢查 uv 是否安裝（如未安裝會提示安裝方法）
+- ✅ 創建虛擬環境（使用 uv）
+- ✅ 安裝所有依賴（使用 uv）
 - ✅ 尋找可用端口（5000-5010）
 - ✅ 清理殭屍進程
 - ✅ 啟動應用
@@ -324,14 +332,18 @@ cd MLX-Video-OCR-DeepSeek-Apple-Silicon
 # 1. 進入專案目錄
 cd ~/MLX-Video-OCR-DeepSeek-Apple-Silicon
 
-# 2. 創建虛擬環境
-python3 -m venv venv
-source venv/bin/activate
+# 2. 安裝 uv（如果尚未安裝）
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# 或使用 Homebrew: brew install uv
 
-# 3. 安裝依賴
-pip install -r requirements.txt
+# 3. 創建虛擬環境
+uv venv
+source .venv/bin/activate
 
-# 4. 啟動應用
+# 4. 安裝依賴
+uv pip install -r requirements.txt
+
+# 5. 啟動應用
 python3 app.py
 ```
 
