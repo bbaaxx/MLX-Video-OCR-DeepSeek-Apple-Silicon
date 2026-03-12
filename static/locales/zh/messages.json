@@ -67,5 +67,8 @@
         "images": "張圖片",
         "frames": "幀",
         "pages": "頁"
+    },
+    "progress": {
+        "generating_results": "生成結果中..."
     }
 }

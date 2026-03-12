@@ -19,7 +19,16 @@
         "filter": "Filter",
         "sort": "Sort",
         "refresh": "Refresh",
-        "reset": "Reset"
+        "reset": "Reset",
+        "retry": "Retry",
+        "click_to_copy": "Click to copy",
+        "click_to_download": "Click to download",
+        "delete_item": "Delete item",
+        "confirm_clear_results": "Are you sure you want to clear all results?",
+        "confirm_cancel": "Cancel current processing?",
+        "confirm_delete": "Delete this history item?",
+        "close_modal": "Close",
+        "toggle_settings": "Toggle settings panel"
     },
     "status": {
         "loading": "Loading...",

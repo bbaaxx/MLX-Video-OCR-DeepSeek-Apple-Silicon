@@ -63,6 +63,19 @@
         "no_extraction": "Please run video screenshot first",
         "no_selection": "Please select at least one screenshot",
         "frames_load_failed": "Cannot load any screenshots",
-        "no_frames_extracted": "No frames extracted"
+        "no_frames_extracted": "No frames extracted",
+        "no_upload": "Please upload a video file first",
+        "load_processed_image": "Failed to load processed image",
+        "extract_pages_failed": "Failed to extract pages"
+    },
+    "system": {
+        "unknown_error": "Unknown error",
+        "feature_disabled": "Feature temporarily disabled",
+        "maintenance_mode": "System maintenance mode",
+        "session_expired": "Session expired. Please refresh the page.",
+        "queue_full": "Processing queue is full. Please wait."
+    },
+    "download": {
+        "failed": "Download failed"
     }
 }

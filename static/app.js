@@ -164,6 +164,12 @@ class I18n {
             const key = element.getAttribute('data-i18n-placeholder');
             element.placeholder = this.t(key);
         });
+        
+        // Update aria-label attributes
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
+            const key = element.getAttribute('data-i18n-aria-label');
+            element.setAttribute('aria-label', this.t(key));
+        });
     }
 }
 
@@ -920,8 +926,8 @@ function displayPageResult(pageNum, text) {
     div.className = 'mb-6 p-5 bg-white rounded-xl shadow-md border-l-4 border-purple-500';
     div.innerHTML = `
         <div class="flex justify-between items-center mb-3">
-            <h3 class="text-lg font-bold text-purple-700">第 ${pageNum} 頁</h3>
-            <span class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">${text.length} 字</span>
+            <h3 class="text-lg font-bold text-purple-700">${i18n.t('ui.results.page_label', { page: pageNum })}</h3>
+            <span class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded-full">${i18n.t('ui.results.char_count', { count: text.length })}</span>
         </div>
         <pre class="whitespace-pre-wrap text-sm text-gray-800 leading-relaxed font-mono bg-gray-50 p-4 rounded-lg overflow-x-auto">${text}</pre>
     `;
@@ -1443,7 +1449,7 @@ function showPreprocessPreview(files) {
             const imgDiv = document.createElement('div');
             imgDiv.className = 'text-center';
             imgDiv.innerHTML = `
-                <img src="${e.target.result}" class="w-full h-32 object-cover rounded-lg mb-2" alt="預覽">
+                <img src="${e.target.result}" class="w-full h-32 object-cover rounded-lg mb-2" alt="${i18n.t('ui.preview.title')}">
                 <p class="text-xs text-gray-600 truncate">${file.name}</p>
                 <p class="text-xs text-gray-500">${(file.size / 1024).toFixed(1)} KB</p>
             `;
@@ -2200,19 +2206,21 @@ if (executePdfPreprocessBtn) {
 function displayPreprocessResults(results) {
     resultDiv.innerHTML = `
         <div class="p-5 bg-white rounded-xl shadow-md border-l-4 border-green-500">
-            <h3 class="text-lg font-bold text-green-700 mb-3">照片前處理完成</h3>
+            <h3 class="text-lg font-bold text-green-700 mb-3">${i18n.t('ui.preprocessing.completed')}</h3>
             <div class="text-sm text-gray-600 mb-4">
-                成功處理 ${results.length} 張照片
+                ${i18n.t('ui.preprocessing.success_count', { count: results.length })}
             </div>
             <div class="grid grid-cols-2 gap-4">
                 ${results.map((result, index) => `
                     <div class="border rounded-lg p-3">
                         <p class="text-xs font-medium mb-2">${preprocessFiles[index]?.name || result.filename}</p>
                         ${result.processed_thumb_b64 
-                            ? `<img src="${result.processed_thumb_b64}" class="w-full h-32 object-cover rounded-lg mb-2" alt="處理後預覽">`
-                            : '<div class="w-full h-32 bg-gray-200 rounded-lg mb-2 flex items-center justify-center text-gray-400 text-xs">無預覽</div>'}
+                            ? `<img src="${result.processed_thumb_b64}" class="w-full h-32 object-cover rounded-lg mb-2" alt="${i18n.t('ui.preprocessing.completed_status')}">`
+                            : `<div class="w-full h-32 bg-gray-200 rounded-lg mb-2 flex items-center justify-center text-gray-400 text-xs">${i18n.t('ui.preprocessing.no_preview')}</div>`}
                         <div class="text-xs text-gray-500">
-                            ${result.status === 'completed' ? '✅ 處理完成' : '❌ 處理失敗'}
+                            ${result.status === 'completed' 
+                                ? `✅ ${i18n.t('ui.preprocessing.completed_status')}` 
+                                : `❌ ${i18n.t('ui.preprocessing.failed_status')}`}
                         </div>
                     </div>
                 `).join('')}
@@ -2470,7 +2478,7 @@ if (sendToOcrBtn) {
             processedPdfThumbnails.forEach((item, idx) => {
                 const div = document.createElement('div');
                 div.className = 'thumbnail-item';
-                div.innerHTML = `<img src="${item.processed_thumb_b64}" title="第 ${item.page} 頁（已前處理）">`;
+                div.innerHTML = `<img src="${item.processed_thumb_b64}" title="${i18n.t('ui.results.page_label', { page: item.page })} ${i18n.t('ui.results.processed_label')}">`;
                 
                 div.addEventListener('click', () => {
                     document.querySelectorAll('.thumbnail-item').forEach(el => {
@@ -2814,14 +2822,14 @@ function displayExtractedFrames(frames) {
         // 如果缩图为空，显示占位符
         const imgHtml = thumbSrc 
             ? `<img src="${thumbSrc}" class="w-full h-24 object-cover rounded-lg mb-2 cursor-pointer" 
-                     onclick="selectFrame(${index})" alt="幀 ${index + 1}">`
+                     onclick="selectFrame(${index})" alt="${i18n.t('ui.video.frame_label', { index: index + 1 })}">`
             : `<div class="w-full h-24 bg-gray-200 rounded-lg mb-2 flex items-center justify-center text-gray-400 text-xs">
-                 無縮圖
-               </div>`;
+                  ${i18n.t('ui.video.no_thumbnail')}
+                </div>`;
         
         frameDiv.innerHTML = `
             ${imgHtml}
-            <p class="text-xs text-gray-600 font-medium">幀 ${frame.index || index + 1}</p>
+            <p class="text-xs text-gray-600 font-medium">${i18n.t('ui.video.frame_label', { index: frame.index || index + 1 })}</p>
             <input type="checkbox" class="frame-checkbox mt-1" data-index="${index}" ${frame.selected ? 'checked' : ''} onchange="updateFramesCount()">
         `;
         gridElement.appendChild(frameDiv);

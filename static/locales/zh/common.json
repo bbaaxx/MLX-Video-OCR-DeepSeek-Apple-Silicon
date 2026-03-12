@@ -19,7 +19,16 @@
         "filter": "篩選",
         "sort": "排序",
         "refresh": "重新整理",
-        "reset": "重設"
+        "reset": "重設",
+        "retry": "重試",
+        "click_to_copy": "點擊複製",
+        "click_to_download": "點擊下載",
+        "delete_item": "刪除項目",
+        "confirm_clear_results": "確定要清除所有結果嗎？",
+        "confirm_cancel": "取消當前處理？",
+        "confirm_delete": "刪除此歷史項目？",
+        "close_modal": "關閉",
+        "toggle_settings": "切換設置面板"
     },
     "status": {
         "loading": "載入中...",

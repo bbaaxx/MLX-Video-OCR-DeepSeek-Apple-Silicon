@@ -361,13 +361,13 @@
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold text-gray-800" data-i18n="preview.title">預覽</h3>
                             <div class="space-x-2">
-                                <button onclick="zoomPreview(1.2)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow">+</button>
-                                <button onclick="zoomPreview(0.8)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow">−</button>
+                                <button onclick="zoomPreview(1.2)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow" data-i18n-aria-label="zoom.in">+</button>
+                                <button onclick="zoomPreview(0.8)" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold w-10 h-10 rounded-full shadow" data-i18n-aria-label="zoom.out">−</button>
                                 <button id="clearBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow" data-i18n="preview.clear">清除</button>
                             </div>
                         </div>
                         <div id="preview" class="hidden relative bg-gray-100 rounded-xl overflow-hidden border-4 border-gray-300">
-                            <img id="previewImage" class="w-full transition-transform duration-200" style="transform: scale(1)" alt="預覽">
+                            <img id="previewImage" class="w-full transition-transform duration-200" style="transform: scale(1)" alt="" data-i18n-aria-label="preview.title">
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@
                     </div>
 
                     <div class="bg-white rounded-2xl shadow-xl p-6">
-                        <h2 class="text-2xl font-bold mb-4 text-gray-800">照片前處理</h2>
+                        <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="preprocess.title">照片前處理</h2>
                         
                         <div class="hint-box" data-i18n="preprocessing.hint_no_options">
                             💡 提示：如果不勾選任何選項，將保存原圖（不做任何處理）<br>
@@ -464,35 +464,35 @@
 
                             <!-- 預設配置 -->
                             <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">預設配置</label>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" data-i18n="presets.config_label">預設配置</label>
                                 <select id="preprocessPreset" class="w-full border-2 border-purple-200 rounded-xl px-4 py-3">
-                                    <option value="custom">自訂設定</option>
-                                    <option value="scan_optimize">掃描件優化</option>
-                                    <option value="photo_optimize">拍照文檔優化</option>
-                                    <option value="enhance_blurry">模糊照片增強</option>
-                                    <option value="remove_background_only">僅去背景</option>
+                                    <option value="custom" data-i18n="presets.custom">自訂設定</option>
+                                    <option value="scan_optimize" data-i18n="presets.scan_optimize">掃描件優化</option>
+                                    <option value="photo_optimize" data-i18n="presets.photo_optimize">拍照文檔優化</option>
+                                    <option value="enhance_blurry" data-i18n="presets.enhance_blurry">模糊照片增強</option>
+                                    <option value="remove_background_only" data-i18n="presets.remove_bg_only">僅去背景</option>
                                 </select>
                             </div>
                         </div>
 
                         <!-- 進度條（修正 4） -->
                         <div id="preprocessProgress" class="hidden mb-4">
-                            <p class="text-sm font-bold text-gray-700 mb-2">處理進度</p>
+                            <p class="text-sm font-bold text-gray-700 mb-2" data-i18n="preprocessing.progress_label">處理進度</p>
                             <div class="w-full bg-gray-200 rounded-full h-3">
                                 <div id="preprocessProgressBar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
                             </div>
-                            <p id="preprocessProgressText" class="text-xs text-gray-500 mt-2 text-center">0/0</p>
+                            <p id="preprocessProgressText" class="text-xs text-gray-500 mt-2 text-center" data-i18n="preprocessing.progress_text">0/0</p>
                         </div>
 
                         <!-- 執行按鈕 -->
                         <div class="mt-6 space-y-3">
-                            <button id="processPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="processPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.start_preprocessing">
                                 開始前處理
                             </button>
-                            <button id="downloadPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="downloadPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.download_results">
                                 下載處理結果
                             </button>
-                            <button id="sendToOcrBtn" disabled class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105">
+                            <button id="sendToOcrBtn" disabled class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.send_to_ocr">
                                 發送至 OCR
                             </button>
                         </div>
@@ -500,7 +500,7 @@
 
                     <!-- 前處理預覽 -->
                     <div id="preprocessPreview" class="bg-white rounded-2xl shadow-xl p-6 hidden">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">處理結果預覽</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="preprocess.results_preview">處理結果預覽</h3>
                         <div id="preprocessImages" class="grid grid-cols-2 gap-4 max-h-96 overflow-y-auto"></div>
                     </div>
                 </div>
@@ -583,12 +583,12 @@
 
                     <!-- 截圖預覽（這就是截圖結果） -->
                     <div id="framesPreview" class="bg-white rounded-2xl shadow-xl p-6 hidden mt-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">📸 截圖結果</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4" data-i18n="video_frames.title">📸 截圖結果</h3>
                         <div class="flex justify-between items-center mb-4">
-                            <span id="framesCount" class="text-sm text-gray-600">已選擇 0 張</span>
+                            <span id="framesCount" class="text-sm text-gray-600" data-i18n="video.select_count">已選擇 0 張</span>
                             <div class="space-x-2">
-                                <button id="selectAllFrames" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg text-sm">全選</button>
-                                <button id="deselectAllFrames" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg text-sm">全不選</button>
+                                <button id="selectAllFrames" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg text-sm" data-i18n="video_frames.select_all">全選</button>
+                                <button id="deselectAllFrames" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg text-sm" data-i18n="video_frames.deselect_all">全不選</button>
                             </div>
                         </div>
                         <div id="framesGrid" class="grid grid-cols-3 gap-3 max-h-96 overflow-y-auto"></div>
@@ -673,10 +673,11 @@
                     // ===== 檢查Tab按鈕是否禁用（獨立前處理Tab已凍結） =====
                     if (this.disabled) {
                         // 顯示提示
+                        const errorMsg = typeof i18n !== 'undefined' ? i18n.t('ui.inline_js.preprocess_tab_disabled') : '獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能';
                         if (typeof showError === 'function') {
-                            showError('獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能');
+                            showError(errorMsg);
                         } else {
-                            alert('獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能');
+                            alert(errorMsg);
                         }
                         return; // 完全阻止後續執行
                     }
@@ -720,13 +721,14 @@
                     
                     // 更新結果標題（影片截圖不使用此區域，所以不更新）
                     if (tabName !== 'video') {
-                        const titles = {
-                            'ocr': '辨識結果',
-                            'preprocess': '前處理結果'
+                        const titleKeys = {
+                            'ocr': 'ui.inline_js.result_title_ocr',
+                            'preprocess': 'ui.inline_js.result_title_preprocess'
                         };
                         const titleEl = document.getElementById('resultTitle');
                         if (titleEl) {
-                            titleEl.textContent = titles[tabName] || '處理結果';
+                            const titleKey = titleKeys[tabName] || 'ui.inline_js.result_title_default';
+                            titleEl.textContent = typeof i18n !== 'undefined' ? i18n.t(titleKey) : titleEl.getAttribute('data-i18n') || '處理結果';
                         }
                     }
                 });

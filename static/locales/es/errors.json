@@ -63,6 +63,19 @@
         "no_extraction": "Por favor primero ejecute la captura de video",
         "no_selection": "Por favor seleccione al menos una captura",
         "frames_load_failed": "No se puede cargar ninguna captura",
-        "no_frames_extracted": "No se extrajo ningún fotograma"
+        "no_frames_extracted": "No se extrajo ningún fotograma",
+        "no_upload": "Por favor, cargue primero un archivo de video",
+        "load_processed_image": "Error al cargar imagen procesada",
+        "extract_pages_failed": "Error al extraer páginas"
+    },
+    "system": {
+        "unknown_error": "Error desconocido",
+        "feature_disabled": "Función deshabilitada temporalmente",
+        "maintenance_mode": "Sistema en modo mantenimiento",
+        "session_expired": "Sesión expirada. Por favor, actualice la página.",
+        "queue_full": "La cola de procesamiento está llena. Por favor, espere."
+    },
+    "download": {
+        "failed": "Error al descargar"
     }
 }

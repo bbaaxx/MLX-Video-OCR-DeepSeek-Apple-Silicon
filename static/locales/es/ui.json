@@ -165,6 +165,68 @@
         "sensitivity_label": "{label} ({value})"
     },
     "copy": {
-        "success": "¡Copiado!"
+        "success": "¡Copiado!",
+        "page_marker": "=== Página {page} ==="
+    },
+    "download": {
+        "filename_prefix": "OCR_Resultado"
+    },
+    "results": {
+        "page_label": "Página {page}",
+        "char_count": "{count} caracteres",
+        "processed_label": "(Procesado)"
+    },
+    "config": {
+        "current_config": "Config: {mode} / {subcategory} / {complexity}"
+    },
+    "preprocessing": {
+        "completed": "Preprocesamiento de fotos completo",
+        "success_count": "Procesadas {count} fotos con éxito",
+        "no_preview": "Sin vista previa",
+        "completed_status": "Completado",
+        "failed_status": "Fallido"
+    },
+    "video": {
+        "file_info": "{name} - {size} ({type})",
+        "no_thumbnail": "Sin miniatura",
+        "frame_label": "Frame {index}",
+        "select_count": "{count} seleccionadas",
+        "frames_count": "{count} frames"
+    },
+    "presets": {
+        "config_label": "Configuración Predefinida",
+        "custom": "Configuración Personalizada",
+        "scan_optimize": "Optimización de Escaneo",
+        "photo_optimize": "Optimización de Documento Fotografiado",
+        "enhance_blurry": "Mejora de Foto Desenfocada",
+        "remove_bg_only": "Solo Eliminar Fondo"
+    },
+    "preprocessing": {
+        "progress_label": "Progreso de Procesamiento",
+        "progress_text": "{current}/{total}"
+    },
+    "preprocess": {
+        "title": "Preprocesamiento de Fotos",
+        "results_preview": "Vista Previa de Resultados"
+    },
+    "buttons": {
+        "start_preprocessing": "Comenzar Preprocesamiento",
+        "download_results": "Descargar Resultados",
+        "send_to_ocr": "Enviar a OCR"
+    },
+    "zoom": {
+        "in": "Acercar",
+        "out": "Alejar"
+    },
+    "video_frames": {
+        "title": "Resultados de Captura",
+        "select_all": "Seleccionar Todo",
+        "deselect_all": "Deseleccionar Todo"
+    },
+    "inline_js": {
+        "preprocess_tab_disabled": "La función de preprocesamiento independiente está deshabilitada. Por favor use la función de preprocesamiento en la pestaña OCR o Captura de Video",
+        "result_title_ocr": "Resultados de reconocimiento",
+        "result_title_preprocess": "Resultados de preprocesamiento",
+        "result_title_default": "Resultados del procesamiento"
     }
 }

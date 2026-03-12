@@ -67,5 +67,8 @@
         "images": "images",
         "frames": "frames",
         "pages": "pages"
+    },
+    "progress": {
+        "generating_results": "Generating results..."
     }
 }

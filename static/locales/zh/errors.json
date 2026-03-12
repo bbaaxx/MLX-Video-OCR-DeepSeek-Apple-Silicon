@@ -63,6 +63,19 @@
         "no_extraction": "請先執行影片截圖",
         "no_selection": "請至少選擇一個截圖",
         "frames_load_failed": "無法載入任何截圖",
-        "no_frames_extracted": "沒有提取到任何幀"
+        "no_frames_extracted": "沒有提取到任何幀",
+        "no_upload": "請先上傳視頻文件",
+        "load_processed_image": "無法載入處理後的圖片",
+        "extract_pages_failed": "提取頁面失敗"
+    },
+    "system": {
+        "unknown_error": "未知錯誤",
+        "feature_disabled": "功能暫時停用",
+        "maintenance_mode": "系統維護模式",
+        "session_expired": "會話已過期。請刷新頁面。",
+        "queue_full": "處理隊列已滿。請等待。"
+    },
+    "download": {
+        "failed": "下載失敗"
     }
 }

@@ -19,7 +19,16 @@
         "filter": "Filtrar",
         "sort": "Ordenar",
         "refresh": "Actualizar",
-        "reset": "Restablecer"
+        "reset": "Restablecer",
+        "retry": "Reintentar",
+        "click_to_copy": "Clic para copiar",
+        "click_to_download": "Clic para descargar",
+        "delete_item": "Eliminar elemento",
+        "confirm_clear_results": "¿Está seguro de que desea borrar todos los resultados?",
+        "confirm_cancel": "¿Cancelar el procesamiento actual?",
+        "confirm_delete": "¿Eliminar este elemento del historial?",
+        "close_modal": "Cerrar",
+        "toggle_settings": "Alternar panel de configuración"
     },
     "status": {
         "loading": "Cargando...",

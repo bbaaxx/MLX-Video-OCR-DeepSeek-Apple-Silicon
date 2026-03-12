@@ -162,6 +162,68 @@
         "sensitivity_label": "{label} ({value})"
     },
     "copy": {
-        "success": "Copied!"
+        "success": "Copied!",
+        "page_marker": "=== Page {page} ==="
+    },
+    "download": {
+        "filename_prefix": "OCR_Result"
+    },
+    "results": {
+        "page_label": "Page {page}",
+        "char_count": "{count} chars",
+        "processed_label": "(Processed)"
+    },
+    "config": {
+        "current_config": "Config: {mode} / {subcategory} / {complexity}"
+    },
+    "preprocessing": {
+        "completed": "Photo preprocessing complete",
+        "success_count": "Successfully processed {count} photos",
+        "no_preview": "No preview",
+        "completed_status": "Completed",
+        "failed_status": "Failed"
+    },
+    "video": {
+        "file_info": "{name} - {size} ({type})",
+        "no_thumbnail": "No thumbnail",
+        "frame_label": "Frame {index}",
+        "select_count": "{count} selected",
+        "frames_count": "{count} frames"
+    },
+    "presets": {
+        "config_label": "Preset Configuration",
+        "custom": "Custom Settings",
+        "scan_optimize": "Scan Optimization",
+        "photo_optimize": "Photo Document Optimization",
+        "enhance_blurry": "Blurry Photo Enhancement",
+        "remove_bg_only": "Remove Background Only"
+    },
+    "preprocessing": {
+        "progress_label": "Processing Progress",
+        "progress_text": "{current}/{total}"
+    },
+    "preprocess": {
+        "title": "Photo Preprocessing",
+        "results_preview": "Processing Results Preview"
+    },
+    "buttons": {
+        "start_preprocessing": "Start Preprocessing",
+        "download_results": "Download Results",
+        "send_to_ocr": "Send to OCR"
+    },
+    "zoom": {
+        "in": "Zoom In",
+        "out": "Zoom Out"
+    },
+    "video_frames": {
+        "title": "Screenshot Results",
+        "select_all": "Select All",
+        "deselect_all": "Deselect All"
+    },
+    "inline_js": {
+        "preprocess_tab_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab",
+        "result_title_ocr": "Recognition Results",
+        "result_title_preprocess": "Preprocessing Results",
+        "result_title_default": "Processing Results"
     }
 }
