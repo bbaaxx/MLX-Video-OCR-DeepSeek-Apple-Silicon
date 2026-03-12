@@ -31,7 +31,7 @@ classifiers = [
 
 dependencies = [
     "Flask==3.0.0",
-    "mlx-vlm==0.3.5",
+    "mlx-vlm>=0.4.0",
     "mlx>=0.20.0",
     "Pillow>=10.3.0",
     "Werkzeug==3.0.1",
