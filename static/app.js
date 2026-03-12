@@ -350,7 +350,7 @@ customBatchInput.addEventListener('blur', () => {
     const errorEl = document.getElementById('batchValidationError');
     
     if (val < 1 || val > 50 || isNaN(val)) {
-        errorEl.textContent = '請輸入 1-50 之間的數字';
+        errorEl.textContent = i18n.t('ui.preprocessing.invalid_batch_size');
         errorEl.classList.remove('hidden');
         customBatchInput.value = 5;
     } else {
@@ -585,7 +585,7 @@ function handleFiles(files) {
 
 // ===== 初始化 PDF 頁面 =====
 async function initPDFPages(file) {
-    showLoading('正在載入 PDF...');
+    showLoading(i18n.t('messages.pdf.loading'));
 
     const formData = new FormData();
     formData.append('file', file);
@@ -615,7 +615,7 @@ async function initPDFPages(file) {
         for (let i = 1; i <= totalPages; i++) {
             const opt = document.createElement('option');
             opt.value = i;
-            opt.textContent = `第 ${i} 頁`;
+            opt.textContent = i18n.t('ui.pdf.page_number', { page: i });
             pageSelector.appendChild(opt);
         }
 
@@ -625,7 +625,7 @@ async function initPDFPages(file) {
             data.thumbnails.forEach((b64, idx) => {
                 const div = document.createElement('div');
                 div.className = 'thumbnail-item';
-                div.innerHTML = `<img src="${b64}" title="第 ${idx+1} 頁">`;
+                div.innerHTML = `<img src="${b64}" title="${i18n.t('ui.pdf.page_number', { page: idx + 1 })}">`;
                 
                 // === 修正 5：縮圖選擇視覺反饋 ===
                 div.addEventListener('click', () => {
@@ -642,7 +642,7 @@ async function initPDFPages(file) {
         
         thumbnailsContainer.classList.remove('hidden');
         selectPage(1);
-        batchBtnText.innerText = `開始批次處理 (共 ${totalPages} 頁)`;
+        batchBtnText.innerText = i18n.t('ui.pdf.batch_with_count', { count: totalPages });
         processBatchBtn.disabled = false;
         processSingleBtn.disabled = false;
 
@@ -659,7 +659,7 @@ processImageBtn.addEventListener('click', async () => {
     
     processImageBtn.disabled = true;
     imageBtnText.innerText = i18n.t('loading.processing');
-    showLoading('辨識中...');
+    showLoading(i18n.t('messages.ocr.processing'));
     resetResults();
 
     const formData = new FormData();
@@ -692,7 +692,7 @@ processImageBtn.addEventListener('click', async () => {
         showError(err.message);
     } finally {
         processImageBtn.disabled = false;
-        imageBtnText.innerText = '開始辨識';
+        imageBtnText.innerText = i18n.t('ui.buttons.start_recognition');
     }
 });
 
@@ -815,7 +815,7 @@ async function processBatch() {
             const errorData = await res.json().catch(() => ({ error: `HTTP ${res.status}: ${res.statusText}` }));
             hideLoading();
             console.error('❌ 批次處理失敗:', errorData);
-            showError(errorData.error || `${i18n.t('errors.processing.ocr_failed')}: HTTP ${res.status}`);
+            showError(errorData.error ? null : 'errors.processing.ocr_failed', errorData.error ? null : 'errors.processing.ocr_failed', errorData.error ? {} : {});
             return;
         }
         
@@ -823,7 +823,7 @@ async function processBatch() {
         hideLoading();
 
         if (!data.success) {
-            showError(data.error || '批次處理失敗');
+            showError(data.error ? null : 'errors.batch_failed', data.error ? null : 'errors.batch_failed');
             return;
         }
 
@@ -846,7 +846,7 @@ async function processBatch() {
         if (data.has_more) {
             currentBatchIndex = data.next_batch_index;
             batchControls.classList.remove('hidden');
-            batchBtnText.innerText = `繼續處理 (${processed}/${totalPages})`;
+            batchBtnText.innerText = i18n.t('ui.buttons.continue_processing', { processed: processed, total: totalPages });
             downloadBtn.classList.remove('hidden');
         } else {
             finishBatch();
@@ -863,8 +863,8 @@ processSingleBtn.addEventListener('click', async () => {
     if (!page || !currentTaskId) return;
 
     processSingleBtn.disabled = true;
-    singleBtnText.innerText = '辨識中...';
-    showLoading(`辨識第 ${page} 頁...`);
+    singleBtnText.innerText = i18n.t('messages.ocr.processing');
+    showLoading(i18n.t('messages.ocr.processing_page', { current: page, total: totalPages }));
     resetResults();
 
     try {
@@ -903,14 +903,14 @@ processSingleBtn.addEventListener('click', async () => {
             copyBtn.classList.remove('hidden');
             downloadBtn.classList.remove('hidden');
         } else {
-            showError(data.error || '辨識失敗');
+            showError(data.error || i18n.t('errors.recognition_failed'));
         }
     } catch (err) {
         hideLoading();
         showError(err.message);
     } finally {
         processSingleBtn.disabled = false;
-        singleBtnText.innerText = '辨識此頁';
+        singleBtnText.innerText = i18n.t('ui.buttons.recognize_page');
     }
 });
 
@@ -942,12 +942,12 @@ function displaySingleResult(title, text) {
 
 // ===== 完成批次 =====
 function finishBatch() {
-    successMessage.textContent = `全部完成！共 ${totalPages} 頁`;
+    successMessage.textContent = i18n.t('ui.pdf.batch_complete', { count: totalPages });
     successDiv.classList.remove('hidden');
     copyBtn.classList.remove('hidden');
     downloadBtn.classList.remove('hidden');
     batchControls.classList.add('hidden');
-    batchBtnText.innerText = '批次完成';
+    batchBtnText.innerText = i18n.t('ui.buttons.batch_completed');
     processBatchBtn.disabled = false;
     cleanupTask();
 }
@@ -962,7 +962,7 @@ stopBtn.addEventListener('click', () => {
     stopProcessing = true;
     batchControls.classList.add('hidden');
     hideLoading();
-    batchBtnText.innerText = '已停止';
+    batchBtnText.innerText = i18n.t('ui.buttons.batch_stopped');
     processBatchBtn.disabled = false;
     downloadBtn.classList.remove('hidden');
 });
@@ -977,7 +977,7 @@ copyBtn.addEventListener('click', () => {
     
     navigator.clipboard.writeText(fullText).then(() => {
         const orig = copyBtn.innerHTML;
-        copyBtn.innerHTML = '已複製!';
+        copyBtn.innerHTML = i18n.t('ui.copy.success');
         setTimeout(() => {
             copyBtn.innerHTML = orig;
         }, 2000);
@@ -1338,7 +1338,7 @@ function switchToPreprocessTab() {
     // 清理結果顯示區域
     if (resultDiv) {
         resultDiv.classList.remove('hidden');
-        resultDiv.innerHTML = '<p class="text-gray-400 text-center mt-20">前處理結果將顯示在這裡</p>';
+        resultDiv.innerHTML = `<p class="text-gray-400 text-center mt-20">${i18n.t('ui.preprocessing.results_placeholder')}</p>`;
     }
     if (resultTitle) {
         resultTitle.classList.remove('hidden');
@@ -1426,7 +1426,7 @@ function handlePreprocessFiles(files) {
             processPreprocessBtn.disabled = true;
         }
         showPreprocessPreview(imageFiles);
-        showLoading('載入照片中...', `已選擇 ${imageFiles.length} 張照片`);
+        showLoading(i18n.t('messages.preprocessing.loading'), i18n.t('messages.preprocessing.selected_count', { count: imageFiles.length }));
         setTimeout(() => hideLoading(), 1000);
     }
 }
@@ -1467,7 +1467,7 @@ if (processPreprocessBtn) {
         if (preprocessFiles.length === 0) return;
         
         const settings = getPreprocessSettings();
-        showLoading(i18n.t('preprocessing.processing'), i18n.t('common.status.loading'));
+        showLoading(i18n.t('messages.preprocessing.processing'), i18n.t('messages.preprocessing.loading_hint'));
         
         try {
             // 步骤1：上传文件
@@ -1491,7 +1491,7 @@ if (processPreprocessBtn) {
             
             if (!uploadData.success) {
                 hideLoading();
-                showError(uploadData.error || '上傳失敗');
+                showError(uploadData.error || i18n.t('errors.upload_failed'));
                 return;
             }
             
@@ -1576,11 +1576,11 @@ if (processPreprocessBtn) {
                     console.log(`📊 processedPdfThumbnails:`, processedPdfThumbnails.map(item => `頁${item.page}`).join(', '));
                 }
             } else {
-                showError(processData.error || '處理失敗');
+                showError(processData.error || i18n.t('errors.processing_failed', { detail: '' }));
             }
         } catch (error) {
             hideLoading();
-            showError('處理失敗: ' + error.message);
+            showError(i18n.t('errors.processing_failed', { detail: error.message }));
         }
     });
 }
@@ -1647,7 +1647,7 @@ if (skipImagePreprocessBtn) {
                 for (let i = 1; i <= totalPages; i++) {
                     const opt = document.createElement('option');
                     opt.value = i;
-                    opt.textContent = `截圖 ${i}`;
+                    opt.textContent = i18n.t('ui.video.frame_number', { index: i });
                     pageSelector.appendChild(opt);
                 }
             }
@@ -1660,7 +1660,7 @@ if (skipImagePreprocessBtn) {
                     reader.onload = function(e) {
                         const div = document.createElement('div');
                         div.className = 'thumbnail-item';
-                        div.innerHTML = `<img src="${e.target.result}" title="截圖 ${idx + 1}">`;
+                        div.innerHTML = `<img src="${e.target.result}" title="${i18n.t('ui.video.frame_number', { index: idx + 1 })}">`;
                         
                         div.addEventListener('click', () => {
                             document.querySelectorAll('.thumbnail-item').forEach(el => {
@@ -1687,7 +1687,7 @@ if (skipImagePreprocessBtn) {
                 processBatchBtn.classList.remove('hidden');
                 processBatchBtn.disabled = false;
                 if (batchBtnText) {
-                    batchBtnText.innerText = `開始批次處理 (共 ${totalPages} 張截圖)`;
+                    batchBtnText.innerText = i18n.t('ui.video.batch_with_count', { count: totalPages });
                 }
             }
             if (processSingleBtn) {
@@ -1715,7 +1715,7 @@ if (skipImagePreprocessBtn) {
                 processImageBtn.classList.remove('hidden');
                 processImageBtn.disabled = false;
                 if (imageBtnText) {
-                    imageBtnText.innerText = '開始辨識';
+                    imageBtnText.innerText = i18n.t('ui.buttons.start_recognition');
                 }
             }
             
@@ -1744,14 +1744,14 @@ if (executeImagePreprocessBtn) {
         // 檢查是否有選擇任何選項
         const hasAnyOption = Object.values(settings).some(v => v === true);
         if (!hasAnyOption) {
-            showError('請至少選擇一個處理選項，或點擊「跳過前處理」');
+            showError(null, 'errors.preprocessing.no_options');
             return;
         }
         
         const filesToProcess = isVideoMode ? preprocessFiles : [selectedFile];
-        const loadingText = isVideoMode ? `${i18n.t('preprocessing.processing')} (${filesToProcess.length} ${i18n.t('units.images')})` : i18n.t('preprocessing.processing');
+        const loadingText = isVideoMode ? `${i18n.t('messages.preprocessing.processing')} (${filesToProcess.length} ${i18n.t('units.images')})` : i18n.t('messages.preprocessing.processing');
         
-        showLoading(loadingText, '這可能需要一些時間');
+        showLoading(loadingText, i18n.t('messages.preprocessing.loading_hint'));
         
         try {
             // 步骤1：上传文件
@@ -1769,7 +1769,7 @@ if (executeImagePreprocessBtn) {
             
             if (!uploadData.success) {
                 hideLoading();
-                showError(uploadData.error || '上傳失敗');
+                showError(uploadData.error || i18n.t('errors.upload_failed'));
                 return;
             }
             
@@ -1806,10 +1806,10 @@ if (executeImagePreprocessBtn) {
                         has_path: !!r.processed_path
                     })));
                     
-                    if (preprocessResults.length === 0) {
-                        showError('處理結果不存在，請重新執行前處理');
-                        return;
-                    }
+        if (preprocessResults.length === 0) {
+            showError(null, 'errors.preprocessing.no_result');
+            return;
+        }
                     
                     // 保存處理後的截圖路徑（用於OCR時使用）
                     // 將處理結果映射到截圖索引
@@ -1846,7 +1846,7 @@ if (executeImagePreprocessBtn) {
                         processedVideoFrames.forEach((item, idx) => {
                             const div = document.createElement('div');
                             div.className = 'thumbnail-item';
-                            div.innerHTML = `<img src="${item.processed_thumb_b64}" title="截圖 ${item.frame}（已前處理）">`;
+                            div.innerHTML = `<img src="${item.processed_thumb_b64}" title="${i18n.t('ui.video.frame_number', { index: item.frame })} ${i18n.t('messages.preprocessing.completed_processed')}">`;
                             
                             div.addEventListener('click', () => {
                                 document.querySelectorAll('.thumbnail-item').forEach(el => {
@@ -1873,7 +1873,7 @@ if (executeImagePreprocessBtn) {
                         for (let i = 1; i <= totalPages; i++) {
                             const opt = document.createElement('option');
                             opt.value = i;
-                            opt.textContent = `截圖 ${i}`;
+                            opt.textContent = i18n.t('ui.video.frame_number', { index: i });
                             pageSelector.appendChild(opt);
                         }
                         console.log(`✅ 已生成截圖選擇器，共 ${totalPages} 張`);
@@ -1897,7 +1897,7 @@ if (executeImagePreprocessBtn) {
                         processBatchBtn.disabled = false;
                         // 更新批次處理按鈕文本
                         if (batchBtnText) {
-                            batchBtnText.innerText = `開始批次處理 (共 ${totalPages} 張截圖)`;
+                            batchBtnText.innerText = i18n.t('ui.video.batch_with_count', { count: totalPages });
                         }
                     }
                     if (processSingleBtn) {
@@ -1986,11 +1986,11 @@ if (executeImagePreprocessBtn) {
                     console.log('✅ 圖片前處理完成');
                 }
             } else {
-                showError(processData.error || '處理失敗');
+                showError(processData.error || i18n.t('errors.processing_failed', { detail: '' }));
             }
         } catch (error) {
             hideLoading();
-            showError('處理失敗: ' + error.message);
+            showError(null, 'errors.processing_failed', { detail: error.message });
         }
     });
 }
@@ -1999,7 +1999,7 @@ if (executeImagePreprocessBtn) {
 if (skipPdfPreprocessBtn) {
     skipPdfPreprocessBtn.addEventListener('click', async () => {
         if (!selectedFile) {
-            showError('請先上傳PDF');
+            showError(null, 'errors.pdf.no_upload');
             return;
         }
         
@@ -2028,13 +2028,13 @@ if (skipPdfPreprocessBtn) {
 if (executePdfPreprocessBtn) {
     executePdfPreprocessBtn.addEventListener('click', async () => {
         if (!selectedFile) {
-            showError('請先上傳PDF');
+            showError(null, 'errors.pdf.no_upload');
             return;
         }
         
         // 先初始化PDF任務（如果還沒有）
         if (!currentTaskId) {
-            showLoading('正在載入 PDF...');
+            showLoading(i18n.t('messages.pdf.loading'));
             
             try {
                 const formData = new FormData();
@@ -2052,7 +2052,7 @@ if (executePdfPreprocessBtn) {
                 
                 if (!initData.success) {
                     hideLoading();
-                    showError(initData.error || 'PDF 載入失敗');
+                    showError(initData.error || i18n.t('errors.pdf.load_failed', { detail: '' }));
                     return;
                 }
                 
@@ -2062,7 +2062,7 @@ if (executePdfPreprocessBtn) {
                 isPdfPreprocessMode = true;
             } catch (error) {
                 hideLoading();
-                showError('PDF 載入失敗: ' + error.message);
+                showError(null, 'errors.pdf.load_failed', { detail: error.message });
                 return;
             }
         } else {
@@ -2071,7 +2071,7 @@ if (executePdfPreprocessBtn) {
         }
         
         // 提取PDF頁面為圖片文件
-        showLoading('正在提取PDF頁面...', `共 ${totalPages} 頁`);
+        showLoading(i18n.t('messages.pdf.extracting'), i18n.t('messages.pdf.total_pages', { count: totalPages }));
         
         try {
             const extractResponse = await fetch('/api/pdf/extract-pages', {
@@ -2100,7 +2100,8 @@ if (executePdfPreprocessBtn) {
             hideLoading();
             
             if (!extractData.success) {
-                showError(extractData.error || '提取頁面失敗');
+                const errMsg = extractData.error || '';
+                showError(errMsg ? `${i18n.t('errors.pdf.extract_failed', { detail: errMsg })}` : i18n.t('errors.pdf.extract_failed'));
                 console.error('Extract pages failed:', extractData.error);
                 return;
             }
@@ -2132,7 +2133,7 @@ if (executePdfPreprocessBtn) {
             console.log(`📊 載入結果: 成功載入 ${imageFiles.length}/${extractData.images.length} 張圖片`);
             
             if (imageFiles.length === 0) {
-                showError('無法載入提取的圖片文件');
+                showError(null, 'errors.pdf.image_load_failed');
                 return;
             }
             
@@ -2190,7 +2191,7 @@ if (executePdfPreprocessBtn) {
             console.log(`✅ 已提取 ${imageFiles.length} 頁PDF，切換到前處理Tab`);
         } catch (error) {
             hideLoading();
-            showError('提取頁面失敗: ' + error.message);
+            showError(null, 'errors.processing_failed', { detail: error.message });
         }
     });
 }
@@ -2224,11 +2225,11 @@ function displayPreprocessResults(results) {
 if (downloadPreprocessBtn) {
     downloadPreprocessBtn.addEventListener('click', async () => {
     if (!currentPreprocessTaskId) {
-        showError('找不到前處理任務ID，請重新執行前處理');
+        showError(null, 'errors.preprocessing.task_not_found');
         return;
     }
     
-    showLoading('準備下載...');
+    showLoading(i18n.t('messages.preprocessing.preparing_download'));
     
     try {
         console.log(`📥 開始下載前處理結果，task_id: ${currentPreprocessTaskId}`);
@@ -2259,7 +2260,7 @@ if (downloadPreprocessBtn) {
     } catch (error) {
         hideLoading();
         console.error('下載失敗:', error);
-        showError('下載失敗: ' + error.message);
+        showError(null, 'errors.download_failed', { detail: error.message });
     }
     });
 }
@@ -2268,7 +2269,7 @@ if (downloadPreprocessBtn) {
 if (sendToOcrBtn) {
     sendToOcrBtn.addEventListener('click', async () => {
     if (preprocessFiles.length === 0) {
-        showError('請先上傳並處理照片');
+        showError(null, 'errors.preprocessing.no_upload_process');
         return;
     }
     
@@ -2299,7 +2300,7 @@ if (sendToOcrBtn) {
         })));
         
         if (preprocessResults.length === 0) {
-            showError('處理結果不存在，請重新執行前處理');
+            showError(null, 'errors.preprocessing.no_result');
             return;
         }
         
@@ -2338,7 +2339,7 @@ if (sendToOcrBtn) {
             processedVideoFrames.forEach((item, idx) => {
                 const div = document.createElement('div');
                 div.className = 'thumbnail-item';
-                div.innerHTML = `<img src="${item.processed_thumb_b64}" title="截圖 ${item.frame}（已前處理）">`;
+                div.innerHTML = `<img src="${item.processed_thumb_b64}" title="${i18n.t('ui.video.frame_number', { index: item.frame })} ${i18n.t('messages.preprocessing.completed_processed')}">`;
                 
                 div.addEventListener('click', () => {
                     document.querySelectorAll('.thumbnail-item').forEach(el => {
@@ -2365,7 +2366,7 @@ if (sendToOcrBtn) {
             for (let i = 1; i <= totalPages; i++) {
                 const opt = document.createElement('option');
                 opt.value = i;
-                opt.textContent = `截圖 ${i}`;
+                opt.textContent = i18n.t('ui.video.frame_number', { index: i });
                 pageSelector.appendChild(opt);
             }
             console.log(`✅ 已生成截圖選擇器，共 ${totalPages} 張`);
@@ -2389,7 +2390,7 @@ if (sendToOcrBtn) {
             processBatchBtn.disabled = false;
             // 更新批次處理按鈕文本
             if (batchBtnText) {
-                batchBtnText.innerText = `開始批次處理 (共 ${totalPages} 張截圖)`;
+                batchBtnText.innerText = i18n.t('ui.video.batch_with_count', { count: totalPages });
             }
         }
         if (processSingleBtn) {
@@ -2419,7 +2420,7 @@ if (sendToOcrBtn) {
         })));
         
         if (preprocessResults.length === 0) {
-            showError('處理結果不存在，請重新執行前處理');
+            showError(null, 'errors.preprocessing.no_result');
             return;
         }
         
@@ -2495,7 +2496,7 @@ if (sendToOcrBtn) {
             for (let i = 1; i <= totalPages; i++) {
                 const opt = document.createElement('option');
                 opt.value = i;
-                opt.textContent = `第 ${i} 頁`;
+                opt.textContent = i18n.t('ui.pdf.page_number', { page: i });
                 pageSelector.appendChild(opt);
             }
             console.log(`✅ 已生成頁面選擇器，共 ${totalPages} 頁`);
@@ -2519,7 +2520,7 @@ if (sendToOcrBtn) {
             processBatchBtn.disabled = false;
             // 更新批次處理按鈕文本（像 initPDFPages 一樣）
             if (batchBtnText) {
-        batchBtnText.innerText = `${i18n.t('buttons.start_batch')} (共 ${totalPages} 頁)`;
+        batchBtnText.innerText = i18n.t('ui.pdf.batch_with_count', { count: totalPages });
             }
         }
         if (processSingleBtn) {
@@ -2536,14 +2537,14 @@ if (sendToOcrBtn) {
     } else {
         // ===== 修正：圖片前處理：使用處理後的圖片，而不是原始圖片 =====
         if (preprocessResults.length === 0 || !preprocessResults[0].processed_path) {
-            showError('處理結果不存在，請重新執行前處理');
+            showError(null, 'errors.preprocessing.no_result');
             return;
         }
         
         const firstResult = preprocessResults[0];
         
         // 下載處理後的圖片並轉換為File對象
-        showLoading('載入處理後的圖片...');
+        showLoading(i18n.t('messages.preprocessing.loading_result'));
         
         try {
             // ===== 修正：將完整路徑轉換為相對路徑，以便通過 /api/files/ 訪問 =====
@@ -2592,7 +2593,7 @@ if (sendToOcrBtn) {
                 pdfModeSection.classList.add('hidden');
                 processImageBtn.classList.remove('hidden');
                 if (imageBtnText) {
-                    imageBtnText.innerText = '開始辨識';
+                    imageBtnText.innerText = i18n.t('ui.buttons.start_recognition');
                 }
             };
             reader.readAsDataURL(processedImageFile);
@@ -2600,7 +2601,7 @@ if (sendToOcrBtn) {
             console.log('✅ 已載入處理後的圖片並發送到 OCR');
         } catch (error) {
             hideLoading();
-            showError('載入處理後的圖片失敗: ' + error.message);
+            showError(null, 'errors.preprocessing.load_failed', { detail: error.message });
         }
     }
     });
@@ -2664,10 +2665,14 @@ document.getElementById('extractionMethod').addEventListener('change', function(
 
 // ===== 場景敏感度滑塊顯示（修正 1） =====
 document.getElementById('sceneSensitivity').addEventListener('input', function() {
-    const labels = ['低 (更多幀)', '中 (0.5)', '高 (更少幀)'];
+    const labels = [
+        i18n.t('ui.video.sensitivity_low'),
+        i18n.t('ui.video.sensitivity_medium'),
+        i18n.t('ui.video.sensitivity_high')
+    ];
     const value = parseFloat(this.value);
     const index = Math.round((value - 0.1) / 0.9 * 2);
-    document.getElementById('sensitivityLabel').textContent = `${labels[Math.min(2, Math.max(0, index))]} (${value})`;
+    document.getElementById('sensitivityLabel').textContent = i18n.t('ui.video.sensitivity_label', { label: labels[Math.min(2, Math.max(0, index))], value: value });
 });
 
 // ===== 執行截圖 =====
@@ -2675,7 +2680,7 @@ extractFramesBtn.addEventListener('click', async () => {
     if (!videoFile) return;
     
     const settings = getVideoSettings();
-    showLoading('影片截圖中...', '根據影片長度可能需要一些時間');
+    showLoading(i18n.t('messages.video.extracting_frames'), i18n.t('messages.video.extraction_hint'));
     
     try {
         // 步骤1：上传视频，获取task_id
@@ -2691,7 +2696,7 @@ extractFramesBtn.addEventListener('click', async () => {
         
         if (!uploadData.success) {
             hideLoading();
-            showError(uploadData.error || '上傳失敗');
+            showError(uploadData.error || i18n.t('errors.upload_failed'));
             return;
         }
         
@@ -2719,11 +2724,11 @@ extractFramesBtn.addEventListener('click', async () => {
                 sendFramesToOcrBtn.classList.remove('hidden');
             }
         } else {
-            showError(extractData.error || '截圖失敗');
+            showError(extractData.error || i18n.t('errors.video.extract_failed', { detail: '' }));
         }
     } catch (error) {
         hideLoading();
-        showError('截圖失敗: ' + error.message);
+        showError(null, 'errors.video.extract_failed', { detail: error.message });
     }
 });
 
@@ -2793,7 +2798,7 @@ function displayExtractedFrames(frames) {
     // 檢查是否有有效的幀數據
     if (!frames || frames.length === 0) {
         console.warn('⚠️ 沒有有效的幀數據');
-        gridElement.innerHTML = '<p class="text-gray-400 text-center col-span-3">沒有提取到任何幀</p>';
+        gridElement.innerHTML = `<p class="text-gray-400 text-center col-span-3">${i18n.t('errors.video.no_frames_extracted')}</p>`;
         updateFramesCount();
         return;
     }
@@ -2831,7 +2836,7 @@ function displayExtractedFrames(frames) {
 // ===== 更新幀計數 =====
 function updateFramesCount() {
     const selectedCount = document.querySelectorAll('.frame-checkbox:checked').length;
-    framesCount.textContent = `已選擇 ${selectedCount} 張`;
+    framesCount.textContent = i18n.t('ui.video.frames_selected', { count: selectedCount });
     
     // 如果有選中的截圖，顯示"發送到OCR"按鈕；否則隱藏
     if (sendFramesToOcrBtn) {
@@ -2846,7 +2851,7 @@ function updateFramesCount() {
 // === 修正 3：下載視頻幀完整實現 ===
 downloadFramesBtn.addEventListener('click', async () => {
     if (!currentVideoTaskId) {
-        showError('找不到視頻任務ID，請重新執行截圖');
+        showError(null, 'errors.video.task_not_found');
         return;
     }
     
@@ -2854,11 +2859,11 @@ downloadFramesBtn.addEventListener('click', async () => {
         .map(cb => parseInt(cb.dataset.index));
     
     if (selectedIndices.length === 0) {
-        showError('請選擇至少一個幀');
+        showError(null, 'errors.video.no_frames_selected');
         return;
     }
     
-    showLoading('準備下載...');
+    showLoading(i18n.t('messages.video.preparing_download'));
     
     try {
         const response = await fetch('/api/video/download', {
@@ -2886,7 +2891,7 @@ downloadFramesBtn.addEventListener('click', async () => {
         hideLoading();
     } catch (error) {
         hideLoading();
-        showError('下載失敗: ' + error.message);
+        showError(null, 'errors.download_failed', { detail: error.message });
     }
 });
 
@@ -2923,7 +2928,7 @@ if (deselectAllFrames) {
 if (sendFramesToOcrBtn) {
     sendFramesToOcrBtn.addEventListener('click', async () => {
         if (!extractedFrames || extractedFrames.length === 0) {
-            showError('請先執行影片截圖');
+            showError(null, 'errors.video.no_extraction');
             return;
         }
         
@@ -2933,11 +2938,11 @@ if (sendFramesToOcrBtn) {
             .sort((a, b) => a - b); // 排序以保持順序
         
         if (selectedIndices.length === 0) {
-            showError('請至少選擇一個截圖');
+            showError(null, 'errors.video.no_selection');
             return;
         }
         
-        showLoading(`載入截圖中... (${selectedIndices.length} 張)`, '正在從服務器下載圖片');
+        showLoading(i18n.t('messages.video.loading_frames', { count: selectedIndices.length }), i18n.t('messages.video.downloading_frames'));
         
         try {
             // ===== 修正：載入所有選中的截圖，而不只是第一張 =====
@@ -2992,7 +2997,7 @@ if (sendFramesToOcrBtn) {
             
             if (imageFiles.length === 0) {
                 hideLoading();
-                showError('無法載入任何截圖');
+                showError(null, 'errors.video.frames_load_failed');
                 return;
             }
             
@@ -3049,7 +3054,7 @@ if (sendFramesToOcrBtn) {
         } catch (error) {
             hideLoading();
             console.error('載入影片截圖失敗:', error);
-            showError('載入影片截圖失敗: ' + error.message);
+            showError(null, 'errors.video.frames_load_failed', { detail: error.message });
         }
     });
 }

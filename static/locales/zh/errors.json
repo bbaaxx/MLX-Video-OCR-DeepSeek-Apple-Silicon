@@ -37,5 +37,32 @@
         "unknown_error": "未知錯誤",
         "feature_disabled": "功能暫時停用",
         "maintenance_mode": "系統維護模式"
+    },
+    "processing_failed": "處理失敗: {detail}",
+    "download_failed": "下載失敗: {detail}",
+    "batch_failed": "批次處理失敗",
+    "recognition_failed": "辨識失敗",
+    "upload_failed": "上傳失敗",
+    "preprocessing": {
+        "no_options": "請至少選擇一個處理選項，或點擊「跳過前處理」",
+        "no_result": "處理結果不存在，請重新執行前處理",
+        "task_not_found": "找不到前處理任務ID，請重新執行前處理",
+        "no_upload_process": "請先上傳並處理照片",
+        "load_failed": "載入處理後的圖片失敗: {detail}"
+    },
+    "pdf": {
+        "no_upload": "請先上傳PDF",
+        "load_failed": "PDF 載入失敗: {detail}",
+        "image_load_failed": "無法載入提取的圖片文件",
+        "extract_failed": "提取頁面失敗: {detail}"
+    },
+    "video": {
+        "extract_failed": "截圖失敗: {detail}",
+        "task_not_found": "找不到視頻任務ID，請重新執行截圖",
+        "no_frames_selected": "請選擇至少一個幀",
+        "no_extraction": "請先執行影片截圖",
+        "no_selection": "請至少選擇一個截圖",
+        "frames_load_failed": "無法載入任何截圖",
+        "no_frames_extracted": "沒有提取到任何幀"
     }
 }

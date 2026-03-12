@@ -33,6 +33,9 @@
         "start_recognition": "Start Recognition",
         "start_batch": "Start Batch Processing",
         "recognize_page": "Recognize This Page",
+        "continue_processing": "Continue Processing ({processed}/{total})",
+        "batch_completed": "Batch Completed",
+        "batch_stopped": "Stopped",
         "start_preprocessing": "Start Preprocessing",
         "download_results": "Download Results",
         "send_to_ocr": "Send to OCR",
@@ -142,5 +145,23 @@
     },
     "errors": {
         "preprocessing_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab"
+    },
+    "preprocessing": {
+        "invalid_batch_size": "Please enter a number between 1-50",
+        "results_placeholder": "Preprocessing results will appear here"
+    },
+    "pdf": {
+        "page_number": "Page {page}",
+        "batch_complete": "All complete! Total {count} pages",
+        "batch_with_count": "Start Batch Processing ({count} pages)"
+    },
+    "video": {
+        "batch_with_count": "Start Batch Processing ({count} screenshots)",
+        "frame_number": "Screenshot {index}",
+        "frames_selected": "{count} selected",
+        "sensitivity_label": "{label} ({value})"
+    },
+    "copy": {
+        "success": "Copied!"
     }
 }

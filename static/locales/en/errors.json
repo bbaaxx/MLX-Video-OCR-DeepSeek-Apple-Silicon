@@ -37,5 +37,32 @@
         "unknown_error": "Unknown error",
         "feature_disabled": "Feature temporarily disabled",
         "maintenance_mode": "System maintenance mode"
+    },
+    "processing_failed": "Processing failed: {detail}",
+    "download_failed": "Download failed: {detail}",
+    "batch_failed": "Batch processing failed",
+    "recognition_failed": "Recognition failed",
+    "upload_failed": "Upload failed",
+    "preprocessing": {
+        "no_options": "Please select at least one processing option, or click 'Skip Preprocessing'",
+        "no_result": "Processing result does not exist, please re-run preprocessing",
+        "task_not_found": "Cannot find preprocessing task ID, please re-run preprocessing",
+        "no_upload_process": "Please upload and process photos first",
+        "load_failed": "Failed to load processed image: {detail}"
+    },
+    "pdf": {
+        "no_upload": "Please upload PDF first",
+        "load_failed": "PDF load failed: {detail}",
+        "image_load_failed": "Cannot load extracted image file",
+        "extract_failed": "Page extraction failed: {detail}"
+    },
+    "video": {
+        "extract_failed": "Screenshot failed: {detail}",
+        "task_not_found": "Cannot find video task ID, please re-run screenshot",
+        "no_frames_selected": "Please select at least one frame",
+        "no_extraction": "Please run video screenshot first",
+        "no_selection": "Please select at least one screenshot",
+        "frames_load_failed": "Cannot load any screenshots",
+        "no_frames_extracted": "No frames extracted"
     }
 }

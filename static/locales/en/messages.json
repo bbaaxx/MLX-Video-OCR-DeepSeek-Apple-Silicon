@@ -21,8 +21,19 @@
         "processing": "Preprocessing image...",
         "processing_batch": "Preprocessing images {current} of {total}...",
         "completed": "Preprocessing completed",
+        "completed_processed": "(Processed)",
         "error_processing": "Preprocessing error",
-        "ready_to_ocr": "Ready to send to OCR"
+        "ready_to_ocr": "Ready to send to OCR",
+        "loading": "Loading images...",
+        "selected_count": "{count} images selected",
+        "loading_hint": "This may take a while",
+        "preparing_download": "Preparing download...",
+        "loading_result": "Loading processed image..."
+    },
+    "pdf": {
+        "loading": "Loading PDF...",
+        "extracting": "Extracting PDF pages...",
+        "total_pages": "{count} pages total"
     },
     "video": {
         "processing": "Extracting frames from video...",
@@ -30,7 +41,12 @@
         "extracting": "Extracting frame {current} of {total}...",
         "completed": "Extraction completed",
         "error_processing": "Error processing video",
-        "frames_extracted": "{count} frames extracted"
+        "frames_extracted": "{count} frames extracted",
+        "extracting_frames": "Extracting screenshots...",
+        "extraction_hint": "This may take a while depending on video length",
+        "preparing_download": "Preparing download...",
+        "loading_frames": "Loading screenshots... ({count} frames)",
+        "downloading_frames": "Downloading images from server"
     },
     "batch": {
         "processing_batch": "Processing batch {current} of {total}...",
@@ -46,5 +62,10 @@
     "copy": {
         "success": "Text copied to clipboard",
         "error": "Error copying text"
+    },
+    "units": {
+        "images": "images",
+        "frames": "frames",
+        "pages": "pages"
     }
 }

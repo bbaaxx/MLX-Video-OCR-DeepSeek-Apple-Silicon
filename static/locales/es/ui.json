@@ -36,6 +36,9 @@
         "start_recognition": "Iniciar Reconocimiento",
         "start_batch": "Comenzar Proceso por Lotes",
         "recognize_page": "Reconocer esta Página",
+        "continue_processing": "Continuar Procesando ({processed}/{total})",
+        "batch_completed": "Lote Completado",
+        "batch_stopped": "Detenido",
         "start_preprocessing": "Comenzar Preprocesamiento",
         "download_results": "Descargar Resultados",
         "send_to_ocr": "Enviar a OCR",
@@ -145,5 +148,23 @@
     },
     "errors": {
         "preprocessing_disabled": "La función de preprocesamiento independiente está deshabilitada. Por favor use la función de preprocesamiento en la pestaña OCR o Captura de Video"
+    },
+    "preprocessing": {
+        "invalid_batch_size": "Por favor ingrese un número entre 1-50",
+        "results_placeholder": "Los resultados del preprocesamiento aparecerán aquí"
+    },
+    "pdf": {
+        "page_number": "Página {page}",
+        "batch_complete": "¡Todo completo! Total {count} páginas",
+        "batch_with_count": "Comenzar Proceso por Lotes ({count} páginas)"
+    },
+    "video": {
+        "batch_with_count": "Comenzar Proceso por Lotes ({count} capturas)",
+        "frame_number": "Captura {index}",
+        "frames_selected": "{count} seleccionadas",
+        "sensitivity_label": "{label} ({value})"
+    },
+    "copy": {
+        "success": "¡Copiado!"
     }
 }

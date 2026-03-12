@@ -21,8 +21,19 @@
         "processing": "前處理圖片中...",
         "processing_batch": "前處理圖片 {current}/{total}...",
         "completed": "前處理完成",
+        "completed_processed": "（已前處理）",
         "error_processing": "前處理錯誤",
-        "ready_to_ocr": "準備發送到 OCR"
+        "ready_to_ocr": "準備發送到 OCR",
+        "loading": "正在載入照片...",
+        "selected_count": "已選擇 {count} 張照片",
+        "loading_hint": "這可能需要一些時間",
+        "preparing_download": "準備下載...",
+        "loading_result": "正在載入處理後的圖片..."
+    },
+    "pdf": {
+        "loading": "正在載入 PDF...",
+        "extracting": "正在提取 PDF 頁面...",
+        "total_pages": "共 {count} 頁"
     },
     "video": {
         "processing": "從影片提取幀中...",
@@ -30,7 +41,12 @@
         "extracting": "提取第 {current} 幀，共 {total} 幀...",
         "completed": "提取完成",
         "error_processing": "處理影片時發生錯誤",
-        "frames_extracted": "已提取 {count} 幀"
+        "frames_extracted": "已提取 {count} 幀",
+        "extracting_frames": "影片截圖中...",
+        "extraction_hint": "根據影片長度可能需要一些時間",
+        "preparing_download": "準備下載...",
+        "loading_frames": "正在載入截圖... ({count} 張)",
+        "downloading_frames": "正在從服務器下載圖片"
     },
     "batch": {
         "processing_batch": "處理第 {current} 批，共 {total} 批...",
@@ -46,5 +62,10 @@
     "copy": {
         "success": "文字已複製到剪貼簿",
         "error": "複製文字時發生錯誤"
+    },
+    "units": {
+        "images": "張圖片",
+        "frames": "幀",
+        "pages": "頁"
     }
 }

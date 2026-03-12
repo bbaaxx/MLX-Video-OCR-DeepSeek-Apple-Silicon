@@ -37,5 +37,32 @@
         "unknown_error": "Error desconocido",
         "feature_disabled": "Función deshabilitada temporalmente",
         "maintenance_mode": "Sistema en modo mantenimiento"
+    },
+    "processing_failed": "El procesamiento falló: {detail}",
+    "download_failed": "Error al descargar: {detail}",
+    "batch_failed": "El procesamiento por lotes falló",
+    "recognition_failed": "El reconocimiento falló",
+    "upload_failed": "Error al subir",
+    "preprocessing": {
+        "no_options": "Por favor seleccione al menos una opción de procesamiento, o haga clic en 'Omitir Preprocesamiento'",
+        "no_result": "El resultado del procesamiento no existe, por favor ejecute el preprocesamiento nuevamente",
+        "task_not_found": "No se puede encontrar el ID de la tarea de preprocesamiento, por favor ejecute el preprocesamiento nuevamente",
+        "no_upload_process": "Por favor primero suba y procese las fotos",
+        "load_failed": "Error al cargar la imagen procesada: {detail}"
+    },
+    "pdf": {
+        "no_upload": "Por favor primero suba el PDF",
+        "load_failed": "Error al cargar el PDF: {detail}",
+        "image_load_failed": "No se puede cargar el archivo de imagen extraído",
+        "extract_failed": "Error al extraer la página: {detail}"
+    },
+    "video": {
+        "extract_failed": "Error al capturar: {detail}",
+        "task_not_found": "No se puede encontrar el ID de la tarea de video, por favor ejecute la captura nuevamente",
+        "no_frames_selected": "Por favor seleccione al menos un fotograma",
+        "no_extraction": "Por favor primero ejecute la captura de video",
+        "no_selection": "Por favor seleccione al menos una captura",
+        "frames_load_failed": "No se puede cargar ninguna captura",
+        "no_frames_extracted": "No se extrajo ningún fotograma"
     }
 }

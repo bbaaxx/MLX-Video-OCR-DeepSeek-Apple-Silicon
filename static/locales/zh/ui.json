@@ -36,6 +36,9 @@
         "start_recognition": "開始辨識",
         "start_batch": "開始批次處理",
         "recognize_page": "辨識此頁",
+        "continue_processing": "繼續處理 ({processed}/{total})",
+        "batch_completed": "批次完成",
+        "batch_stopped": "已停止",
         "start_preprocessing": "開始前處理",
         "download_results": "下載處理結果",
         "send_to_ocr": "發送至 OCR",
@@ -145,5 +148,23 @@
     },
     "errors": {
         "preprocessing_disabled": "獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能"
+    },
+    "preprocessing": {
+        "invalid_batch_size": "請輸入 1-50 之間的數字",
+        "results_placeholder": "前處理結果將顯示在這裡"
+    },
+    "pdf": {
+        "page_number": "第 {page} 頁",
+        "batch_complete": "全部完成！共 {count} 頁",
+        "batch_with_count": "開始批次處理（共 {count} 頁）"
+    },
+    "video": {
+        "batch_with_count": "開始批次處理（共 {count} 張截圖）",
+        "frame_number": "截圖 {index}",
+        "frames_selected": "已選擇 {count} 張",
+        "sensitivity_label": "{label} ({value})"
+    },
+    "copy": {
+        "success": "已複製!"
     }
 }

@@ -21,8 +21,19 @@
         "processing": "Preprocesando imagen...",
         "processing_batch": "Preprocesando imágenes {current} de {total}...",
         "completed": "Preprocesamiento completado",
+        "completed_processed": "(Procesado)",
         "error_processing": "Error en el preprocesamiento",
-        "ready_to_ocr": "Listo para enviar a OCR"
+        "ready_to_ocr": "Listo para enviar a OCR",
+        "loading": "Cargando imágenes...",
+        "selected_count": "{count} imágenes seleccionadas",
+        "loading_hint": "Esto puede tomar un tiempo",
+        "preparing_download": "Preparando descarga...",
+        "loading_result": "Cargando imagen procesada..."
+    },
+    "pdf": {
+        "loading": "Cargando PDF...",
+        "extracting": "Extrayendo páginas PDF...",
+        "total_pages": "{count} páginas en total"
     },
     "video": {
         "processing": "Extrayendo fotogramas del video...",
@@ -30,7 +41,12 @@
         "extracting": "Extrayendo fotograma {current} de {total}...",
         "completed": "Extracción completada",
         "error_processing": "Error al procesar video",
-        "frames_extracted": "{count} fotogramas extraídos"
+        "frames_extracted": "{count} fotogramas extraídos",
+        "extracting_frames": "Extrayendo capturas...",
+        "extraction_hint": "Esto puede tomar un tiempo dependiendo de la longitud del video",
+        "preparing_download": "Preparando descarga...",
+        "loading_frames": "Cargando capturas... ({count} fotogramas)",
+        "downloading_frames": "Descargando imágenes del servidor"
     },
     "batch": {
         "processing_batch": "Procesando lote {current} de {total}...",
@@ -46,5 +62,10 @@
     "copy": {
         "success": "Texto copiado al portapapeles",
         "error": "Error al copiar texto"
+    },
+    "units": {
+        "images": "imágenes",
+        "frames": "fotogramas",
+        "pages": "páginas"
     }
 }
