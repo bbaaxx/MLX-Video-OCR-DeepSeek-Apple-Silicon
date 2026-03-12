@@ -25,7 +25,10 @@
         "title": "辨識結果",
         "copy_all": "複製全部",
         "download_txt": "下載 TXT",
-        "default_text": "請上傳檔案開始處理"
+        "default_text": "請上傳檔案開始處理",
+        "page_label": "第 {page} 頁",
+        "char_count": "{count} 字",
+        "processed_label": "（已前處理）"
     },
     "progress": {
         "label": "進度：",
@@ -75,7 +78,16 @@
         "preset_remove_bg_only": "🎨 僅去背景",
         "preset_photo_optimize": "📷 照片優化",
         "preset_scan_optimize": "📄 掃描優化",
-        "preset_enhance_blurry": "🔍 模糊增強"
+        "preset_enhance_blurry": "🔍 模糊增強",
+        "invalid_batch_size": "請輸入 1-50 之間的數字",
+        "results_placeholder": "前處理結果將顯示在這裡",
+        "completed": "照片前處理完成",
+        "success_count": "成功處理 {count} 張照片",
+        "no_preview": "無預覽",
+        "completed_status": "處理完成",
+        "failed_status": "處理失敗",
+        "progress_label": "處理進度",
+        "progress_text": "{current}/{total}"
     },
     "video": {
         "title": "影片截圖",
@@ -95,7 +107,16 @@
         "sensitivity_high": "高 (更少幀)",
         "start_capture": "開始截圖",
         "download_frames": "下載截圖",
-        "send_to_ocr": "發送到 OCR"
+        "send_to_ocr": "發送到 OCR",
+        "batch_with_count": "開始批次處理（共 {count} 張截圖）",
+        "frame_number": "截圖 {index}",
+        "frames_selected": "已選擇 {count} 張",
+        "sensitivity_label": "{label} ({value})",
+        "file_info": "{name} - {size} ({type})",
+        "no_thumbnail": "無縮圖",
+        "frame_label": "幀 {index}",
+        "select_count": "已選擇 {count} 張",
+        "frames_count": "共 {count} 張"
     },
     "pdf": {
         "batch_processing": "批次處理",
@@ -112,7 +133,10 @@
         "batch_size_2": "2 頁（推薦）",
         "batch_size_3": "3 頁",
         "batch_size_5": "5 頁",
-        "batch_size_10": "10 頁"
+        "batch_size_10": "10 頁",
+        "page_number": "第 {page} 頁",
+        "batch_complete": "全部完成！共 {count} 頁",
+        "batch_with_count": "開始批次處理（共 {count} 頁）"
     },
     "config": {
         "content_type": "📄 內容類型",
@@ -125,7 +149,8 @@
         "small": "Small (100)",
         "medium": "Medium (256)",
         "large": "Large (400)",
-        "gundam": "Gundam (800)"
+        "gundam": "Gundam (800)",
+        "current_config": "配置: {mode} / {subcategory} / {complexity}"
     },
     "presets": {
         "title": "⚡ 快速預設組合（一鍵套用）",
@@ -137,7 +162,9 @@
         "scan_optimization": "掃描件優化",
         "photo_doc_optimization": "拍照文檔優化",
         "blurry_photo_enhance": "模糊照片增強",
-        "remove_background_only": "僅去背景"
+        "remove_background_only": "僅去背景",
+        "config_label": "預設配置",
+        "custom": "自訂設定"
     },
     "loading": {
         "processing": "處理中...",
@@ -149,21 +176,6 @@
     "errors": {
         "preprocessing_disabled": "獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能"
     },
-    "preprocessing": {
-        "invalid_batch_size": "請輸入 1-50 之間的數字",
-        "results_placeholder": "前處理結果將顯示在這裡"
-    },
-    "pdf": {
-        "page_number": "第 {page} 頁",
-        "batch_complete": "全部完成！共 {count} 頁",
-        "batch_with_count": "開始批次處理（共 {count} 頁）"
-    },
-    "video": {
-        "batch_with_count": "開始批次處理（共 {count} 張截圖）",
-        "frame_number": "截圖 {index}",
-        "frames_selected": "已選擇 {count} 張",
-        "sensitivity_label": "{label} ({value})"
-    },
     "copy": {
         "success": "已複製!",
         "page_marker": "=== 第 {page} 頁 ==="
@@ -171,48 +183,9 @@
     "download": {
         "filename_prefix": "OCR_結果"
     },
-    "results": {
-        "page_label": "第 {page} 頁",
-        "char_count": "{count} 字",
-        "processed_label": "（已前處理）"
-    },
-    "config": {
-        "current_config": "配置: {mode} / {subcategory} / {complexity}"
-    },
-    "preprocessing": {
-        "completed": "照片前處理完成",
-        "success_count": "成功處理 {count} 張照片",
-        "no_preview": "無預覽",
-        "completed_status": "處理完成",
-        "failed_status": "處理失敗"
-    },
-    "video": {
-        "file_info": "{name} - {size} ({type})",
-        "no_thumbnail": "無縮圖",
-        "frame_label": "幀 {index}",
-        "select_count": "已選擇 {count} 張",
-        "frames_count": "共 {count} 張"
-    },
-    "presets": {
-        "config_label": "預設配置",
-        "custom": "自訂設定",
-        "scan_optimize": "掃描件優化",
-        "photo_optimize": "拍照文檔優化",
-        "enhance_blurry": "模糊照片增強",
-        "remove_bg_only": "僅去背景"
-    },
-    "preprocessing": {
-        "progress_label": "處理進度",
-        "progress_text": "{current}/{total}"
-    },
     "preprocess": {
         "title": "照片前處理",
         "results_preview": "處理結果預覽"
-    },
-    "buttons": {
-        "start_preprocessing": "開始前處理",
-        "download_results": "下載處理結果",
-        "send_to_ocr": "發送至 OCR"
     },
     "zoom": {
         "in": "放大",
@@ -228,5 +201,60 @@
         "result_title_ocr": "辨識結果",
         "result_title_preprocess": "前處理結果",
         "result_title_default": "處理結果"
+    },
+    "ui": {
+        "buttons": {
+            "start_recognition": "開始辨識",
+            "recognize_page": "辨識此頁",
+            "continue_processing": "繼續處理 ({processed}/{total})",
+            "batch_completed": "批次完成",
+            "batch_stopped": "已停止"
+        },
+        "copy": {
+            "success": "已複製!",
+            "page_marker": "=== 第 {page} 頁 ==="
+        },
+        "pdf": {
+            "batch_processing": "批次處理",
+            "single_page": "單頁辨識",
+            "page_number": "第 {page} 頁",
+            "batch_complete": "全部完成！共 {count} 頁",
+            "batch_with_count": "開始批次處理（共 {count} 頁）"
+        },
+        "preprocessing": {
+            "completed": "照片前處理完成",
+            "success_count": "成功處理 {count} 張照片",
+            "no_preview": "無預覽",
+            "completed_status": "處理完成",
+            "failed_status": "處理失敗",
+            "invalid_batch_size": "請輸入 1-50 之間的數字",
+            "results_placeholder": "前處理結果將顯示在這裡"
+        },
+        "preview": {
+            "title": "預覽"
+        },
+        "results": {
+            "title": "辨識結果",
+            "page_label": "第 {page} 頁",
+            "char_count": "{count} 字",
+            "processed_label": "（已前處理）"
+        },
+        "video": {
+            "batch_with_count": "開始批次處理（共 {count} 張截圖）",
+            "frame_number": "截圖 {index}",
+            "frames_selected": "已選擇 {count} 張",
+            "sensitivity_label": "{label} ({value})",
+            "no_thumbnail": "無縮圖",
+            "frame_label": "幀 {index}",
+            "sensitivity_low": "低 (更多幀)",
+            "sensitivity_medium": "中 (0.5)",
+            "sensitivity_high": "高 (更少幀)"
+        },
+        "inline_js": {
+            "preprocess_tab_disabled": "獨立前處理功能已禁用，請使用 OCR Tab 或影片截圖 Tab 中的前處理功能",
+            "result_title_ocr": "辨識結果",
+            "result_title_preprocess": "前處理結果",
+            "result_title_default": "處理結果"
+        }
     }
 }

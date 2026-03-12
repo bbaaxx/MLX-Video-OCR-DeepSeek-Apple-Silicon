@@ -22,7 +22,10 @@
         "title": "Recognition Results",
         "copy_all": "Copy All",
         "download_txt": "Download TXT",
-        "default_text": "Please upload a file to start processing"
+        "default_text": "Please upload a file to start processing",
+        "page_label": "Page {page}",
+        "char_count": "{count} chars",
+        "processed_label": "(Processed)"
     },
     "progress": {
         "label": "Progress:",
@@ -72,7 +75,16 @@
         "preset_remove_bg_only": "🎨 Remove Background Only",
         "preset_photo_optimize": "📷 Photo Optimize",
         "preset_scan_optimize": "📄 Scan Optimize",
-        "preset_enhance_blurry": "🔍 Enhance Blurry"
+        "preset_enhance_blurry": "🔍 Enhance Blurry",
+        "invalid_batch_size": "Please enter a number between 1-50",
+        "results_placeholder": "Preprocessing results will appear here",
+        "completed": "Photo preprocessing complete",
+        "success_count": "Successfully processed {count} photos",
+        "no_preview": "No preview",
+        "completed_status": "Completed",
+        "failed_status": "Failed",
+        "progress_label": "Processing Progress",
+        "progress_text": "{current}/{total}"
     },
     "video": {
         "title": "Video Capture",
@@ -92,7 +104,16 @@
         "sensitivity_high": "High (fewer frames)",
         "start_capture": "Start Capture",
         "download_frames": "Download Frames",
-        "send_to_ocr": "Send to OCR"
+        "send_to_ocr": "Send to OCR",
+        "batch_with_count": "Start Batch Processing ({count} screenshots)",
+        "frame_number": "Screenshot {index}",
+        "frames_selected": "{count} selected",
+        "sensitivity_label": "{label} ({value})",
+        "file_info": "{name} - {size} ({type})",
+        "no_thumbnail": "No thumbnail",
+        "frame_label": "Frame {index}",
+        "select_count": "{count} selected",
+        "frames_count": "{count} frames"
     },
     "pdf": {
         "batch_processing": "Batch Processing",
@@ -109,7 +130,10 @@
         "batch_size_2": "2 pages (recommended)",
         "batch_size_3": "3 pages",
         "batch_size_5": "5 pages",
-        "batch_size_10": "10 pages"
+        "batch_size_10": "10 pages",
+        "page_number": "Page {page}",
+        "batch_complete": "All complete! Total {count} pages",
+        "batch_with_count": "Start Batch Processing ({count} pages)"
     },
     "config": {
         "content_type": "📄 Content Type",
@@ -122,7 +146,8 @@
         "small": "Small (100)",
         "medium": "Medium (256)",
         "large": "Large (400)",
-        "gundam": "Gundam (800)"
+        "gundam": "Gundam (800)",
+        "current_config": "Config: {mode} / {subcategory} / {complexity}"
     },
     "presets": {
         "title": "⚡ Quick Preset Combinations (one click)",
@@ -134,7 +159,9 @@
         "scan_optimization": "Scan Optimization",
         "photo_doc_optimization": "Photo Document Optimization",
         "blurry_photo_enhance": "Blurry Photo Enhancement",
-        "remove_background_only": "Remove Background Only"
+        "remove_background_only": "Remove Background Only",
+        "config_label": "Preset Configuration",
+        "custom": "Custom Settings"
     },
     "loading": {
         "processing": "Processing...",
@@ -146,21 +173,6 @@
     "errors": {
         "preprocessing_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab"
     },
-    "preprocessing": {
-        "invalid_batch_size": "Please enter a number between 1-50",
-        "results_placeholder": "Preprocessing results will appear here"
-    },
-    "pdf": {
-        "page_number": "Page {page}",
-        "batch_complete": "All complete! Total {count} pages",
-        "batch_with_count": "Start Batch Processing ({count} pages)"
-    },
-    "video": {
-        "batch_with_count": "Start Batch Processing ({count} screenshots)",
-        "frame_number": "Screenshot {index}",
-        "frames_selected": "{count} selected",
-        "sensitivity_label": "{label} ({value})"
-    },
     "copy": {
         "success": "Copied!",
         "page_marker": "=== Page {page} ==="
@@ -168,48 +180,9 @@
     "download": {
         "filename_prefix": "OCR_Result"
     },
-    "results": {
-        "page_label": "Page {page}",
-        "char_count": "{count} chars",
-        "processed_label": "(Processed)"
-    },
-    "config": {
-        "current_config": "Config: {mode} / {subcategory} / {complexity}"
-    },
-    "preprocessing": {
-        "completed": "Photo preprocessing complete",
-        "success_count": "Successfully processed {count} photos",
-        "no_preview": "No preview",
-        "completed_status": "Completed",
-        "failed_status": "Failed"
-    },
-    "video": {
-        "file_info": "{name} - {size} ({type})",
-        "no_thumbnail": "No thumbnail",
-        "frame_label": "Frame {index}",
-        "select_count": "{count} selected",
-        "frames_count": "{count} frames"
-    },
-    "presets": {
-        "config_label": "Preset Configuration",
-        "custom": "Custom Settings",
-        "scan_optimize": "Scan Optimization",
-        "photo_optimize": "Photo Document Optimization",
-        "enhance_blurry": "Blurry Photo Enhancement",
-        "remove_bg_only": "Remove Background Only"
-    },
-    "preprocessing": {
-        "progress_label": "Processing Progress",
-        "progress_text": "{current}/{total}"
-    },
     "preprocess": {
         "title": "Photo Preprocessing",
         "results_preview": "Processing Results Preview"
-    },
-    "buttons": {
-        "start_preprocessing": "Start Preprocessing",
-        "download_results": "Download Results",
-        "send_to_ocr": "Send to OCR"
     },
     "zoom": {
         "in": "Zoom In",
@@ -225,5 +198,60 @@
         "result_title_ocr": "Recognition Results",
         "result_title_preprocess": "Preprocessing Results",
         "result_title_default": "Processing Results"
+    },
+    "ui": {
+        "buttons": {
+            "start_recognition": "Start Recognition",
+            "recognize_page": "Recognize This Page",
+            "continue_processing": "Continue Processing ({processed}/{total})",
+            "batch_completed": "Batch Completed",
+            "batch_stopped": "Stopped"
+        },
+        "copy": {
+            "success": "Copied!",
+            "page_marker": "=== Page {page} ==="
+        },
+        "pdf": {
+            "batch_processing": "Batch Processing",
+            "single_page": "Single Page Recognition",
+            "page_number": "Page {page}",
+            "batch_complete": "All complete! Total {count} pages",
+            "batch_with_count": "Start Batch Processing ({count} pages)"
+        },
+        "preprocessing": {
+            "completed": "Photo preprocessing complete",
+            "success_count": "Successfully processed {count} photos",
+            "no_preview": "No preview",
+            "completed_status": "Completed",
+            "failed_status": "Failed",
+            "invalid_batch_size": "Please enter a number between 1-50",
+            "results_placeholder": "Preprocessing results will appear here"
+        },
+        "preview": {
+            "title": "Preview"
+        },
+        "results": {
+            "title": "Recognition Results",
+            "page_label": "Page {page}",
+            "char_count": "{count} chars",
+            "processed_label": "(Processed)"
+        },
+        "video": {
+            "batch_with_count": "Start Batch Processing ({count} screenshots)",
+            "frame_number": "Screenshot {index}",
+            "frames_selected": "{count} selected",
+            "sensitivity_label": "{label} ({value})",
+            "no_thumbnail": "No thumbnail",
+            "frame_label": "Frame {index}",
+            "sensitivity_low": "Low (more frames)",
+            "sensitivity_medium": "Medium (0.5)",
+            "sensitivity_high": "High (fewer frames)"
+        },
+        "inline_js": {
+            "preprocess_tab_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab",
+            "result_title_ocr": "Recognition Results",
+            "result_title_preprocess": "Preprocessing Results",
+            "result_title_default": "Processing Results"
+        }
     }
 }

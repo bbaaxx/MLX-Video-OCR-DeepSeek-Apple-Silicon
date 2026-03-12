@@ -25,7 +25,10 @@
         "title": "Resultados de Reconocimiento",
         "copy_all": "Copiar Todo",
         "download_txt": "Descargar TXT",
-        "default_text": "Por favor suba un archivo para comenzar el procesamiento"
+        "default_text": "Por favor suba un archivo para comenzar el procesamiento",
+        "page_label": "Página {page}",
+        "char_count": "{count} caracteres",
+        "processed_label": "(Procesado)"
     },
     "progress": {
         "label": "Progreso:",
@@ -75,7 +78,16 @@
         "preset_remove_bg_only": "🎨 Solo Eliminar Fondo",
         "preset_photo_optimize": "📷 Optimizar Foto",
         "preset_scan_optimize": "📄 Optimizar Escaneo",
-        "preset_enhance_blurry": "🔍 Mejorar Desenfocado"
+        "preset_enhance_blurry": "🔍 Mejorar Desenfocado",
+        "invalid_batch_size": "Por favor ingrese un número entre 1-50",
+        "results_placeholder": "Los resultados del preprocesamiento aparecerán aquí",
+        "completed": "Preprocesamiento de fotos completo",
+        "success_count": "Procesadas {count} fotos con éxito",
+        "no_preview": "Sin vista previa",
+        "completed_status": "Completado",
+        "failed_status": "Fallido",
+        "progress_label": "Progreso de Procesamiento",
+        "progress_text": "{current}/{total}"
     },
     "video": {
         "title": "Captura de Video",
@@ -95,7 +107,16 @@
         "sensitivity_high": "Alto (menos fotogramas)",
         "start_capture": "Comenzar Captura",
         "download_frames": "Descargar Fotogramas",
-        "send_to_ocr": "Enviar a OCR"
+        "send_to_ocr": "Enviar a OCR",
+        "batch_with_count": "Comenzar Proceso por Lotes ({count} capturas)",
+        "frame_number": "Captura {index}",
+        "frames_selected": "{count} seleccionadas",
+        "sensitivity_label": "{label} ({value})",
+        "file_info": "{name} - {size} ({type})",
+        "no_thumbnail": "Sin miniatura",
+        "frame_label": "Frame {index}",
+        "select_count": "{count} seleccionadas",
+        "frames_count": "{count} frames"
     },
     "pdf": {
         "batch_processing": "Proceso por Lotes",
@@ -112,7 +133,10 @@
         "batch_size_2": "2 páginas (recomendado)",
         "batch_size_3": "3 páginas",
         "batch_size_5": "5 páginas",
-        "batch_size_10": "10 páginas"
+        "batch_size_10": "10 páginas",
+        "page_number": "Página {page}",
+        "batch_complete": "¡Todo completo! Total {count} páginas",
+        "batch_with_count": "Comenzar Proceso por Lotes ({count} páginas)"
     },
     "config": {
         "content_type": "📄 Tipo de Contenido",
@@ -125,7 +149,8 @@
         "small": "Small (100)",
         "medium": "Medium (256)",
         "large": "Large (400)",
-        "gundam": "Gundam (800)"
+        "gundam": "Gundam (800)",
+        "current_config": "Config: {mode} / {subcategory} / {complexity}"
     },
     "presets": {
         "title": "⚡ Combinaciones Rápidas Preestablecidas (un clic)",
@@ -137,7 +162,9 @@
         "scan_optimization": "Optimización de Escaneo",
         "photo_doc_optimization": "Optimización de Documento Fotografiado",
         "blurry_photo_enhance": "Mejora de Foto Desenfocada",
-        "remove_background_only": "Solo Eliminar Fondo"
+        "remove_background_only": "Solo Eliminar Fondo",
+        "config_label": "Configuración Predefinida",
+        "custom": "Configuración Personalizada"
     },
     "loading": {
         "processing": "Procesando...",
@@ -149,21 +176,6 @@
     "errors": {
         "preprocessing_disabled": "La función de preprocesamiento independiente está deshabilitada. Por favor use la función de preprocesamiento en la pestaña OCR o Captura de Video"
     },
-    "preprocessing": {
-        "invalid_batch_size": "Por favor ingrese un número entre 1-50",
-        "results_placeholder": "Los resultados del preprocesamiento aparecerán aquí"
-    },
-    "pdf": {
-        "page_number": "Página {page}",
-        "batch_complete": "¡Todo completo! Total {count} páginas",
-        "batch_with_count": "Comenzar Proceso por Lotes ({count} páginas)"
-    },
-    "video": {
-        "batch_with_count": "Comenzar Proceso por Lotes ({count} capturas)",
-        "frame_number": "Captura {index}",
-        "frames_selected": "{count} seleccionadas",
-        "sensitivity_label": "{label} ({value})"
-    },
     "copy": {
         "success": "¡Copiado!",
         "page_marker": "=== Página {page} ==="
@@ -171,48 +183,9 @@
     "download": {
         "filename_prefix": "OCR_Resultado"
     },
-    "results": {
-        "page_label": "Página {page}",
-        "char_count": "{count} caracteres",
-        "processed_label": "(Procesado)"
-    },
-    "config": {
-        "current_config": "Config: {mode} / {subcategory} / {complexity}"
-    },
-    "preprocessing": {
-        "completed": "Preprocesamiento de fotos completo",
-        "success_count": "Procesadas {count} fotos con éxito",
-        "no_preview": "Sin vista previa",
-        "completed_status": "Completado",
-        "failed_status": "Fallido"
-    },
-    "video": {
-        "file_info": "{name} - {size} ({type})",
-        "no_thumbnail": "Sin miniatura",
-        "frame_label": "Frame {index}",
-        "select_count": "{count} seleccionadas",
-        "frames_count": "{count} frames"
-    },
-    "presets": {
-        "config_label": "Configuración Predefinida",
-        "custom": "Configuración Personalizada",
-        "scan_optimize": "Optimización de Escaneo",
-        "photo_optimize": "Optimización de Documento Fotografiado",
-        "enhance_blurry": "Mejora de Foto Desenfocada",
-        "remove_bg_only": "Solo Eliminar Fondo"
-    },
-    "preprocessing": {
-        "progress_label": "Progreso de Procesamiento",
-        "progress_text": "{current}/{total}"
-    },
     "preprocess": {
         "title": "Preprocesamiento de Fotos",
         "results_preview": "Vista Previa de Resultados"
-    },
-    "buttons": {
-        "start_preprocessing": "Comenzar Preprocesamiento",
-        "download_results": "Descargar Resultados",
-        "send_to_ocr": "Enviar a OCR"
     },
     "zoom": {
         "in": "Acercar",
@@ -228,5 +201,60 @@
         "result_title_ocr": "Resultados de reconocimiento",
         "result_title_preprocess": "Resultados de preprocesamiento",
         "result_title_default": "Resultados del procesamiento"
+    },
+    "ui": {
+        "buttons": {
+            "start_recognition": "Iniciar Reconocimiento",
+            "recognize_page": "Reconocer esta Página",
+            "continue_processing": "Continuar Procesando ({processed}/{total})",
+            "batch_completed": "Lote Completado",
+            "batch_stopped": "Detenido"
+        },
+        "copy": {
+            "success": "¡Copiado!",
+            "page_marker": "=== Página {page} ==="
+        },
+        "pdf": {
+            "batch_processing": "Proceso por Lotes",
+            "single_page": "Reconocimiento de Página Única",
+            "page_number": "Página {page}",
+            "batch_complete": "¡Todo completo! Total {count} páginas",
+            "batch_with_count": "Comenzar Proceso por Lotes ({count} páginas)"
+        },
+        "preprocessing": {
+            "completed": "Preprocesamiento de fotos completo",
+            "success_count": "Procesadas {count} fotos con éxito",
+            "no_preview": "Sin vista previa",
+            "completed_status": "Completado",
+            "failed_status": "Fallido",
+            "invalid_batch_size": "Por favor ingrese un número entre 1-50",
+            "results_placeholder": "Los resultados del preprocesamiento aparecerán aquí"
+        },
+        "preview": {
+            "title": "Vista Previa"
+        },
+        "results": {
+            "title": "Resultados de Reconocimiento",
+            "page_label": "Página {page}",
+            "char_count": "{count} caracteres",
+            "processed_label": "(Procesado)"
+        },
+        "video": {
+            "batch_with_count": "Comenzar Proceso por Lotes ({count} capturas)",
+            "frame_number": "Captura {index}",
+            "frames_selected": "{count} seleccionadas",
+            "sensitivity_label": "{label} ({value})",
+            "no_thumbnail": "Sin miniatura",
+            "frame_label": "Frame {index}",
+            "sensitivity_low": "Bajo (más fotogramas)",
+            "sensitivity_medium": "Medio (0.5)",
+            "sensitivity_high": "Alto (menos fotogramas)"
+        },
+        "inline_js": {
+            "preprocess_tab_disabled": "La función de preprocesamiento independiente está deshabilitada. Por favor use la función de preprocesamiento en la pestaña OCR o Captura de Video",
+            "result_title_ocr": "Resultados de reconocimiento",
+            "result_title_preprocess": "Resultados de preprocesamiento",
+            "result_title_default": "Resultados del procesamiento"
+        }
     }
 }
