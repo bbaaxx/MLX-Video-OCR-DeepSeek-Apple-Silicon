@@ -412,24 +412,36 @@ else:
 ### **Estructura del proyecto**
 
 ```
-FLASKAPP/
-├── app.py                 # Backend Flask (1770 líneas)
-├── start.sh              # Script de inicio
-├── requirements.txt      # Dependencias Python
+MLX-VIDEO-OCR/
+├── mlx_video_ocr/       # Paquete principal
+│   ├── __init__.py     # Inicialización
+│   ├── app.py          # App Flask (74 líneas)
+│   ├── config.py       # Configuración
+│   ├── preprocessing.py # Preprocesamiento
+│   ├── shared_state.py # Estado compartido
+│   ├── routes/         # Rutas API
+│   │   ├── __init__.py
+│   │   ├── ocr.py      # Endpoints OCR (116 líneas)
+│   │   ├── pdf.py      # Endpoints PDF (589 líneas)
+│   │   ├── preprocessing.py # Endpoints preprocesamiento (243 líneas)
+│   │   └── video.py    # Endpoints video (180 líneas)
+│   ├── engines/        # Motores MLX
+│   └── utils/          # Utilidades
 ├── static/
-│   └── app.js           # Lógica frontal (3033 líneas)
+│   └── app.js         # Lógica frontal (3207 líneas)
 ├── templates/
-│   └── index.html       # Página principal (849 líneas)
-├── docs/                # Directorio de documentación
-├── uploads/             # Directorio de carga temporal
-└── venv/                # Entorno virtual
+│   └── index.html     # Página principal (859 líneas)
+├── run.py             # Punto de entrada
+├── start.sh           # Script de inicio
+├── pyproject.toml     # Configuración del proyecto
+└── requirements.txt  # Dependencias Python
 ```
 
 ### **Dependencias principales**
 
 ```python
 Flask==3.0.0              # Marco Web
-mlx-vlm==0.3.5           # Modelo de lenguaje visual MLX
+mlx-vlm>=0.4.0           # Modelo de lenguaje visual MLX
 mlx>=0.20.0              # Marco MLX de Apple
 Pillow>=10.3.0           # Procesamiento de imagen
 opencv-python>=4.10.0    # Visión por computadora
@@ -441,10 +453,11 @@ Werkzeug==3.0.1          # Herramientas WSGI
 
 | Archivo | Líneas | Descripción |
 |---------|--------|-------------|
-| `app.py` | 1,770 | Lógica de backend, API, procesamiento OCR |
-| `static/app.js` | 3,033 | Lógica frontal, interacción UI |
-| `templates/index.html` | 849 | Estructura HTML, estilos |
-| **Total** | **5,652** | Implementación de función completa |
+| `mlx_video_ocr/app.py` | 74 | Configuración de Flask |
+| `mlx_video_ocr/routes/*.py` | 1,136 | Rutas API |
+| `static/app.js` | 3,207 | Lógica frontal, interacción UI |
+| `templates/index.html` | 859 | Estructura HTML, estilos |
+| **Total** | **5,276** | Implementación de función completa |
 
 ---
 
