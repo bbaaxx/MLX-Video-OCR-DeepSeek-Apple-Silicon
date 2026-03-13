@@ -39,7 +39,7 @@ class I18n {
     constructor() {
         this.currentLang = localStorage.getItem('language') || this.detectLanguage();
         this.translations = {};
-        this.loadTranslations(this.currentLang);
+        this.ready = this.loadTranslations(this.currentLang);
     }
     
     detectLanguage() {
@@ -73,11 +73,17 @@ class I18n {
                 continue;
             }
             
+            // Strip file category prefix from key if present (e.g., 'ui.pdf.batch_with_count' -> 'pdf.batch_with_count')
+            let lookupParts = keyParts;
+            if (keyParts[0] === fileCategory && keyParts.length > 1) {
+                lookupParts = keyParts.slice(1);
+            }
+            
             let text = fileData;
             let found = true;
             
             // Navigate through nested structure using the key parts
-            for (const k of keyParts) {
+            for (const k of lookupParts) {
                 if (text && typeof text === 'object' && text !== null && k in text) {
                     text = text[k];
                 } else {
@@ -91,7 +97,8 @@ class I18n {
             }
         }
         
-        return key; // Return key as fallback
+        console.warn(`[i18n] Missing translation: "${key}" for language "${this.currentLang}"`);
+        return key;
     }
     
     interpolate(text, params) {
@@ -3100,8 +3107,10 @@ function zoomPreview(factor) {
 }
 
 // ===== 初始化截圖方式顯示 =====
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener('DOMContentLoaded', async function() {
+    
+    // ===== 等待翻譯載入完成 =====
+    await i18n.ready;
     
     // ===== I18n 語言選擇器事件 =====
     const languageSelector = document.getElementById('languageSelector');
@@ -3118,9 +3127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Initialize UI translations
-    setTimeout(async () => {
-        await i18n.updateUI();
-    }, 500);
+    await i18n.updateUI();
     
     // ===== 修正：確保前處理選項在初始狀態時隱藏 =====
     if (imagePreprocessSection) {

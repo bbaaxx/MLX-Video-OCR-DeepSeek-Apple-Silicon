@@ -97,7 +97,6 @@ if __name__ == "__main__":
     print("\n")
     print("📁 Modular Structure:")
     print("   - config.py: Configuration constants")
-    print("   - i18n.py: Internationalization system")
     print("   - preprocessing.py: Image preprocessing")
     print("   - video_utils.py: Video frame extraction")
     print("   - ocr_engine.py: Model loading & OCR processing")

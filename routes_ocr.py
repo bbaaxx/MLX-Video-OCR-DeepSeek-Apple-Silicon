@@ -11,7 +11,6 @@ import traceback
 import tempfile
 from flask import Blueprint, request, jsonify
 from PIL import Image
-from i18n import i18n_backend
 from config import MODE_QUICK_MAP, prompts
 from preprocessing import get_preprocessing_config, preprocess_image_by_config
 from ocr_engine import generate_with_timeout_and_process
@@ -24,14 +23,12 @@ ocr_bp = Blueprint("ocr", __name__)
 @ocr_bp.route("/api/ocr", methods=["POST"])
 def ocr():
     """Single image OCR - supports new 3D classification and legacy quick mode"""
-    lang = i18n_backend.get_client_language()
-
     if "file" not in request.files:
-        return jsonify({"error": i18n_backend.t("file.no_file", lang)}), 400
+        return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files["file"]
     if not allowed_file(file.filename):
-        return jsonify({"error": i18n_backend.t("file.invalid_format", lang)}), 400
+        return jsonify({"error": "Invalid file format"}), 400
 
     old_mode = request.form.get("mode")
     if old_mode and old_mode in MODE_QUICK_MAP:

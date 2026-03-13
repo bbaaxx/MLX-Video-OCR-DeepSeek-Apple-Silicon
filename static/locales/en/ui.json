@@ -18,6 +18,9 @@
         "title": "Preview",
         "clear": "Clear"
     },
+    "thumbnails": {
+        "click_to_switch": "Click thumbnail to switch page"
+    },
     "results": {
         "title": "Recognition Results",
         "copy_all": "Copy All",
@@ -199,60 +202,5 @@
         "result_title_ocr": "Recognition Results",
         "result_title_preprocess": "Preprocessing Results",
         "result_title_default": "Processing Results"
-    },
-    "ui": {
-        "buttons": {
-            "start_recognition": "Start Recognition",
-            "recognize_page": "Recognize This Page",
-            "continue_processing": "Continue Processing ({processed}/{total})",
-            "batch_completed": "Batch Completed",
-            "batch_stopped": "Stopped"
-        },
-        "copy": {
-            "success": "Copied!",
-            "page_marker": "=== Page {page} ==="
-        },
-        "pdf": {
-            "batch_processing": "Batch Processing",
-            "single_page": "Single Page Recognition",
-            "page_number": "Page {page}",
-            "batch_complete": "All complete! Total {count} pages",
-            "batch_with_count": "Start Batch Processing ({count} pages)"
-        },
-        "preprocessing": {
-            "completed": "Photo preprocessing complete",
-            "success_count": "Successfully processed {count} photos",
-            "no_preview": "No preview",
-            "completed_status": "Completed",
-            "failed_status": "Failed",
-            "invalid_batch_size": "Please enter a number between 1-50",
-            "results_placeholder": "Preprocessing results will appear here"
-        },
-        "preview": {
-            "title": "Preview"
-        },
-        "results": {
-            "title": "Recognition Results",
-            "page_label": "Page {page}",
-            "char_count": "{count} chars",
-            "processed_label": "(Processed)"
-        },
-        "video": {
-            "batch_with_count": "Start Batch Processing ({count} screenshots)",
-            "frame_number": "Screenshot {index}",
-            "frames_selected": "{count} selected",
-            "sensitivity_label": "{label} ({value})",
-            "no_thumbnail": "No thumbnail",
-            "frame_label": "Frame {index}",
-            "sensitivity_low": "Low (more frames)",
-            "sensitivity_medium": "Medium (0.5)",
-            "sensitivity_high": "High (fewer frames)"
-        },
-        "inline_js": {
-            "preprocess_tab_disabled": "Independent preprocessing function is disabled. Please use the preprocessing function in the OCR tab or Video Capture tab",
-            "result_title_ocr": "Recognition Results",
-            "result_title_preprocess": "Preprocessing Results",
-            "result_title_default": "Processing Results"
-        }
     }
 }

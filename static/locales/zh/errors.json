@@ -33,11 +33,6 @@
         "file_access_denied": "檔案存取被拒絕",
         "operation_not_allowed": "不允許的操作"
     },
-    "system": {
-        "unknown_error": "未知錯誤",
-        "feature_disabled": "功能暫時停用",
-        "maintenance_mode": "系統維護模式"
-    },
     "processing_failed": "處理失敗: {detail}",
     "download_failed": "下載失敗: {detail}",
     "batch_failed": "批次處理失敗",

@@ -33,11 +33,6 @@
         "file_access_denied": "Acceso al archivo denegado",
         "operation_not_allowed": "Operación no permitida"
     },
-    "system": {
-        "unknown_error": "Error desconocido",
-        "feature_disabled": "Función deshabilitada temporalmente",
-        "maintenance_mode": "Sistema en modo mantenimiento"
-    },
     "processing_failed": "El procesamiento falló: {detail}",
     "download_failed": "Error al descargar: {detail}",
     "batch_failed": "El procesamiento por lotes falló",
