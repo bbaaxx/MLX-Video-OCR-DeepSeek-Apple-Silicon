@@ -173,7 +173,7 @@
             <button id="tab-video" class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300" data-i18n="tabs.video">
                 🎬 影片截圖
             </button>
-            <button id="tab-preprocess" disabled class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300 opacity-50 cursor-not-allowed" data-i18n="tabs.preprocess" data-i18n-title="errors.preprocessing_disabled">
+            <button id="tab-preprocess" class="tab-btn px-6 py-3 rounded-xl font-bold text-lg bg-gray-200 text-gray-700 hover:bg-gray-300" data-i18n="tabs.preprocess">
                 🎨 照片前處理
             </button>
         </div>
@@ -183,7 +183,7 @@
             <div class="xl:col-span-1 space-y-6">
                 
                 <!-- OCR 辨識 Tab -->
-                <div id="tab-ocr-content" class="tab-content active">
+                <div id="tab-ocr-content" class="tab-content active space-y-6">
                     <div class="bg-white rounded-2xl shadow-xl p-6">
                         <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="upload.title">上傳檔案</h2>
                         
@@ -373,11 +373,11 @@
                 </div>
 
                 
-                <div id="tab-preprocess-content" class="tab-content">
+                <div id="tab-preprocess-content" class="tab-content space-y-6">
                     <!-- 頂部說明橫幅 -->
                     <div class="info-banner">
                         <h3 data-i18n="preprocessing.about_bg_removal">🎨 關於「去除背景」功能</h3>
-                        <p data-i18n="preprocessing.about_bg_removal_desc">
+                        <p data-i18n-html="preprocessing.about_bg_removal_desc">
                             ✅ 使用 <strong>rembg AI 模型</strong>，與您的 Colab 代碼<strong>完全相同</strong><br>
                             ✅ 只需勾選「去除背景」選項，或點擊「🎨 僅去背景」快速按鈕<br>
                             ✅ 輸出為透明背景 PNG 格式<br>
@@ -388,10 +388,7 @@
                     <div class="bg-white rounded-2xl shadow-xl p-6">
                         <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="preprocess.title">照片前處理</h2>
                         
-                        <div class="hint-box" data-i18n="preprocessing.hint_no_options">
-                            💡 提示：如果不勾選任何選項，將保存原圖（不做任何處理）<br>
-                            💡 提示：可以多選，系統會依序處理所有選項
-                        </div>
+                        <div class="hint-box" data-i18n-html="preprocessing.hint_no_options"></div>
                         
                         <div id="preprocessDropZone" class="drop-zone rounded-xl p-8 text-center cursor-pointer mb-4 bg-gray-50 hover:bg-gray-100 border-2 border-dashed border-purple-300">
                             <svg class="mx-auto h-12 w-12 text-purple-500" stroke="currentColor" fill="none" viewBox="0 0 48 48">
@@ -399,7 +396,7 @@
                             </svg>
                             <p class="mt-3 text-lg font-medium text-gray-700" data-i18n="preprocessing.drag_drop">拖放照片到這裡</p>
                             <p class="mt-1 text-sm text-gray-500" data-i18n="preprocessing.multi_support">支援 JPG、PNG（可多選）</p>
-                            <input type="file" id="preprocessFileInput" accept="image/*" multiple disabled class="hidden">
+                            <input type="file" id="preprocessFileInput" accept="image/*" multiple class="hidden">
                         </div>
 
                         <!-- 前處理設定 -->
@@ -486,13 +483,13 @@
 
                         <!-- 執行按鈕 -->
                         <div class="mt-6 space-y-3">
-                            <button id="processPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.start_preprocessing">
+                            <button id="processPreprocessBtn" class="hidden w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.start_preprocessing">
                                 開始前處理
                             </button>
-                            <button id="downloadPreprocessBtn" disabled class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.download_results">
+                            <button id="downloadPreprocessBtn" class="hidden w-full bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.download_results">
                                 下載處理結果
                             </button>
-                            <button id="sendToOcrBtn" disabled class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.send_to_ocr">
+                            <button id="sendToOcrBtn" class="hidden w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-6 rounded-xl shadow-xl text-xl transition transform hover:scale-105" data-i18n="buttons.send_to_ocr">
                                 發送至 OCR
                             </button>
                         </div>
@@ -506,7 +503,7 @@
                 </div>
 
          
-                <div id="tab-video-content" class="tab-content">
+                <div id="tab-video-content" class="tab-content space-y-6">
                     <div class="bg-white rounded-2xl shadow-xl p-6">
                         <h2 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="video.title">影片截圖</h2>
                         

@@ -123,13 +123,16 @@ class I18n {
         }
         
         // Update all elements with data-i18n attribute
-        const elements = document.querySelectorAll('[data-i18n]');
+        const elements = document.querySelectorAll('[data-i18n], [data-i18n-html]');
         
         elements.forEach((element) => {
-            const key = element.getAttribute('data-i18n');
+            const key = element.getAttribute('data-i18n') || element.getAttribute('data-i18n-html');
             const translation = this.t(key);
             
-            if (element.tagName === 'INPUT' && (element.type === 'submit' || element.type === 'button')) {
+            // Handle HTML content separately
+            if (element.hasAttribute('data-i18n-html')) {
+                element.innerHTML = translation;
+            } else if (element.tagName === 'INPUT' && (element.type === 'submit' || element.type === 'button')) {
                 element.value = translation;
             } else if (element.tagName === 'INPUT' && element.type === 'text') {
                 element.placeholder = translation;
@@ -724,7 +727,7 @@ async function processBatch() {
     const startPage = currentBatchIndex * batchSize + 1;
     const endPage = Math.min((currentBatchIndex + 1) * batchSize, totalPages);
     
-    const loadingText = isVideoMode ? `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('units.frames')})` : `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('units.pages')})`;
+    const loadingText = isVideoMode ? `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('messages.units.frames')})` : `${i18n.t('loading.processing')} (${startPage}~${endPage} ${i18n.t('messages.units.pages')})`;
     showLoading(loadingText);
 
     try {
@@ -846,7 +849,7 @@ async function processBatch() {
         document.getElementById('progressBar').style.width = 
             `${(processed / totalPages * 100).toFixed(1)}%`;
         document.getElementById('progressConfig').textContent = 
-            `配置: ${currentMode} / ${currentSubcategory} / ${currentComplexity}`;
+            `${i18n.t('ui.results.config')}: ${currentMode} / ${currentSubcategory} / ${currentComplexity}`;
         progressInfo.classList.remove('hidden');
 
         if (data.has_more) {
@@ -1268,14 +1271,6 @@ function switchToVideoTab() {
 
 // 切換到前處理 Tab 時清理 OCR/影片相關狀態
 function switchToPreprocessTab() {
-    // ===== 檢查Tab按鈕是否禁用（獨立前處理Tab已凍結） =====
-    const preprocessTabBtn = document.getElementById('tab-preprocess');
-    if (preprocessTabBtn && preprocessTabBtn.disabled) {
-        // Tab已禁用，不執行切換邏輯
-        console.log('⚠️ 獨立前處理Tab已禁用，無法切換');
-        return;
-    }
-    
     // ===== 修正1 & 4：PDF前處理模式檢測（使用標記或狀態檢查） =====
     // 優先使用 isPdfPreprocessMode 標記，如果沒有則檢查狀態
     const isPdfPreprocess = isPdfPreprocessMode || (selectedFile && selectedFile.type === 'application/pdf' && currentTaskId);
@@ -1755,7 +1750,7 @@ if (executeImagePreprocessBtn) {
         }
         
         const filesToProcess = isVideoMode ? preprocessFiles : [selectedFile];
-        const loadingText = isVideoMode ? `${i18n.t('messages.preprocessing.processing')} (${filesToProcess.length} ${i18n.t('units.images')})` : i18n.t('messages.preprocessing.processing');
+        const loadingText = isVideoMode ? `${i18n.t('messages.preprocessing.processing')} (${filesToProcess.length} ${i18n.t('messages.units.images')})` : i18n.t('messages.preprocessing.processing');
         
         showLoading(loadingText, i18n.t('messages.preprocessing.loading_hint'));
         
@@ -1985,7 +1980,7 @@ if (executeImagePreprocessBtn) {
                         processImageBtn.classList.remove('hidden');
                         processImageBtn.disabled = false;
                         if (imageBtnText) {
-        imageBtnText.innerText = i18n.t('buttons.start_recognition');
+        imageBtnText.innerText = i18n.t('ui.buttons.start_recognition');
                         }
                     }
                     
@@ -3083,8 +3078,8 @@ function showError(message, translationKey = null, params = {}) {
 
 // ===== 顯示加載 =====
 function showLoading(text = null, subtext = null) {
-    if (!text) text = i18n.t('loading.processing');
-    if (!subtext) subtext = i18n.t('loading.please_wait');
+if (!text) text = i18n.t('loading.processing');
+        if (!subtext) subtext = i18n.t('loading.please_wait');
     loading.classList.remove('hidden');
     loadingText.textContent = text;
     document.getElementById('loadingSubtext').textContent = subtext;

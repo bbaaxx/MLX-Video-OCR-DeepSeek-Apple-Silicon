@@ -28,7 +28,8 @@
         "default_text": "Por favor suba un archivo para comenzar el procesamiento",
         "page_label": "Página {page}",
         "char_count": "{count} caracteres",
-        "processed_label": "(Procesado)"
+        "processed_label": "(Procesado)",
+        "config": "Config"
     },
     "progress": {
         "label": "Progreso:",

@@ -28,7 +28,8 @@
         "default_text": "請上傳檔案開始處理",
         "page_label": "第 {page} 頁",
         "char_count": "{count} 字",
-        "processed_label": "（已前處理）"
+        "processed_label": "（已前處理）",
+        "config": "配置"
     },
     "progress": {
         "label": "進度：",

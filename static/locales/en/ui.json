@@ -25,7 +25,8 @@
         "default_text": "Please upload a file to start processing",
         "page_label": "Page {page}",
         "char_count": "{count} chars",
-        "processed_label": "(Processed)"
+        "processed_label": "(Processed)",
+        "config": "Config"
     },
     "progress": {
         "label": "Progress:",
