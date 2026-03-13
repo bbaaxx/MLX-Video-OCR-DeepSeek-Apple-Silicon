@@ -11,11 +11,14 @@ import traceback
 import tempfile
 from flask import Blueprint, request, jsonify
 from PIL import Image
-from config import MODE_QUICK_MAP, prompts
-from preprocessing import get_preprocessing_config, preprocess_image_by_config
-from ocr_engine import generate_with_timeout_and_process
-from api_utils import allowed_file
-from shared_state import model_loaded_status
+from mlx_video_ocr.config import MODE_QUICK_MAP, prompts
+from mlx_video_ocr.preprocessing import (
+    get_preprocessing_config,
+    preprocess_image_by_config,
+)
+from mlx_video_ocr.engines.ocr_engine import generate_with_timeout_and_process
+from mlx_video_ocr.utils.api_utils import allowed_file
+from mlx_video_ocr.shared_state import model_loaded_status
 
 ocr_bp = Blueprint("ocr", __name__)
 

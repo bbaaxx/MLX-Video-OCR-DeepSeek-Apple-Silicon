@@ -5,6 +5,10 @@
 # See the LICENSE file in the project root for full license text:
 # https://www.gnu.org/licenses/agpl-3.0.en.html
 
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "mlx-deepseek-ocr"
 version = "1.0.0"
@@ -63,3 +67,13 @@ target-version = "py311"
 [tool.black]
 line-length = 88
 target-version = ["py311", "py312"]
+
+[project.scripts]
+mlx-video-ocr = "run:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mlx_video_ocr*"]
+
+[tool.setuptools]
+py-modules = ["run"]

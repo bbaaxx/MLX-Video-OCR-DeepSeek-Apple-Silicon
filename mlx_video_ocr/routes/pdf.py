@@ -17,11 +17,14 @@ from flask import Blueprint, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from PIL import Image
 import fitz
-from config import MODE_QUICK_MAP, prompts
-from preprocessing import get_preprocessing_config, preprocess_image_by_config
-from ocr_engine import generate_with_timeout_and_process
-from api_utils import cleanup_old_tasks
-from shared_state import model_loaded_status, pdf_tasks, UPLOAD_FOLDER
+from mlx_video_ocr.config import MODE_QUICK_MAP, prompts
+from mlx_video_ocr.preprocessing import (
+    get_preprocessing_config,
+    preprocess_image_by_config,
+)
+from mlx_video_ocr.engines.ocr_engine import generate_with_timeout_and_process
+from mlx_video_ocr.utils.api_utils import cleanup_old_tasks
+from mlx_video_ocr.shared_state import model_loaded_status, pdf_tasks, UPLOAD_FOLDER
 
 pdf_bp = Blueprint("pdf", __name__)
 

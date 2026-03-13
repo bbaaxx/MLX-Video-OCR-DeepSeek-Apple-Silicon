@@ -11,7 +11,7 @@ import gc
 from datetime import datetime, timedelta
 from pathlib import Path
 import mlx.core as mx
-from config import ALLOWED_EXTENSIONS, ALLOWED_VIDEO_EXTENSIONS
+from mlx_video_ocr.config import ALLOWED_EXTENSIONS, ALLOWED_VIDEO_EXTENSIONS
 
 
 def allowed_file(filename):

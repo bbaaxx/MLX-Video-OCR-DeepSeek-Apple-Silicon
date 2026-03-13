@@ -64,5 +64,5 @@ echo "Starting Flask at http://localhost:$PORT"
 echo "Press Ctrl+C to stop"
 echo ""
 
-# Run with uv
-PORT=$PORT uv run python app.py
+# Run with uv (using new package structure)
+PORT=$PORT uv run python run.py

@@ -16,9 +16,9 @@ from flask import Blueprint, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from PIL import Image
 import cv2
-from video_utils import extract_frames_from_video
-from api_utils import allowed_video_file
-from shared_state import video_tasks, UPLOAD_FOLDER
+from mlx_video_ocr.utils.video_utils import extract_frames_from_video
+from mlx_video_ocr.utils.api_utils import allowed_video_file
+from mlx_video_ocr.shared_state import video_tasks, UPLOAD_FOLDER
 
 video_bp = Blueprint("video", __name__)
 

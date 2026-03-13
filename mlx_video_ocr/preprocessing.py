@@ -8,7 +8,7 @@
 import cv2
 import numpy as np
 from PIL import Image
-from config import PREPROCESSING_CONFIG
+from mlx_video_ocr.config import PREPROCESSING_CONFIG
 
 
 def remove_background_pil(image):

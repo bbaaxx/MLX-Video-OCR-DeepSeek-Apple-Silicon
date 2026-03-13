@@ -14,9 +14,9 @@ from pathlib import Path
 from flask import Blueprint, request, jsonify, send_file
 from werkzeug.utils import secure_filename
 from PIL import Image
-from preprocessing import preprocess_single_image
-from api_utils import allowed_file
-from shared_state import preprocess_tasks, UPLOAD_FOLDER
+from mlx_video_ocr.preprocessing import preprocess_single_image
+from mlx_video_ocr.utils.api_utils import allowed_file
+from mlx_video_ocr.shared_state import preprocess_tasks, UPLOAD_FOLDER
 
 preprocessing_bp = Blueprint("preprocessing", __name__)
 
