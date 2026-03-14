@@ -532,8 +532,16 @@ This project is licensed under **GNU Affero General Public License v3.0 (AGPL-3.
 
 ## 📞 Contact
 
-- **GitHub**: [matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon)
-- **Issues**: [Submit Issues](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+- **GitHub**: [bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon)
+- **Issues**: [Submit Issues](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+
+---
+
+## 🙏 Credits
+
+This is a fork that has significantly diverged from the original repository by [matica0902](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon).
+
+Special thanks to the original author for creating this project.
 
 ---
 

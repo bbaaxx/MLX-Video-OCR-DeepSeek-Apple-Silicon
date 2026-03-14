@@ -531,8 +531,16 @@ Werkzeug==3.0.1          # WSGI 工具
 
 ## 📞 聯繫方式
 
-- **GitHub**: [matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon)
-- **Issues**: [提交問題](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+- **GitHub**: [bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon)
+- **Issues**: [提交問題](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+
+---
+
+## 🙏 鳴謝
+
+這是一個已經與原始倉庫 [matica0902](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon) 大幅分歧的分支。
+
+特別感謝原始作者創建了這個專案。
 
 ---
 

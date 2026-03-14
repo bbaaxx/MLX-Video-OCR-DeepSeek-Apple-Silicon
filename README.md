@@ -96,8 +96,16 @@ Para información detallada, consulta los archivos completos:
 
 ## 📞 Contacto
 
-- **GitHub**: [matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon)
-- **Issues**: [Reportar problemas](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+- **GitHub**: [bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon)
+- **Issues**: [Reportar problemas](https://github.com/bbaaxx/MLX-Video-OCR-DeepSeek-Apple-Silicon/issues)
+
+---
+
+## 🙏 Créditos
+
+Este es un fork que ha divergido significativamente del repositorio original de [matica0902](https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon).
+
+Agradecimientos especiales al autor original por crear este proyecto.
 
 ---
 

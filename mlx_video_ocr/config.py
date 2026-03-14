@@ -111,11 +111,11 @@ MODE_QUICK_MAP = {
 }
 
 prompts = {
-    "product": "<image>\nExtract all printed text from this product packaging exactly as it appears. Use Traditional Chinese.",
-    "basic": "<image>\nExtract all text from the image. Keep original Traditional Chinese and formatting.",
-    "table": "<image>\nConvert this table to clean Markdown format.",
-    "markdown": "<image>\nConvert this document page to clean Markdown format.",
-    "formula": "<image>\nExtract all mathematical formulas using LaTeX format.",
+    "product": "<image>\nExtract all printed text from this product packaging exactly as it appears. Preserve all text in its original language and format. Do not translate.",
+    "basic": "<image>\nExtract all text from the image exactly as it appears. Preserve original characters (including Chinese, Japanese, Cyrillic, etc.) and formatting. Do not translate.",
+    "table": "<image>\nConvert this table to clean Markdown format. Preserve original characters and do not translate.",
+    "markdown": "<image>\nConvert this document page to clean Markdown format. Preserve original characters and do not translate.",
+    "formula": "<image>\nExtract all mathematical formulas using LaTeX format. Preserve original symbols and notation.",
 }
 
 PREPROCESS_PRESETS = {
