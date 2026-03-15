@@ -43,11 +43,10 @@ class I18n {
     }
     
     detectLanguage() {
-        // 檢測瀏覽器語言
         const browserLang = navigator.language || navigator.userLanguage;
         if (browserLang.startsWith('es')) return 'es';
         if (browserLang.startsWith('zh')) return 'zh';
-        return 'zh'; // 預設中文
+        return 'en';
     }
     
     async loadTranslations(lang) {
@@ -1430,8 +1429,6 @@ function handlePreprocessFiles(files) {
         }
         if (processPreprocessBtn) {
             processPreprocessBtn.classList.remove('hidden');
-            // ===== 確保按鈕保持禁用狀態（獨立前處理Tab已凍結） =====
-            processPreprocessBtn.disabled = true;
         }
         showPreprocessPreview(imageFiles);
         showLoading(i18n.t('messages.preprocessing.loading'), i18n.t('messages.preprocessing.selected_count', { count: imageFiles.length }));

@@ -21,12 +21,24 @@ def remove_background_pil(image):
     except ImportError:
         print("⚠️ rembg not available, using simple background removal")
         img_array = np.array(image)
-        gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
+
+        if img_array.ndim == 2:
+            gray = img_array
+        elif img_array.shape[2] == 4:
+            rgb_array = img_array[:, :, :3]
+            gray = cv2.cvtColor(rgb_array, cv2.COLOR_RGB2GRAY)
+        else:
+            gray = cv2.cvtColor(img_array, cv2.COLOR_RGB2GRAY)
+
         _, mask = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY_INV)
 
-        rgba = np.zeros((img_array.shape[0], img_array.shape[1], 4), dtype=np.uint8)
-        rgba[:, :, :3] = img_array
-        rgba[:, :, 3] = mask
+        if img_array.shape[2] == 4:
+            rgba = img_array.copy()
+            rgba[:, :, 3] = mask
+        else:
+            rgba = np.zeros((img_array.shape[0], img_array.shape[1], 4), dtype=np.uint8)
+            rgba[:, :, :3] = img_array
+            rgba[:, :, 3] = mask
 
         return Image.fromarray(rgba, "RGBA")
     except Exception as e:

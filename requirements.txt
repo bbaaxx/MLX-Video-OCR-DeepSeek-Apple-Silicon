@@ -10,3 +10,5 @@ Pillow>=10.3.0
 Werkzeug==3.0.1
 PyMuPDF
 opencv-python>=4.10.0
+rembg>=2.0.0
+onnxruntime
